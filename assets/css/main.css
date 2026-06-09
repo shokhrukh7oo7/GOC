@@ -38,7 +38,8 @@
 /* LAYOUT START */
 :root {
   --black-color: #1e1e1e;
-  --white-color: #fafaf7eb;
+  --white-color: #ffffff;
+  --white-grey-color: #fafaf7eb;
   --grey-color: #6c6c6c;
   --milk-color: #e6e5e0;
   --aqua-color: #00d6d6;
@@ -64,7 +65,7 @@ html {
 }
 
 body {
-  font-family: "Suisse", sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
 .container {
@@ -99,3 +100,97 @@ p {
   color: unset;
 }
 /* LAYOUT END */
+
+/* HEADER START */
+.header-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+}
+.header-wrapper .header-left {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+.header-wrapper .header-left .logo-wrapper img {
+  width: 100%;
+  max-width: 160px;
+}
+.header-wrapper .header-left .nav-link-wrapper ul {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+.header-wrapper .header-left .nav-link-wrapper ul li a {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 20px;
+  color: var(--black-color);
+}
+
+.header-wrapper .header-right {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+.header-wrapper .header-right .language-wrapper ul {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.header-wrapper .header-right .language-wrapper ul li {
+  position: relative;
+  padding: 0 5px;
+}
+
+.header-wrapper .header-right .language-wrapper ul li:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  right: -5px;
+  top: 35%;
+  height: 50%;
+  width: 1px;
+  background-color: var(--black-color);
+  transform: skew(-15deg);
+}
+
+.header-wrapper .header-right .language-wrapper ul li a {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 100%;
+  color: var(--black-color);
+}
+
+.header-wrapper .header-right .call-wrapper a {
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 100%;
+  color: var(--black-color);
+  border: 1px solid var(--aqua-color);
+  border-radius: 100px;
+  padding: 10px 17px;
+  transition: 0.3s;
+}
+.header-wrapper .header-right .call-wrapper a:hover {
+  background-color: var(--aqua-color);
+  color: var(--black-color);
+}
+
+.header-wrapper .header-right .request-wrapper .btn-main {
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 100%;
+  color: var(--black-color);
+  background-color: var(--aqua-color);
+  border-radius: 100px;
+  padding: 11px 17px;
+}
+
+.header-wrapper .header-right .request-wrapper .btn-main:hover {
+  background-color: var(--white-color);
+  border-color: var(--aqua-color);
+  color: var(--aqua-color);
+}
+/* HEADER END */
