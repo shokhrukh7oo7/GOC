@@ -45,6 +45,14 @@
   --aqua-color: #00d6d6;
 
   --body-color: #fafaf7;
+
+  --bg: #fafaf7;
+  --ink: #111111;
+  --ink-mid: #1e1e1e;
+  --ink-muted: #6c6c6c;
+  --cyan: #00d6d6;
+  --border: #e6e5e0;
+  --pad-x: clamp(24px, 6.25vw, 120px);
 }
 
 * {
@@ -75,7 +83,7 @@ body {
   width: 100%;
   max-width: 1920px;
   margin: 0 auto;
-  padding: 0 32px;
+  padding: 0 clamp(16px, 2vw, 32px);
 }
 
 a {
@@ -237,9 +245,263 @@ header {
   transform: translateY(-8px) rotate(-45deg);
 }
 /* HEADER END */
+/* ====================================================================================================== */
+/* ─── SLIDER WRAPPER ─────────────────────────────── */
+.slider {
+  position: relative;
+  width: 100%;
+  min-height: 400px;
+  max-height: 1200px;
+  display: flex;
+  flex-direction: column;
+  /* overflow: hidden; */
+}
+
+/* ─── SLIDES ──────────────────────────────────────── */
+.slider .slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.9s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  padding: clamp(60px, 8vw, 150px) 0;
+}
+.slider .slide.active {
+  opacity: 1;
+  pointer-events: all;
+  position: relative;
+  flex: 1;
+}
+
+/* ─── VIDEO BACKGROUND ────────────────────────────── */
+.slider .slide .slide__video-wrap {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+.slider .slide .slide__video-wrap video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ─── CONTENT LAYER ───────────────────────────────── */
+.slider .slide .slide__content {
+  position: relative;
+  z-index: 2;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(12px, 3vw, 57px);
+}
+
+/* ─── SLIDER NAV (top) ────────────────────────────── */
+.slider .slide .slider-nav {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.slider .slide .nav-arrow {
+  width: clamp(25px, 2.5vw, 40px);
+  height: clamp(25px, 2.5vw, 40px);
+  border: 3px solid var(--milk-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background: transparent;
+  transition:
+    border-color 0.2s,
+    background 0.2s;
+  flex-shrink: 0;
+}
+.slider .slide .nav-arrow:hover {
+  border-color: var(--aqua-color);
+}
+.slider .slide .nav-arrow img {
+  width: clamp(20px, 1.5vw, 30px);
+  height: clamp(20px, 1.5vw, 30px);
+  filter: brightness(0) invert(1);
+}
+
+.slider .slide .nav-dots {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.slider .slide .nav-dot {
+  height: 12px;
+  border-radius: 50px;
+  background: var(--milk-color);
+  transition:
+    width 0.35s ease,
+    background 0.35s ease;
+  cursor: pointer;
+  width: 12px;
+  border: none;
+}
+.slider .slide .nav-dot.active {
+  width: 60px;
+  background: var(--aqua-color);
+}
+
+/* ─── HEADLINE ────────────────────────────────────── */
+.slider .slide .headline .headline__row1 h1 {
+  font-size: clamp(34px, 8.9vw, 136px);
+  font-weight: 900;
+  line-height: 0.85;
+  letter-spacing: -0.4px;
+  color: var(--white-color);
+  width: 100%;
+  max-width: 1100px;
+}
+.slider .slide .headline .headline__row1 h1 span {
+  font-weight: 400;
+  color: var(--white-color);
+}
+
+.slider .slide .headline__row1 {
+  display: flex;
+  align-items: baseline;
+  gap: 0.18em;
+  flex-wrap: wrap;
+}
+
+/* ─── DESCRIPTION ─────────────────────────────────── */
+.slider .slide .description {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(16px, 1.2vw, 21px);
+  max-width: 576px;
+}
+.slider .slide .description .eyebrow {
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 1.32px;
+  text-transform: uppercase;
+  color: var(--milk-color);
+}
+.slider .slide .description .body-text {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.45;
+  color: var(--white-color);
+}
+
+/* ─── BUTTONS ─────────────────────────────────────── */
+.slider .slide .cta-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.slider .slide .btn {
+  height: 44px;
+  border-radius: 100px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    opacity 0.2s,
+    transform 0.15s;
+  white-space: nowrap;
+  padding: 0 22px;
+}
+.slider .slide .btn--primary:hover {
+  background-color: var(--white-color);
+  border-color: var(--white-color);
+  transition: all 0.3s;
+}
+.slider .slide .btn--primary {
+  background: var(--aqua-color);
+  border: 1.5px solid var(--aqua-color);
+  color: var(--black-color);
+  padding-right: 18px;
+}
+.slider .slide .btn--primary .btn-arrow {
+  width: 12px;
+  height: 12px;
+  border-right: 1.5px solid var(--black-color);
+  border-top: 1.5px solid var(--black-color);
+  transform: rotate(45deg);
+  flex-shrink: 0;
+}
+.slider .slide .btn--outline {
+  background: transparent;
+  border: 1.5px solid var(--white-color);
+  color: var(--white-color);
+}
+.slider .slide .btn--outline:hover {
+  background-color: transparent;
+  color: var(--aqua-color);
+  border-color: var(--aqua-color);
+  transition: all 0.3s;
+}
+/* ─── STATS BAR ───────────────────────────────────── */
+.slider .slide .stats-bar {
+  position: relative;
+  z-index: 2;
+  border-top: 1px solid var(--border);
+  margin-top: auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  margin-top: clamp(32px, 5vw, 70px);
+}
+.slider .slide .stat {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: clamp(14px, 1.7vw, 28px) 0 clamp(16px, 2vw, 32px);
+  padding-right: 24px;
+}
+.slider .slide .stat:last-child {
+  border-right: none;
+  padding-right: 0;
+}
+.slider .slide .stat + .stat {
+  padding-left: 24px;
+}
+.slider .slide .stat__label {
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--white-color);
+  margin-bottom: 0;
+}
+.slider .slide .stat__value {
+  font-weight: 800;
+  font-size: clamp(28px, 2.8vw, 42px);
+  letter-spacing: -0.02em;
+  color: var(--white-color);
+  line-height: 1;
+  margin-bottom: 0;
+}
+.slider .slide .stat__unit {
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--white-color);
+  margin-bottom: 0;
+}
+
+/* ====================================================================================================== */
 
 /* ABOUT SECTION START */
-
 .about-wrapper {
   display: flex;
   padding: 32px 88px;

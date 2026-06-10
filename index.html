@@ -63,13 +63,286 @@
     <!-- MAIN START -->
     <main>
       <!-- Banner section start -->
-      <section>
-        <div class="container"></div>
+      <section class="slider" id="slider" aria-label="Слайдер — главный экран">
+        <!-- ══ SLIDE 1 ══════════════════════════════════════ -->
+        <div
+          class="slide active"
+          data-theme="dark"
+          role="group"
+          aria-label="Слайд 1 из 3"
+        >
+          <div class="slide__video-wrap">
+            <video autoplay muted loop playsinline>
+              <source src="/assets/slide-3.mp4" type="video/mp4" />
+            </video>
+          </div>
+
+          <div class="container">
+            <div class="slide__content">
+              <!-- Nav -->
+              <nav class="slider-nav" aria-label="Навигация слайдера">
+                <button
+                  class="nav-arrow"
+                  id="prev"
+                  aria-label="Предыдущий слайд"
+                >
+                  <img src="/assets/images/home/arrow-left.svg" alt="image" />
+                </button>
+                <div
+                  class="nav-dots"
+                  id="dots"
+                  role="tablist"
+                  aria-label="Слайды"
+                >
+                  <button
+                    class="nav-dot active"
+                    role="tab"
+                    aria-selected="true"
+                    aria-label="Слайд 1"
+                    data-index="0"
+                  ></button>
+                  <button
+                    class="nav-dot"
+                    role="tab"
+                    aria-selected="false"
+                    aria-label="Слайд 2"
+                    data-index="1"
+                  ></button>
+                  <button
+                    class="nav-dot"
+                    role="tab"
+                    aria-selected="false"
+                    aria-label="Слайд 3"
+                    data-index="2"
+                  ></button>
+                </div>
+                <button
+                  class="nav-arrow"
+                  id="next"
+                  aria-label="Следующий слайд"
+                >
+                  <img src="/assets/images/home/arrow-right.svg" alt="image" />
+                </button>
+              </nav>
+
+              <!-- Headline -->
+              <div
+                class="headline"
+                aria-label="Инфраструктура связи нового поколения"
+              >
+                <div class="headline__row1">
+                  <h1>Инфраструктура связи <span>нового поколения</span></h1>
+                </div>
+              </div>
+
+              <!-- Description -->
+              <div class="description">
+                <p class="eyebrow">N°01 — Manifesto</p>
+                <p class="body-text">
+                  Производство оптического калбеля для телекоммуникаций,
+                  энернетики и <br />
+                  цифровой инфраструктуры. Ташкент • Сеул • с 2019 года.
+                </p>
+                <div class="cta-row">
+                  <a href="#" class="btn btn--primary">
+                    Получить КП за 1 час
+                    <span class="btn-arrow" aria-hidden="true"></span>
+                  </a>
+                  <a href="#" class="btn btn--outline">Подобрать кабель</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Stats -->
+          <div class="container">
+            <div class="stats-bar" aria-label="Ключевые показатели">
+              <div class="stat">
+                <p class="stat__label">Capacity · Factory 1</p>
+                <p class="stat__value">120 000</p>
+                <p class="stat__unit">км кабеля / год</p>
+              </div>
+              <div class="stat">
+                <p class="stat__label">Capacity · Factory 2</p>
+                <p class="stat__value">24 000</p>
+                <p class="stat__unit">км кабеля / год</p>
+              </div>
+              <div class="stat">
+                <p class="stat__label">CORD Output</p>
+                <p class="stat__value">25 000</p>
+                <p class="stat__unit">штук / месяц</p>
+              </div>
+              <div class="stat">
+                <p class="stat__label">Established</p>
+                <p class="stat__value">2019</p>
+                <p class="stat__unit">совместное предприятие</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ══ SLIDE 2 ══════════════════════════════════════ -->
+        <div
+          class="slide"
+          data-theme="light"
+          role="group"
+          aria-label="Слайд 2 из 3"
+        >
+          <div class="slide__video-wrap">
+            <video autoplay muted loop playsinline>
+              <source src="/assets/slide-4.mp4" type="video/mp4" />
+            </video>
+          </div>
+
+          <div class="container">
+            <div class="slide__content">
+              <nav class="slider-nav" aria-hidden="true">
+                <button class="nav-arrow" aria-label="Предыдущий слайд">
+                  <img src="/assets/images/home/arrow-left.svg" alt="image" />
+                </button>
+                <div class="nav-dots">
+                  <button class="nav-dot" data-index="0"></button>
+                  <button class="nav-dot active" data-index="1"></button>
+                  <button class="nav-dot" data-index="2"></button>
+                </div>
+                <button class="nav-arrow" aria-label="Следующий слайд">
+                  <img src="/assets/images/home/arrow-right.svg" alt="image" />
+                </button>
+              </nav>
+
+              <div class="headline">
+                <div class="headline__row1">
+                  <h1>Инфраструктура связи <span>нового поколения</span></h1>
+                </div>
+              </div>
+
+              <div class="description">
+                <p class="eyebrow">N°02 — Technology</p>
+                <p class="body-text">
+                  Производство оптического калбеля для телекоммуникаций,
+                  энернетики и <br />
+                  цифровой инфраструктуры. Ташкент • Сеул • с 2019 года.
+                </p>
+                <div class="cta-row">
+                  <a href="#" class="btn btn--primary">
+                    Узнать подробнее
+                    <span class="btn-arrow" aria-hidden="true"></span>
+                  </a>
+                  <a href="#" class="btn btn--outline">Наши решения</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="container">
+            <div class="stats-bar">
+              <div class="stat">
+                <p class="stat__label">Стран-партнёров</p>
+                <p class="stat__value">18</p>
+                <p class="stat__unit">по всему миру</p>
+              </div>
+              <div class="stat">
+                <p class="stat__label">Проектов в год</p>
+                <p class="stat__value">340+</p>
+                <p class="stat__unit">реализовано</p>
+              </div>
+              <div class="stat">
+                <p class="stat__label">Сотрудников</p>
+                <p class="stat__value">1 200</p>
+                <p class="stat__unit">специалистов</p>
+              </div>
+              <div class="stat">
+                <p class="stat__label">Сертификаты</p>
+                <p class="stat__value">ISO</p>
+                <p class="stat__unit">9001 / 14001</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ══ SLIDE 3 ══════════════════════════════════════ -->
+        <div
+          class="slide"
+          data-theme="dark"
+          role="group"
+          aria-label="Слайд 3 из 3"
+        >
+          <div class="slide__video-wrap">
+            <video autoplay muted loop playsinline>
+              <source src="/assets/slide-5.mp4" type="video/mp4" />
+            </video>
+          </div>
+
+          <div class="container">
+            <div class="slide__content">
+              <nav class="slider-nav" aria-hidden="true">
+                <button class="nav-arrow" aria-label="Предыдущий слайд">
+                  <img src="/assets/images/home/arrow-left.svg" alt="image" />
+                </button>
+                <div class="nav-dots">
+                  <button class="nav-dot" data-index="0"></button>
+                  <button class="nav-dot" data-index="1"></button>
+                  <button class="nav-dot active" data-index="2"></button>
+                </div>
+                <button class="nav-arrow" aria-label="Следующий слайд">
+                  <img src="/assets/images/home/arrow-right.svg" alt="image" />
+                </button>
+              </nav>
+
+              <div class="headline">
+                <div class="headline__row1">
+                  <h1>Инфраструктура связи <span>нового поколения</span></h1>
+                </div>
+              </div>
+
+              <div class="description">
+                <p class="eyebrow">N°03 — Reliability</p>
+                <p class="body-text">
+                  Производство оптического калбеля для телекоммуникаций,
+                  энернетики и <br />
+                  цифровой инфраструктуры. Ташкент • Сеул • с 2019 года.
+                </p>
+                <div class="cta-row">
+                  <a href="#" class="btn btn--primary">
+                    Запросить образец
+                    <span class="btn-arrow" aria-hidden="true"></span>
+                  </a>
+                  <a href="#" class="btn btn--outline">Технические данные</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="container">
+            <div class="stats-bar">
+              <div class="stat">
+                <p class="stat__label">Срок службы</p>
+                <p class="stat__value">25+</p>
+                <p class="stat__unit">лет гарантии</p>
+              </div>
+              <div class="stat">
+                <p class="stat__label">Полоса пропускания</p>
+                <p class="stat__value">400G</p>
+                <p class="stat__unit">макс. скорость</p>
+              </div>
+              <div class="stat">
+                <p class="stat__label">Температура</p>
+                <p class="stat__value">−60°C</p>
+                <p class="stat__unit">до +85°C</p>
+              </div>
+              <div class="stat">
+                <p class="stat__label">Стандарты</p>
+                <p class="stat__value">ITU-T</p>
+                <p class="stat__unit">G.652 / G.657</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
       <!-- Banner section end -->
 
       <!-- About section start -->
-      <section>
+      <!-- <section>
         <div class="container">
           <div class="about-wrapper">
             <div class="about-left">
@@ -94,18 +367,12 @@
 
               <div class="about-right-center">
                 <div class="about-sertificate-wrapper">
-                  <img
-                    src="/assets/images/home/sertificate.jpg"
-                    alt="images"
-                  />
-                  <img
-                    src="/assets/images/home/sertificate.jpg"
-                    alt="images"
-                  />
+                  <img src="/assets/images/home/sertificate.jpg" alt="images" />
+                  <img src="/assets/images/home/sertificate.jpg" alt="images" />
                 </div>
                 <p>
-                  Два завода. Пятнадцать производственных площадок. <br /> Один контур
-                  качества.
+                  Два завода. Пятнадцать производственных площадок. <br />
+                  Один контур качества.
                 </p>
               </div>
 
@@ -127,7 +394,7 @@
             </div>
           </div>
         </div>
-      </section>
+      </section> -->
       <!-- About section end -->
     </main>
     <!-- MAIN END -->
