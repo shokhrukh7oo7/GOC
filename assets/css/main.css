@@ -590,3 +590,88 @@ header {
   font-weight: 400;
   color: var(--grey-color);
 }
+
+/* application section start */
+.application-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(20px, 4vw, 55px);
+  padding: 32px 88px;
+}
+.layout-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.layout-section .section-enter-header {
+  font-size: 11px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 1.32px;
+  color: var(--grey-color);
+}
+.layout-section .section-enter-description {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+  align-items: center;
+}
+.layout-section .section-enter-description .section-enter-left h1 {
+  font-size: clamp(32px, 7vw, 87px);
+  font-weight: 700;
+  line-height: 0.9;
+  letter-spacing: -1.76px;
+  color: var(--black-color);
+  margin-bottom: 0;
+  width: 100%;
+  max-width: 600px;
+}
+.layout-section .section-enter-description .section-enter-right p {
+  font-size: clamp(14px, 1vw, 16px);
+  font-weight: 400;
+  letter-spacing: 0%;
+  color: var(--grey-color);
+  width: 100%;
+  max-width: 320px;
+}
+.application-left-wrapper {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+}
+.application-left-wrapper .items {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: clamp(60px, 10vw, 120px);
+  padding: 24px 28px;
+  border-right: 1px solid var(--aqua-color);
+}
+.application-left-wrapper .items:last-child {
+  border-right: none;
+}
+.application-left-wrapper .items .item-header a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 11px;
+  font-weight: 400;
+  color: var(--aqua-color);
+}
+.application-left-wrapper .items .item-header img {
+  width: 10px;
+  height: 10px;
+}
+.application-left-wrapper .items .item-body {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(10px, 1vw, 16px);
+}
+.application-left-wrapper .items .item-body h2 {
+  font-size: clamp(18px, 1.5vw, 22px);
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: -0.22px;
+  margin-bottom: 0;
+  color: var(--black-color);
+}
+/* application section end */
