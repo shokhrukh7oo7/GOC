@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="/assets/css/responsive.css" />
   </head>
   <body>
-    <!-- HEADER START -->
+    <!-- HEADER -->
     <header>
       <div class="container">
         <div class="header-wrapper">
@@ -40,11 +40,9 @@
                 <li><a href="#">EN</a></li>
               </ul>
             </div>
-
             <div class="call-wrapper">
               <a href="tel:+998900000000">Позвонить</a>
             </div>
-
             <div class="request-wrapper">
               <button class="btn btn-main">Заявка ></button>
             </div>
@@ -58,90 +56,43 @@
         </div>
       </div>
     </header>
-    <!-- HEADER END -->
 
-    <!-- MAIN START -->
     <main>
-      <!-- Banner section start -->
+      <!-- SLIDER -->
       <section class="slider" id="slider" aria-label="Слайдер — главный экран">
-        <!-- ══ SLIDE 1 ══════════════════════════════════════ -->
-        <div
-          class="slide active"
-          data-theme="dark"
-          role="group"
-          aria-label="Слайд 1 из 3"
-        >
+
+        <!-- Единый nav поверх всех слайдов -->
+        <nav class="slider-nav" aria-label="Навигация слайдера">
+          <button class="nav-arrow" id="prev" aria-label="Предыдущий слайд">
+            <img src="/assets/images/home/arrow-left.svg" alt="" />
+          </button>
+          <div class="nav-dots" id="dots" role="tablist" aria-label="Слайды">
+            <button class="nav-dot active" role="tab" aria-selected="true" aria-label="Слайд 1" data-index="0"></button>
+            <button class="nav-dot" role="tab" aria-selected="false" aria-label="Слайд 2" data-index="1"></button>
+            <button class="nav-dot" role="tab" aria-selected="false" aria-label="Слайд 3" data-index="2"></button>
+          </div>
+          <button class="nav-arrow" id="next" aria-label="Следующий слайд">
+            <img src="/assets/images/home/arrow-right.svg" alt="" />
+          </button>
+        </nav>
+
+        <!-- Slide 1 -->
+        <div class="slide active" data-theme="dark" role="group" aria-label="Слайд 1 из 3">
           <div class="slide__video-wrap">
             <video autoplay muted loop playsinline>
-              <source src="/assets/slide-3.mp4" type="video/mp4" />
+              <source src="/assets/slide-8.mp4" type="video/mp4" />
             </video>
           </div>
-
           <div class="container">
             <div class="slide__content">
-              <!-- Nav -->
-              <nav class="slider-nav" aria-label="Навигация слайдера">
-                <button
-                  class="nav-arrow"
-                  id="prev"
-                  aria-label="Предыдущий слайд"
-                >
-                  <img src="/assets/images/home/arrow-left.svg" alt="image" />
-                </button>
-                <div
-                  class="nav-dots"
-                  id="dots"
-                  role="tablist"
-                  aria-label="Слайды"
-                >
-                  <button
-                    class="nav-dot active"
-                    role="tab"
-                    aria-selected="true"
-                    aria-label="Слайд 1"
-                    data-index="0"
-                  ></button>
-                  <button
-                    class="nav-dot"
-                    role="tab"
-                    aria-selected="false"
-                    aria-label="Слайд 2"
-                    data-index="1"
-                  ></button>
-                  <button
-                    class="nav-dot"
-                    role="tab"
-                    aria-selected="false"
-                    aria-label="Слайд 3"
-                    data-index="2"
-                  ></button>
-                </div>
-                <button
-                  class="nav-arrow"
-                  id="next"
-                  aria-label="Следующий слайд"
-                >
-                  <img src="/assets/images/home/arrow-right.svg" alt="image" />
-                </button>
-              </nav>
-
-              <!-- Headline -->
-              <div
-                class="headline"
-                aria-label="Инфраструктура связи нового поколения"
-              >
-                <div class="headline__row1">
-                  <h1>Инфраструктура связи <span>нового поколения</span></h1>
-                </div>
+              <div class="headline">
+                <h1>Инфраструктура связи <span>нового поколения</span></h1>
               </div>
-
-              <!-- Description -->
               <div class="description">
                 <p class="eyebrow">N°01 — Manifesto</p>
                 <p class="body-text">
-                  Производство оптического калбеля для телекоммуникаций,
-                  энернетики и <br />
-                  цифровой инфраструктуры. Ташкент • Сеул • с 2019 года.
+                  Производство оптического кабеля для телекоммуникаций,
+                  энергетики и цифровой инфраструктуры. Ташкент • Сеул • с 2019 года.
                 </p>
                 <div class="cta-row">
                   <a href="#" class="btn btn--primary">
@@ -153,8 +104,6 @@
               </div>
             </div>
           </div>
-
-          <!-- Stats -->
           <div class="container">
             <div class="stats-bar" aria-label="Ключевые показатели">
               <div class="stat">
@@ -181,47 +130,23 @@
           </div>
         </div>
 
-        <!-- ══ SLIDE 2 ══════════════════════════════════════ -->
-        <div
-          class="slide"
-          data-theme="light"
-          role="group"
-          aria-label="Слайд 2 из 3"
-        >
+        <!-- Slide 2 -->
+        <div class="slide" data-theme="light" role="group" aria-label="Слайд 2 из 3">
           <div class="slide__video-wrap">
             <video autoplay muted loop playsinline>
-              <source src="/assets/slide-4.mp4" type="video/mp4" />
+              <source src="/assets/slide-7.mp4" type="video/mp4" />
             </video>
           </div>
-
           <div class="container">
             <div class="slide__content">
-              <nav class="slider-nav" aria-hidden="true">
-                <button class="nav-arrow" aria-label="Предыдущий слайд">
-                  <img src="/assets/images/home/arrow-left.svg" alt="image" />
-                </button>
-                <div class="nav-dots">
-                  <button class="nav-dot" data-index="0"></button>
-                  <button class="nav-dot active" data-index="1"></button>
-                  <button class="nav-dot" data-index="2"></button>
-                </div>
-                <button class="nav-arrow" aria-label="Следующий слайд">
-                  <img src="/assets/images/home/arrow-right.svg" alt="image" />
-                </button>
-              </nav>
-
               <div class="headline">
-                <div class="headline__row1">
-                  <h1>Инфраструктура связи <span>нового поколения</span></h1>
-                </div>
+                <h1>Инфраструктура связи <span>нового поколения</span></h1>
               </div>
-
               <div class="description">
                 <p class="eyebrow">N°02 — Technology</p>
                 <p class="body-text">
-                  Производство оптического калбеля для телекоммуникаций,
-                  энернетики и <br />
-                  цифровой инфраструктуры. Ташкент • Сеул • с 2019 года.
+                  Производство оптического кабеля для телекоммуникаций,
+                  энергетики и цифровой инфраструктуры. Ташкент • Сеул • с 2019 года.
                 </p>
                 <div class="cta-row">
                   <a href="#" class="btn btn--primary">
@@ -233,7 +158,6 @@
               </div>
             </div>
           </div>
-
           <div class="container">
             <div class="stats-bar">
               <div class="stat">
@@ -260,47 +184,23 @@
           </div>
         </div>
 
-        <!-- ══ SLIDE 3 ══════════════════════════════════════ -->
-        <div
-          class="slide"
-          data-theme="dark"
-          role="group"
-          aria-label="Слайд 3 из 3"
-        >
+        <!-- Slide 3 -->
+        <div class="slide" data-theme="dark" role="group" aria-label="Слайд 3 из 3">
           <div class="slide__video-wrap">
             <video autoplay muted loop playsinline>
               <source src="/assets/slide-5.mp4" type="video/mp4" />
             </video>
           </div>
-
           <div class="container">
             <div class="slide__content">
-              <nav class="slider-nav" aria-hidden="true">
-                <button class="nav-arrow" aria-label="Предыдущий слайд">
-                  <img src="/assets/images/home/arrow-left.svg" alt="image" />
-                </button>
-                <div class="nav-dots">
-                  <button class="nav-dot" data-index="0"></button>
-                  <button class="nav-dot" data-index="1"></button>
-                  <button class="nav-dot active" data-index="2"></button>
-                </div>
-                <button class="nav-arrow" aria-label="Следующий слайд">
-                  <img src="/assets/images/home/arrow-right.svg" alt="image" />
-                </button>
-              </nav>
-
               <div class="headline">
-                <div class="headline__row1">
-                  <h1>Инфраструктура связи <span>нового поколения</span></h1>
-                </div>
+                <h1>Инфраструктура связи <span>нового поколения</span></h1>
               </div>
-
               <div class="description">
                 <p class="eyebrow">N°03 — Reliability</p>
                 <p class="body-text">
-                  Производство оптического калбеля для телекоммуникаций,
-                  энернетики и <br />
-                  цифровой инфраструктуры. Ташкент • Сеул • с 2019 года.
+                  Производство оптического кабеля для телекоммуникаций,
+                  энергетики и цифровой инфраструктуры. Ташкент • Сеул • с 2019 года.
                 </p>
                 <div class="cta-row">
                   <a href="#" class="btn btn--primary">
@@ -312,7 +212,6 @@
               </div>
             </div>
           </div>
-
           <div class="container">
             <div class="stats-bar">
               <div class="stat">
@@ -338,11 +237,11 @@
             </div>
           </div>
         </div>
-      </section>
-      <!-- Banner section end -->
 
-      <!-- About section start -->
-      <!-- <section>
+      </section>
+
+      <!-- ABOUT -->
+      <section>
         <div class="container">
           <div class="about-wrapper">
             <div class="about-left">
@@ -371,7 +270,7 @@
                   <img src="/assets/images/home/sertificate.jpg" alt="images" />
                 </div>
                 <p>
-                  Два завода. Пятнадцать производственных площадок. <br />
+                  Два завода. Пятнадцать производственных площадок.
                   Один контур качества.
                 </p>
               </div>
@@ -383,7 +282,6 @@
                     <p>120 000<span>км/год</span></p>
                     <p>Внутренная установка • 6 площадок</p>
                   </div>
-
                   <div class="factory-item">
                     <span>Factory № 2</span>
                     <p>24 000<span>км/год</span></p>
@@ -394,14 +292,10 @@
             </div>
           </div>
         </div>
-      </section> -->
-      <!-- About section end -->
+      </section>
     </main>
-    <!-- MAIN END -->
 
-    <!-- FOOTER START -->
     <footer></footer>
-    <!-- FOOTER END -->
     <script src="/assets/js/bootstrap.js"></script>
     <script src="/assets/js/main.js"></script>
   </body>
