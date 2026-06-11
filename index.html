@@ -578,6 +578,139 @@
           </div>
         </div>
       </section>
+
+      <!-- Configuration -->
+      <section>
+        <div class="configurator-wrapper">
+          <div class="container">
+            <div class="configurator">
+              <!-- LEFT -->
+              <div class="left">
+                <p class="eyebrow">№ 05 — Конфигуратор</p>
+                <h1 class="headline">Подберите кабель под ваш проект.</h1>
+                <p class="subtitle">
+                  Три параметра — и вы получите артикул, конструкцию и цену. Без
+                  звонка менеджеру.
+                </p>
+                <p class="divider-label">или</p>
+                <p class="tz-link">
+                  отправьте нам ТЗ — подберём вручную, ответ за 1 час.
+                </p>
+              </div>
+
+              <!-- RIGHT -->
+              <div class="right">
+                <div class="form-rows">
+                  <!-- Row 01: Project type -->
+                  <div class="form-row">
+                    <label class="row-label" for="project-type">
+                      <span class="row-num">01</span>
+                      Тип проекта
+                    </label>
+                    <div class="row-select-wrap">
+                      <select
+                        class="row-select"
+                        id="project-type"
+                        onchange="onSelect(this)"
+                      >
+                        <option value="" disabled selected>
+                          Выберите применение
+                        </option>
+                        <option value="energy">Энергоснабжение</option>
+                        <option value="control">
+                          Управление и сигнализация
+                        </option>
+                        <option value="data">Передача данных</option>
+                        <option value="industrial">
+                          Промышленная автоматизация
+                        </option>
+                        <option value="transport">
+                          Транспортная инфраструктура
+                        </option>
+                        <option value="construction">Строительство</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <!-- Row 02: Conditions -->
+                  <div class="form-row">
+                    <label class="row-label" for="conditions">
+                      <span class="row-num">02</span>
+                      Условия
+                    </label>
+                    <div class="row-select-wrap">
+                      <select
+                        class="row-select"
+                        id="conditions"
+                        onchange="onSelect(this)"
+                      >
+                        <option value="" disabled selected>
+                          Условия прокладки
+                        </option>
+                        <option value="ground">В земле</option>
+                        <option value="air">
+                          В воздухе (открытая прокладка)
+                        </option>
+                        <option value="pipe">В трубах и каналах</option>
+                        <option value="water">Подводная прокладка</option>
+                        <option value="explosive">Взрывоопасная зона</option>
+                        <option value="corrosive">Агрессивная среда</option>
+                        <option value="indoor">Внутри помещений</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <!-- Row 03: Length -->
+                  <div class="form-row">
+                    <label class="row-label" for="length">
+                      <span class="row-num">03</span>
+                      Длина, м
+                    </label>
+                    <input
+                      class="row-input"
+                      type="number"
+                      id="length"
+                      placeholder="напр. 12 000"
+                      min="1"
+                      oninput="onLengthInput(this)"
+                    />
+                    <span class="row-suffix">М</span>
+                  </div>
+                </div>
+
+                <!-- Estimate + CTA -->
+                <div class="estimate-row">
+                  <div class="estimate-info">
+                    <span class="estimate-label">Estimate&nbsp;·</span>
+                    <span class="estimate-value" id="estimate-value">—</span>
+                  </div>
+                  <button class="btn-cta" onclick="showSolution()">
+                    Показать решение
+                    <svg
+                      width="14"
+                      height="10"
+                      viewBox="0 0 14 10"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M1 5H13M9 1L13 5L9 9"
+                        stroke="currentColor"
+                        stroke-width="1.8"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Toast -->
+      <div class="toast" id="toast"></div>
     </main>
 
     <footer></footer>

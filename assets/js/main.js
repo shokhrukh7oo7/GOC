@@ -1,4 +1,4 @@
-// HEADER BURGER MENU
+// ===================================== HEADER BURGER MENU ==================================================
 document.addEventListener("DOMContentLoaded", () => {
   const burgerBtn = document.querySelector(".burger-btn");
   const navMenu = document.querySelector(".nav-link-wrapper");
@@ -12,7 +12,9 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   document
-    .querySelectorAll(".header-wrapper a, .header-wrapper button:not(.burger-btn)")
+    .querySelectorAll(
+      ".header-wrapper a, .header-wrapper button:not(.burger-btn)",
+    )
     .forEach((el) => {
       el.addEventListener("click", () => {
         burgerBtn.classList.remove("active");
@@ -23,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-// SLIDER
+// ===================================== SLIDER ==================================================
 (() => {
   const slides = Array.from(document.querySelectorAll(".slide"));
   const total = slides.length;
@@ -57,11 +59,20 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  document.getElementById("prev").addEventListener("click", () => goTo(current - 1));
-  document.getElementById("next").addEventListener("click", () => goTo(current + 1));
-  document.getElementById("dots").querySelectorAll(".nav-dot").forEach((dot) => {
-    dot.addEventListener("click", () => goTo(parseInt(dot.dataset.index, 10)));
-  });
+  document
+    .getElementById("prev")
+    .addEventListener("click", () => goTo(current - 1));
+  document
+    .getElementById("next")
+    .addEventListener("click", () => goTo(current + 1));
+  document
+    .getElementById("dots")
+    .querySelectorAll(".nav-dot")
+    .forEach((dot) => {
+      dot.addEventListener("click", () =>
+        goTo(parseInt(dot.dataset.index, 10)),
+      );
+    });
 
   document.addEventListener("keydown", (e) => {
     if (e.key === "ArrowLeft") goTo(current - 1);
@@ -70,13 +81,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let touchX = null;
   const slider = document.getElementById("slider");
-  slider.addEventListener("touchstart", (e) => { touchX = e.touches[0].clientX; }, { passive: true });
-  slider.addEventListener("touchend", (e) => {
-    if (touchX === null) return;
-    const dx = e.changedTouches[0].clientX - touchX;
-    if (Math.abs(dx) > 50) goTo(dx < 0 ? current + 1 : current - 1);
-    touchX = null;
-  }, { passive: true });
+  slider.addEventListener(
+    "touchstart",
+    (e) => {
+      touchX = e.touches[0].clientX;
+    },
+    { passive: true },
+  );
+  slider.addEventListener(
+    "touchend",
+    (e) => {
+      if (touchX === null) return;
+      const dx = e.changedTouches[0].clientX - touchX;
+      if (Math.abs(dx) > 50) goTo(dx < 0 ? current + 1 : current - 1);
+      touchX = null;
+    },
+    { passive: true },
+  );
 
   function resetTimer() {
     clearInterval(timer);
@@ -84,5 +105,128 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   resetTimer();
 
-  slides[0].querySelector("video")?.play().catch(() => {});
+  slides[0]
+    .querySelector("video")
+    ?.play()
+    .catch(() => {});
 })();
+
+// ===================================== configuration ==================================================
+const pricing = {
+  energy: {
+    ground: 420,
+    air: 310,
+    pipe: 370,
+    water: 890,
+    explosive: 750,
+    corrosive: 680,
+    indoor: 280,
+  },
+  control: {
+    ground: 180,
+    air: 140,
+    pipe: 160,
+    water: 420,
+    explosive: 390,
+    corrosive: 310,
+    indoor: 120,
+  },
+  data: {
+    ground: 220,
+    air: 170,
+    pipe: 200,
+    water: 560,
+    explosive: 480,
+    corrosive: 400,
+    indoor: 150,
+  },
+  industrial: {
+    ground: 350,
+    air: 270,
+    pipe: 310,
+    water: 720,
+    explosive: 640,
+    corrosive: 570,
+    indoor: 240,
+  },
+  transport: {
+    ground: 490,
+    air: 390,
+    pipe: 450,
+    water: 950,
+    explosive: 820,
+    corrosive: 740,
+    indoor: 330,
+  },
+  construction: {
+    ground: 290,
+    air: 210,
+    pipe: 250,
+    water: 600,
+    explosive: 530,
+    corrosive: 460,
+    indoor: 190,
+  },
+};
+
+function fmt(n) {
+  return new Intl.NumberFormat("ru-RU").format(Math.round(n));
+}
+
+function getState() {
+  return {
+    type: document.getElementById("project-type").value,
+    cond: document.getElementById("conditions").value,
+    length: parseFloat(document.getElementById("length").value) || 0,
+  };
+}
+
+function updateEstimate() {
+  const { type, cond, length } = getState();
+  const el = document.getElementById("estimate-value");
+  if (type && cond && length > 0) {
+    const rate = pricing[type]?.[cond] ?? 300;
+    const total = rate * length;
+    el.textContent = `от ${fmt(total)} ₽`;
+    el.classList.add("has-value");
+  } else {
+    el.textContent = "—";
+    el.classList.remove("has-value");
+  }
+}
+
+function onSelect(el) {
+  el.classList.toggle("filled", !!el.value);
+  updateEstimate();
+}
+
+function onLengthInput(el) {
+  el.classList.toggle("filled", !!el.value);
+  updateEstimate();
+}
+
+function showToast(msg) {
+  const t = document.getElementById("toast");
+  t.textContent = msg;
+  t.classList.add("show");
+  setTimeout(() => t.classList.remove("show"), 3000);
+}
+
+function showSolution() {
+  const { type, cond, length } = getState();
+  if (!type) return showToast("Выберите тип проекта");
+  if (!cond) return showToast("Укажите условия прокладки");
+  if (!length) return showToast("Введите длину кабеля");
+
+  const rate = pricing[type]?.[cond] ?? 300;
+  const total = rate * length;
+  const labels = {
+    energy: "энергоснабжения",
+    control: "управления",
+    data: "передачи данных",
+    industrial: "автоматизации",
+    transport: "транспорта",
+    construction: "строительства",
+  };
+  showToast(`Решение для ${labels[type]} · ${fmt(total)} ₽`);
+}
