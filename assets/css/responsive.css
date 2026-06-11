@@ -37,6 +37,20 @@
   }
 }
 
+@media (max-width: 1200px) {
+  .solutions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+  }
+  .cell:nth-child(1),
+  .cell:nth-child(2),
+  .cell:nth-child(3),
+  .cell:nth-child(4) {
+    grid-area: auto;
+  }
+}
+
 @media (max-width: 992px) {
   .about-wrapper {
     padding: 24px 0;
@@ -93,6 +107,16 @@
   body.no-scroll {
     overflow: hidden;
   }
+  .solutions {
+    grid-template-columns: 1fr;
+  }
+  .cell {
+    min-height: 340px;
+  }
+  .cell:nth-child(1),
+  .cell:nth-child(3) {
+    border-right: none;
+  }
 }
 
 @media (max-width: 900px) {
@@ -109,12 +133,36 @@
 }
 
 @media (max-width: 768px) {
-  .application-left-wrapper, .about-wrapper {
+  .application-left-wrapper,
+  .about-wrapper {
     grid-template-columns: repeat(2, 1fr);
   }
   .about-right .about-right-center .about-sertificate-wrapper {
     grid-template-columns: repeat(2, 1fr);
     gap: 5px;
+  }
+
+  .solutions {
+    grid-template-columns: 1fr;
+  }
+  .cell {
+    min-height: 280px;
+    padding: 28px 24px 36px;
+    border-right: none !important;
+  }
+  .cell:nth-child(1),
+  .cell:nth-child(2),
+  .cell:nth-child(3) {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  }
+  .cell__label {
+    left: 24px;
+  }
+  .cell__text {
+    max-width: 62%;
+  }
+  .cell__img {
+    max-width: 46%;
   }
 }
 
@@ -154,7 +202,6 @@
     .factory-item:last-child {
     border-bottom: 1px solid var(--milk-color);
   }
-  
 }
 
 @media (max-width: 576px) {
@@ -166,13 +213,26 @@
   .about-wrapper .about-right .about-right-bottom {
     text-align: center;
   }
-  .layout-section .section-enter-description, .about-wrapper .about-right .about-right-center .about-sertificate-wrapper  {
+  .layout-section .section-enter-description,
+  .about-wrapper .about-right .about-right-center .about-sertificate-wrapper {
     grid-template-columns: repeat(1, 1fr);
   }
   .layout-section .section-enter-description .section-enter-right p {
     max-width: 100%;
   }
-  .about-wrapper .about-right .about-right-center .about-sertificate-wrapper 
+}
+
+@media (max-width: 480px) {
+  .cell__text {
+    max-width: 60%;
+  }
+  .cell__img {
+    max-width: 42%;
+    max-height: 65%;
+  }
+  .cell__title {
+    font-size: 20px;
+  }
 }
 
 /* Slide enter animations */
