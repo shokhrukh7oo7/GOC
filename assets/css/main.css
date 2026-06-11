@@ -1065,13 +1065,18 @@ header {
     background 0.18s;
   white-space: nowrap;
 }
-
+.btn-cta img {
+  width: 25px;
+  height: 25px;
+}
 .btn-cta:hover {
   background: #00ffb3;
   color: var(--white-color);
   box-shadow: 0 8px 32px rgba(0, 229, 160, 0.35);
 }
-
+.btn-cta:hover img {
+  filter: brightness(1) invert(1);
+}
 .btn-cta:active {
   transform: translateX(1px) scale(0.98);
 }
