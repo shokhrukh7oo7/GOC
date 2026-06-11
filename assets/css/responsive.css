@@ -56,9 +56,16 @@
   /* configuration */
   .configurator {
     flex-direction: column;
-    padding: 52px 36px;
+    padding: 52px clamp(10px, 2vw, 36px);
     gap: 48px;
     align-items: flex-start;
+  }
+  .configurator .left {
+    max-width: 100%;
+    text-align: center;
+  }
+  .configurator .left .subtitle {
+    max-width: 100%;
   }
 }
 
@@ -219,9 +226,13 @@
   }
 
   .form-row {
-    grid-template-columns: 140px 1fr 28px;
+    grid-template-columns: 140px 1fr;
     min-height: 60px;
     gap: 8px;
+  }
+
+  .form-row:last-child {
+    grid-template-columns: 140px 1fr 28px;
   }
 
   .row-label {
@@ -272,6 +283,22 @@
   }
   .cell__title {
     font-size: 20px;
+  }
+}
+
+@media (max-width: 400px) {
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+  .form-row:last-child {
+    grid-template-columns: 1fr;
+  }
+  .row-suffix {
+    justify-self: center;
+  }
+  .form-row .row-label, .form-row:last-child .row-label {
+    text-align: center;
+    justify-content: center;
   }
 }
 

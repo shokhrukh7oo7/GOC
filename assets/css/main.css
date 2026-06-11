@@ -1104,6 +1104,8 @@ header {
     transform 0.28s;
   pointer-events: none;
   z-index: 999;
+  width: 100%;
+  max-width: 250px !important;
 }
 
 .toast.show {
