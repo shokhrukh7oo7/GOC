@@ -503,13 +503,15 @@ header {
   color: var(--aqua-color);
 }
 .about-wrapper .about-right .about-right-center .about-sertificate-wrapper {
-  display: flex;
+  /* display: flex;
   flex-wrap: wrap;
-  align-items: center;
+  align-items: center; */
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
 }
 .about-wrapper .about-right .about-right-center .about-sertificate-wrapper img {
   width: 100%;
-  max-width: 200px;
+  /* max-width: 200px; */
 }
 .about-wrapper .about-right .about-right-center p {
   font-size: clamp(12px, 1vw, 16px);
@@ -615,6 +617,7 @@ header {
   grid-template-columns: repeat(2, 1fr);
   justify-content: center;
   align-items: center;
+  gap: 10px;
 }
 .layout-section .section-enter-description .section-enter-left h1 {
   font-size: clamp(32px, 7vw, 87px);

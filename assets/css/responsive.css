@@ -48,13 +48,6 @@
   .about-wrapper .about-right .about-right-top {
     gap: 12px;
   }
-  .about-wrapper
-    .about-right
-    .about-right-center
-    .about-sertificate-wrapper
-    img {
-    max-width: 150px;
-  }
 }
 
 @media (max-width: 992px) {
@@ -115,6 +108,16 @@
   }
 }
 
+@media (max-width: 768px) {
+  .application-left-wrapper, .about-wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .about-right .about-right-center .about-sertificate-wrapper {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5px;
+  }
+}
+
 @media (max-width: 600px) {
   .slider .slide .cta-row {
     flex-direction: column;
@@ -151,18 +154,25 @@
     .factory-item:last-child {
     border-bottom: 1px solid var(--milk-color);
   }
-}
-
-@media (max-width: 768px) {
-  .application-left-wrapper {
-    grid-template-columns: repeat(2, 1fr);
-  }
+  
 }
 
 @media (max-width: 576px) {
   .application-left-wrapper {
     grid-template-columns: repeat(1, 1fr);
   }
+  .layout-section,
+  .about-wrapper .about-right .about-right-top,
+  .about-wrapper .about-right .about-right-bottom {
+    text-align: center;
+  }
+  .layout-section .section-enter-description, .about-wrapper .about-right .about-right-center .about-sertificate-wrapper  {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .layout-section .section-enter-description .section-enter-right p {
+    max-width: 100%;
+  }
+  .about-wrapper .about-right .about-right-center .about-sertificate-wrapper 
 }
 
 /* Slide enter animations */
