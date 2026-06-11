@@ -1025,7 +1025,8 @@ header {
 }
 
 .estimate-value {
-  min-width: 140px;
+  /* min-width: 140px; */
+  max-width: 100%;
   transition: color 0.3s;
   font-size: clamp(14px, 1vw, 12px);
   font-weight: 400;
