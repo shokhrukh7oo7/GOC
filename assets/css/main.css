@@ -1282,33 +1282,41 @@ header {
 }
 
 /* ---------- Footer button ---------- */
-.catalog__footer {
+.catalog-wrapper .catalog__footer {
   display: flex;
   justify-content: center;
-  padding-top: 36px;
 }
-.btn-all {
-  appearance: none;
-  background: none;
-  border: 1px solid var(--ink);
-  border-radius: 999px;
-  font: inherit;
-  font-size: 10px;
+.catalog-wrapper .catalog__footer .catalog-btn-all {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid var(--black-color);
+  font-size: 13px;
   font-weight: 700;
-  letter-spacing: 0.18em;
+  color: var(--black-color);
+  border-radius: 100px;
+  letter-spacing: 0.52px;
   text-transform: uppercase;
-  padding: 14px 30px;
+  padding: 16px 23px;
   cursor: pointer;
   transition:
     background 0.2s ease,
     color 0.2s ease;
 }
-.btn-all:hover {
-  background: var(--ink);
-  color: var(--bg);
+.catalog-wrapper .catalog__footer .catalog-btn-all img {
+  width: 25px;
+  height: 25px;
 }
-.btn-all:focus-visible {
-  outline: 2px solid var(--accent);
+.catalog-wrapper .catalog__footer .catalog-btn-all:hover {
+  background: var(--aqua-color);
+  color: var(--white-color);
+  border-color: var(--aqua-color);
+}
+.catalog-wrapper .catalog__footer .catalog-btn-all:hover img {
+  filter: brightness(1) invert(1);
+}
+.catalog-wrapper .catalog__footer .catalog-btn-all:focus-visible {
+  outline: 2px solid var(--aqua-color);
   outline-offset: 3px;
 }
 /* tabs (catalog) section end */
