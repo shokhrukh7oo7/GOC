@@ -644,7 +644,7 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: clamp(60px, 10vw, 120px);
+  gap: clamp(60px, 8vw, 120px);
   padding: 24px 28px;
   border-right: 1px solid var(--aqua-color);
 }
@@ -1114,3 +1114,201 @@ header {
   transform: translateY(0);
 }
 /* configuration section end */
+
+/* tabs (catalog) section start */
+.catalog-wrapper {
+  padding: 32px 88px;
+}
+
+/* ---------- Tabs ---------- */
+.catalog-wrapper .tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 36px;
+  align-items: center;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--milk-color);
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.catalog-wrapper .tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.catalog-wrapper .tab {
+  appearance: none;
+  background: none;
+  border: 0;
+  font: inherit;
+  font-size: clamp(12px, 1vw, 14px);
+  font-weight: 700;
+  letter-spacing: 0.07px;
+  line-height: 100%;
+  color: var(--grey-color);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0;
+  white-space: nowrap;
+  transition: color 0.2s ease;
+}
+.catalog-wrapper .tab .count {
+  font-size: clamp(12px, 1vw, 14px);
+  color: var(--grey-color);
+  transform: translateY(-1px);
+}
+.catalog-wrapper .tab:hover {
+  color: var(--aqua-color);
+}
+.catalog-wrapper .tab.is-active {
+  color: var(--black-color);
+}
+.catalog-wrapper .tab:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
+.catalog-wrapper .grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin: clamp(20px, 2vw, 40px) 0;
+  border: 1px solid var(--aqua-color);
+}
+
+.catalog-wrapper .card {
+  display: flex;
+  flex-direction: column;
+  min-height: 480px;
+  border-radius: 0;
+  border-color: var(--aqua-color);
+  animation: cardIn 0.45s ease both;
+}
+.catalog-wrapper .card.is-hidden {
+  display: none;
+}
+
+@keyframes cardIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .catalog-wrapper .card {
+    animation: none;
+  }
+}
+
+.catalog-wrapper .card .card__sku p {
+  padding: clamp(10px, 1vw, 14px) clamp(12px, 1vw, 16px);
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: var(--grey-color);
+}
+.catalog-wrapper .card .card__sku p span {
+  color: var(--black-color);
+  font-weight: 700;
+}
+
+.catalog-wrapper .card .card__media {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* padding: 8px 18px 18px; */
+  /* min-height: 220px; */
+}
+.catalog-wrapper .card .card__media svg,
+.catalog-wrapper .card .card__media img {
+  width: 100%;
+  height: auto;
+  /* max-height: 230px; */
+  display: block;
+  object-fit: contain;
+}
+
+.catalog-wrapper .card .card__body {
+  padding: 8px clamp(14px, 2vw, 24px);
+}
+
+.catalog-wrapper .card .card__title {
+  font-size: clamp(18px, 1.5vw, 14px);
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  margin-bottom: 6px;
+}
+.catalog-wrapper .card .card__meta {
+  font-size: 13px;
+  color: var(--grey-color);
+  letter-spacing: 0%;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--aqua-color);
+}
+
+.catalog-wrapper .card .card__more {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px 16px 16px;
+}
+.catalog-wrapper .card .card__link {
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.88px;
+  text-transform: uppercase;
+  color: var(--aqua-color);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition:
+    gap 0.2s ease,
+    color 0.2s ease;
+}
+
+.catalog-wrapper .card .card__link:focus-visible {
+  outline: 2px solid var(--aqua-color);
+  outline-offset: 3px;
+}
+.catalog-wrapper .card .card__link img {
+  width: 10px;
+  height: 10px;
+}
+
+/* ---------- Footer button ---------- */
+.catalog__footer {
+  display: flex;
+  justify-content: center;
+  padding-top: 36px;
+}
+.btn-all {
+  appearance: none;
+  background: none;
+  border: 1px solid var(--ink);
+  border-radius: 999px;
+  font: inherit;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 14px 30px;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+.btn-all:hover {
+  background: var(--ink);
+  color: var(--bg);
+}
+.btn-all:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+/* tabs (catalog) section end */

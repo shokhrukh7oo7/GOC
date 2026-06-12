@@ -230,3 +230,41 @@ function showSolution() {
   };
   showToast(`Решение для ${labels[type]} · ${fmt(total)} ₽`);
 }
+
+// ===================================== tabs (cotalog) ==================================================
+/* Static version: cards live in the HTML above.
+   JS only switches the active tab and shows/hides cards
+   based on each card's data-cats attribute. */
+(function () {
+  var tabs = document.querySelectorAll(".tab");
+  var cards = document.querySelectorAll(".card");
+
+  tabs.forEach(function (tab) {
+    tab.addEventListener("click", function () {
+      var cat = tab.dataset.cat;
+
+      // active tab state
+      tabs.forEach(function (t) {
+        var active = t === tab;
+        t.classList.toggle("is-active", active);
+        t.setAttribute("aria-selected", active);
+      });
+
+      // show / hide cards
+      var visibleIndex = 0;
+      cards.forEach(function (card) {
+        var show =
+          cat === "all" || card.dataset.cats.split(" ").indexOf(cat) !== -1;
+        card.classList.toggle("is-hidden", !show);
+        if (show) {
+          // restart the small fade-in, staggered
+          card.style.animation = "none";
+          void card.offsetWidth; // force reflow
+          card.style.animation = "";
+          card.style.animationDelay = visibleIndex * 45 + "ms";
+          visibleIndex++;
+        }
+      });
+    });
+  });
+})();
