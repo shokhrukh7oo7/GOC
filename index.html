@@ -702,226 +702,295 @@
       <section>
         <div class="container">
           <div class="catalog-wrapper">
-            <!-- ================= TABS (static) ================= -->
-            <nav class="tabs" role="tablist" aria-label="Категории продуктов">
-              <button
-                class="tab is-active"
-                role="tab"
-                aria-selected="true"
-                data-cat="all"
-              >
-                Все продукты<span class="count">128</span>
-              </button>
-              <button
-                class="tab"
-                role="tab"
-                aria-selected="false"
-                data-cat="outdoor"
-              >
-                Наружная прокладка<span class="count">42</span>
-              </button>
-              <button
-                class="tab"
-                role="tab"
-                aria-selected="false"
-                data-cat="indoor"
-              >
-                Внутренняя прокладка<span class="count">36</span>
-              </button>
-              <button
-                class="tab"
-                role="tab"
-                aria-selected="false"
-                data-cat="ftth"
-              >
-                FTTH / Drop<span class="count">21</span>
-              </button>
-              <button
-                class="tab"
-                role="tab"
-                aria-selected="false"
-                data-cat="armored"
-              >
-                Бронированные<span class="count">18</span>
-              </button>
-              <button
-                class="tab"
-                role="tab"
-                aria-selected="false"
-                data-cat="special"
-              >
-                Спец. исполнения<span class="count">11</span>
-              </button>
-            </nav>
+            <div class="layout-section">
+              <p class="section-enter-header">№ 04 - Каталог</p>
+              <div class="section-enter-description">
+                <div class="section-enter-left">
+                  <h1>
+                    Каталог <br />
+                    продукции.
+                  </h1>
+                </div>
 
-            <!-- ================= GRID (static cards) ================= -->
-            <div class="grid" id="grid">
-              <!-- 1. Aerial Cable -->
-              <article class="card" data-cats="outdoor special">
-                <div class="card__sku">
-                  <p>SKU · <span>OR-024</span></p>
+                <div class="section-enter-right">
+                  <p>
+                    128 SKU. Если нужного артикула нет - произведем под заказ за
+                    10-14 дней.
+                  </p>
                 </div>
-                <div class="card__media">
-                  <img src="/assets/images/home/catalog/cat-1.png" alt="image">
-                </div>
-                <div class="card__body">
-                  <h3 class="card__title">Aerial Cable</h3>
-                  <p class="card__meta">2–144 волокна · Self-supporting</p>
-                </div>
-                <div class="card__more">
-                  <a class="card__link" href="#or-024"
-                    >Подробнее
-                    <img src="/assets/images/home/arrow-top.svg" alt="image">
-                  </a>
-                </div>
-              </article>
+              </div>
+            </div>
 
-              <!-- 2. Patchcord -->
-              <article class="card" data-cats="indoor">
-                <div class="card__sku">
-                  <p>SKU · <span>OM-118</span></p>
-                </div>
-                <div class="card__media">
-                  <img src="/assets/images/home/catalog/cat-2.png" alt="image">
-                </div>
-                <div class="card__body">
-                  <h3 class="card__title">Patchcord</h3>
-                  <p class="card__meta">Armored · до 288 волокон</p>
-                </div>
-                <div class="card__more">
-                  <a class="card__link" href="#om-118"
-                    >Подробнее
-                    <img src="/assets/images/home/arrow-top.svg" alt="image">
-                  </a>
-                </div>
-              </article>
+            <div class="catalog-tabs-wrapper">
+              <!-- ================= TABS (static) ================= -->
+              <nav class="tabs" role="tablist" aria-label="Категории продуктов">
+                <button
+                  class="tab is-active"
+                  role="tab"
+                  aria-selected="true"
+                  data-cat="all"
+                >
+                  Все продукты<span class="count">128</span>
+                </button>
+                <button
+                  class="tab"
+                  role="tab"
+                  aria-selected="false"
+                  data-cat="outdoor"
+                >
+                  Наружная прокладка<span class="count">42</span>
+                </button>
+                <button
+                  class="tab"
+                  role="tab"
+                  aria-selected="false"
+                  data-cat="indoor"
+                >
+                  Внутренняя прокладка<span class="count">36</span>
+                </button>
+                <button
+                  class="tab"
+                  role="tab"
+                  aria-selected="false"
+                  data-cat="ftth"
+                >
+                  FTTH / Drop<span class="count">21</span>
+                </button>
+                <button
+                  class="tab"
+                  role="tab"
+                  aria-selected="false"
+                  data-cat="armored"
+                >
+                  Бронированные<span class="count">18</span>
+                </button>
+                <button
+                  class="tab"
+                  role="tab"
+                  aria-selected="false"
+                  data-cat="special"
+                >
+                  Спец. исполнения<span class="count">11</span>
+                </button>
+              </nav>
 
-              <!-- 3. ADSS Aramid -->
-              <article class="card" data-cats="ftth outdoor">
-                <div class="card__sku">
-                  <p>SKU · <span>OM-033</span></p>
-                </div>
-                <div class="card__media">
-                  <img src="/assets/images/home/catalog/cat-3.png" alt="image">
-                </div>
-                <div class="card__body">
-                  <h3 class="card__title">ADSS&nbsp; Aramid</h3>
-                  <p class="card__meta">Flat · 1–12 волокон · FTTH</p>
-                </div>
-                <div class="card__more">
-                  <a class="card__link" href="#om-033"
-                    >Подробнее
-                    <img src="/assets/images/home/arrow-top.svg" alt="image">
-                  </a>
-                </div>
-              </article>
+              <!-- ================= GRID (static cards) ================= -->
+              <div class="grid" id="grid">
+                <!-- 1. Aerial Cable -->
+                <article class="card" data-cats="outdoor special">
+                  <div class="card__sku">
+                    <p>SKU · <span>OR-024</span></p>
+                  </div>
+                  <div class="card__media">
+                    <img
+                      src="/assets/images/home/catalog/cat-1.png"
+                      alt="image"
+                    />
+                  </div>
+                  <div class="card__body">
+                    <h3 class="card__title">Aerial Cable</h3>
+                    <p class="card__meta">2–144 волокна · Self-supporting</p>
+                  </div>
+                  <div class="card__more">
+                    <a class="card__link" href="#or-024"
+                      >Подробнее
+                      <img
+                        src="/assets/images/home/arrow-top.svg"
+                        alt="image"
+                      />
+                    </a>
+                  </div>
+                </article>
 
-              <!-- 4. Drop cable -->
-              <article class="card" data-cats="ftth">
-                <div class="card__sku">
-                  <p>SKU · <span>OM-286</span></p>
-                </div>
-                <div class="card__media">
-                  <img src="/assets/images/home/catalog/cat-4.png" alt="image">
-                </div>
-                <div class="card__body">
-                  <h3 class="card__title">Drop cable</h3>
-                  <p class="card__meta">Double-jacketed · 48–432 волокон</p>
-                </div>
-                <div class="card__more">
-                  <a class="card__link" href="#om-286"
-                    >Подробнее
-                    <img src="/assets/images/home/arrow-top.svg" alt="image">
-                  </a>
-                </div>
-              </article>
+                <!-- 2. Patchcord -->
+                <article class="card" data-cats="indoor">
+                  <div class="card__sku">
+                    <p>SKU · <span>OM-118</span></p>
+                  </div>
+                  <div class="card__media">
+                    <img
+                      src="/assets/images/home/catalog/cat-2.png"
+                      alt="image"
+                    />
+                  </div>
+                  <div class="card__body">
+                    <h3 class="card__title">Patchcord</h3>
+                    <p class="card__meta">Armored · до 288 волокон</p>
+                  </div>
+                  <div class="card__more">
+                    <a class="card__link" href="#om-118"
+                      >Подробнее
+                      <img
+                        src="/assets/images/home/arrow-top.svg"
+                        alt="image"
+                      />
+                    </a>
+                  </div>
+                </article>
 
-              <!-- 5. Многомодульный грунтовый -->
-              <article class="card" data-cats="outdoor armored">
-                <div class="card__sku">
-                  <p>SKU · <span>OR-041</span></p>
-                </div>
-                <div class="card__media">
-                  <img src="/assets/images/home/catalog/cat-5.png" alt="image">
-                </div>
-                <div class="card__body">
-                  <h3 class="card__title">Многомодульный грунтовый</h3>
-                  <p class="card__meta">Огнестойкий · 2–24 волокон</p>
-                </div>
-                <div class="card__more">
-                  <a class="card__link" href="#or-041"
-                    >Подробнее
-                    <img src="/assets/images/home/arrow-top.svg" alt="image">
-                  </a>
-                </div>
-              </article>
+                <!-- 3. ADSS Aramid -->
+                <article class="card" data-cats="ftth outdoor">
+                  <div class="card__sku">
+                    <p>SKU · <span>OM-033</span></p>
+                  </div>
+                  <div class="card__media">
+                    <img
+                      src="/assets/images/home/catalog/cat-3.png"
+                      alt="image"
+                    />
+                  </div>
+                  <div class="card__body">
+                    <h3 class="card__title">ADSS&nbsp; Aramid</h3>
+                    <p class="card__meta">Flat · 1–12 волокон · FTTH</p>
+                  </div>
+                  <div class="card__more">
+                    <a class="card__link" href="#om-033"
+                      >Подробнее
+                      <img
+                        src="/assets/images/home/arrow-top.svg"
+                        alt="image"
+                      />
+                    </a>
+                  </div>
+                </article>
 
-              <!-- 6. ADSS -->
-              <article class="card" data-cats="outdoor">
-                <div class="card__sku">
-                  <p>SKU · <span>OM-309</sp></p>
-                </div>
-                <div class="card__media">
-                  <img src="/assets/images/home/catalog/cat-6.png" alt="image">
-                </div>
-                <div class="card__body">
-                  <h3 class="card__title">ADSS</h3>
-                  <p class="card__meta">Diel. · Span до 1200m</p>
-                </div>
-                <div class="card__more">
-                  <a class="card__link" href="#om-309"
-                    >Подробнее
-                    <img src="/assets/images/home/arrow-top.svg" alt="image">
-                  </a>
-                </div>
-              </article>
+                <!-- 4. Drop cable -->
+                <article class="card" data-cats="ftth">
+                  <div class="card__sku">
+                    <p>SKU · <span>OM-286</span></p>
+                  </div>
+                  <div class="card__media">
+                    <img
+                      src="/assets/images/home/catalog/cat-4.png"
+                      alt="image"
+                    />
+                  </div>
+                  <div class="card__body">
+                    <h3 class="card__title">Drop cable</h3>
+                    <p class="card__meta">Double-jacketed · 48–432 волокон</p>
+                  </div>
+                  <div class="card__more">
+                    <a class="card__link" href="#om-286"
+                      >Подробнее
+                      <img
+                        src="/assets/images/home/arrow-top.svg"
+                        alt="image"
+                      />
+                    </a>
+                  </div>
+                </article>
 
-              <!-- 7. Indoor Riser -->
-              <article class="card" data-cats="indoor">
-                <div class="card__sku">
-                  <p>SKU · <span>OM-055</span></p>
-                </div>
-                <div class="card__media">
-                  <img src="/assets/images/home/catalog/cat-7.png" alt="image">
-                </div>
-                <div class="card__body">
-                  <h3 class="card__title">Indoor Riser</h3>
-                  <p class="card__meta">Универсальный · 4–96 волокон</p>
-                </div>
-                <div class="card__more">
-                  <a class="card__link" href="#om-055"
-                    >Подробнее
-                    <img src="/assets/images/home/arrow-top.svg" alt="image">
-                  </a>
-                </div>
-              </article>
+                <!-- 5. Многомодульный грунтовый -->
+                <article class="card" data-cats="outdoor armored">
+                  <div class="card__sku">
+                    <p>SKU · <span>OR-041</span></p>
+                  </div>
+                  <div class="card__media">
+                    <img
+                      src="/assets/images/home/catalog/cat-5.png"
+                      alt="image"
+                    />
+                  </div>
+                  <div class="card__body">
+                    <h3 class="card__title">Многомодульный грунтовый</h3>
+                    <p class="card__meta">Огнестойкий · 2–24 волокон</p>
+                  </div>
+                  <div class="card__more">
+                    <a class="card__link" href="#or-041"
+                      >Подробнее
+                      <img
+                        src="/assets/images/home/arrow-top.svg"
+                        alt="image"
+                      />
+                    </a>
+                  </div>
+                </article>
 
-              <!-- 8. Воздушный многомодульный -->
-              <article class="card" data-cats="outdoor special">
-                <div class="card__sku">
-                  <p>SKU · <span>OR-412</span></p>
-                </div>
-                <div class="card__media">
-                  <img src="/assets/images/home/catalog/cat-8.png" alt="image">
-                </div>
-                <div class="card__body">
-                  <h3 class="card__title">Воздушный многомодульный</h3>
-                  <p class="card__meta">Грозозащитный трос · 24–96</p>
-                </div>
-                <div class="card__more">
-                  <a class="card__link" href="#or-412"
-                    >Подробнее
-                    <img src="/assets/images/home/arrow-top.svg" alt="image">
-                  </a>
-                </div>
-              </article>
+                <!-- 6. ADSS -->
+                <article class="card" data-cats="outdoor">
+                  <div class="card__sku">
+                    <p>SKU · <span>OM-309</span></p>
+                  </div>
+                  <div class="card__media">
+                    <img
+                      src="/assets/images/home/catalog/cat-6.png"
+                      alt="image"
+                    />
+                  </div>
+                  <div class="card__body">
+                    <h3 class="card__title">ADSS</h3>
+                    <p class="card__meta">Diel. · Span до 1200m</p>
+                  </div>
+                  <div class="card__more">
+                    <a class="card__link" href="#om-309"
+                      >Подробнее
+                      <img
+                        src="/assets/images/home/arrow-top.svg"
+                        alt="image"
+                      />
+                    </a>
+                  </div>
+                </article>
+
+                <!-- 7. Indoor Riser -->
+                <article class="card" data-cats="indoor">
+                  <div class="card__sku">
+                    <p>SKU · <span>OM-055</span></p>
+                  </div>
+                  <div class="card__media">
+                    <img
+                      src="/assets/images/home/catalog/cat-7.png"
+                      alt="image"
+                    />
+                  </div>
+                  <div class="card__body">
+                    <h3 class="card__title">Indoor Riser</h3>
+                    <p class="card__meta">Универсальный · 4–96 волокон</p>
+                  </div>
+                  <div class="card__more">
+                    <a class="card__link" href="#om-055"
+                      >Подробнее
+                      <img
+                        src="/assets/images/home/arrow-top.svg"
+                        alt="image"
+                      />
+                    </a>
+                  </div>
+                </article>
+
+                <!-- 8. Воздушный многомодульный -->
+                <article class="card" data-cats="outdoor special">
+                  <div class="card__sku">
+                    <p>SKU · <span>OR-412</span></p>
+                  </div>
+                  <div class="card__media">
+                    <img
+                      src="/assets/images/home/catalog/cat-8.png"
+                      alt="image"
+                    />
+                  </div>
+                  <div class="card__body">
+                    <h3 class="card__title">Воздушный многомодульный</h3>
+                    <p class="card__meta">Грозозащитный трос · 24–96</p>
+                  </div>
+                  <div class="card__more">
+                    <a class="card__link" href="#or-412"
+                      >Подробнее
+                      <img
+                        src="/assets/images/home/arrow-top.svg"
+                        alt="image"
+                      />
+                    </a>
+                  </div>
+                </article>
+              </div>
             </div>
 
             <!-- ================= FOOTER ================= -->
             <div class="catalog__footer">
               <a href="#" class="catalog-btn-all">
                 Смотреть весь каталог (128)
-                <img src="/assets/images/home/arrow-right.svg" alt="image">
+                <img src="/assets/images/home/arrow-right.svg" alt="image" />
               </a>
             </div>
           </div>
