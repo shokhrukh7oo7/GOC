@@ -38,6 +38,9 @@
   .configurator {
     padding: clamp(20px, 2vw, 32px) 0;
   }
+  .catalog-wrapper {
+    padding: clamp(20px, 2vw, 32px) 0;
+  }
 }
 
 @media (max-width: 1200px) {
@@ -82,6 +85,8 @@
   }
   .catalog-wrapper .grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 5px;
+    border: none;
   }
 }
 
@@ -137,6 +142,9 @@
   .cell:nth-child(1),
   .cell:nth-child(3) {
     border-right: none;
+  }
+  .catalog-wrapper {
+    padding: clamp(10px, 2vw, 36px) clamp(10px, 2vw, 36px);
   }
 }
 
