@@ -1545,4 +1545,50 @@ footer
   background-color: var(--white-color);
   border-color: var(--white-color);
 }
+
+.copyright-container {
+  background-color: rgba(2, 55, 162, 1);
+  padding: clamp(20px, 3vw, 40px) 0;
+}
+.copyright-container .copyright-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.copyright-container .copyright-wrapper .copyright p {
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.48px;
+  color: rgba(255, 255, 255, 0.6);
+}
+.copyright-container .copyright-wrapper .useful-links {
+  display: flex;
+  flex-direction: row;
+  gap: clamp(10px, 1.5vw, 23px);
+}
+.copyright-container .copyright-wrapper .useful-links a {
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.48px;
+  color: rgba(255, 255, 255, 0.6);
+  transition: all 0.3s ease-in-out;
+}
+.copyright-container .copyright-wrapper .useful-links a:hover {
+  color: var(--aqua-color);
+}
+.copyright-container .copyright-wrapper .developed-by p {
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.48px;
+  color: rgba(255, 255, 255, 0.6);
+}
+.copyright-container .copyright-wrapper .developed-by p a {
+  color: var(--aqua-color);
+  transition: all 0.3s ease-in-out;
+}
+.copyright-container .copyright-wrapper .developed-by p a:hover {
+  color: var(--white-color);
+}
 /* FOOTER SECTION END */
