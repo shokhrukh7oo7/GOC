@@ -70,6 +70,10 @@
   .configurator .left .subtitle {
     max-width: 100%;
   }
+  .reason-partner-wrapper .partner-items-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 @media (max-width: 992px) {
@@ -206,6 +210,9 @@
   .cell__img {
     max-width: 46%;
   }
+  .reason-partner-wrapper .partner-items-wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 600px) {
@@ -311,6 +318,9 @@
     max-width: 100%;
   }
   .reason-items-wrapper {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .reason-partner-wrapper .partner-items-wrapper {
     grid-template-columns: repeat(1, 1fr);
   }
 }

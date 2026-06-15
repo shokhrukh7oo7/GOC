@@ -1367,5 +1367,29 @@ header {
   letter-spacing: 0%;
   color: var(--grey-color);
 }
+.reason-partner-wrapper {
+  margin: clamp(32px, 5vw, 64px) 0;
+}
+.reason-partner-wrapper h3 {
+  font-size: clamp(22px, 2vw, 32px);
+  font-weight: 700;
+  letter-spacing: -0.24px;
+  margin-bottom: clamp(16px, 2vw, 32px);
+  color: var(--black-color);
+}
 
+.reason-partner-wrapper .partner-items-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: clamp(14px, 1.5vw, 24px);
+}
+
+.reason-partner-wrapper .partner-items-wrapper .item {
+  width: 100%;
+}
+
+.reason-partner-wrapper .partner-items-wrapper .item img {
+  width: 100%;
+}
 /* Reason section end */
