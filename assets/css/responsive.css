@@ -41,6 +41,9 @@
   .catalog-wrapper {
     padding: clamp(20px, 2vw, 32px) 0;
   }
+  footer section .catalog-wrapper {
+    padding: clamp(60px, 8vw, 120px) 0;
+  }
 }
 
 @media (max-width: 1200px) {
@@ -73,6 +76,9 @@
   .reason-partner-wrapper .partner-items-wrapper {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+  }
+  footer section .layout-section .section-enter-description {
+    grid-template-columns: repeat(1, 1fr);
   }
 }
 
@@ -335,6 +341,37 @@
   }
   .cell__title {
     font-size: 20px;
+  }
+  footer
+    section
+    .section-enter-description
+    .section-enter-right
+    .form-wrapper
+    form
+    .item {
+    flex-direction: column;
+    gap: 5px;
+  }
+  footer
+    section
+    .section-enter-description
+    .section-enter-right
+    .form-wrapper
+    form
+    .item
+    label {
+    width: 100%;
+  }
+  footer
+    section
+    .section-enter-description
+    .section-enter-right
+    .form-wrapper
+    form
+    .item
+    input {
+    width: 100%;
+    text-align: center;
   }
 }
 

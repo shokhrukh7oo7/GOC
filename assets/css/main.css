@@ -1300,7 +1300,7 @@ header {
   border-radius: 100px;
   letter-spacing: 0.52px;
   text-transform: uppercase;
-  padding: 16px 23px;
+  padding: clamp(8px, 1vw, 16px) clamp(16px, 1.5vw, 23px);
   cursor: pointer;
   transition:
     background 0.2s ease,
@@ -1393,3 +1393,156 @@ header {
   width: 100%;
 }
 /* Reason section end */
+
+/* FOOTER SECTION START */
+footer section {
+  background-color: var(--blue-color);
+}
+footer section .catalog-wrapper {
+  padding: clamp(60px, 8vw, 120px) 88px;
+}
+footer section .layout-section .section-enter-header {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+footer section .layout-section .section-enter-description {
+  gap: clamp(60px, 8vw, 120px);
+}
+
+footer
+  section
+  .layout-section
+  .section-enter-description
+  .section-enter-left
+  h1 {
+  line-height: 1;
+  color: var(--white-color);
+}
+footer
+  section
+  .layout-section
+  .section-enter-description
+  .section-enter-left
+  h1
+  span {
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.35);
+}
+
+footer
+  section
+  .section-enter-description
+  .section-enter-right
+  .form-wrapper
+  form
+  .item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: clamp(20px, 3vw, 40px);
+  border-top: 1px solid rgba(255, 255, 255, 0.35);
+  padding: clamp(10px, 1.5vw, 20px) 0;
+}
+
+footer
+  section
+  .section-enter-description
+  .section-enter-right
+  .form-wrapper
+  form
+  .item:last-child {
+  justify-content: space-between;
+}
+
+footer
+  section
+  .section-enter-description
+  .section-enter-right
+  .form-wrapper
+  form
+  .item
+  label {
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 1.1px;
+  text-transform: uppercase;
+  color: var(--white-color);
+  width: 25%;
+}
+
+footer
+  section
+  .section-enter-description
+  .section-enter-right
+  .form-wrapper
+  form
+  .item
+  input {
+  background-color: transparent;
+  box-shadow: none;
+  border: none;
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.5);
+  padding: 5px;
+}
+footer
+  section
+  .section-enter-description
+  .section-enter-right
+  .form-wrapper
+  form
+  .item
+  input:focus {
+  border: none;
+  outline: none;
+}
+
+footer
+  section
+  .section-enter-description
+  .section-enter-right
+  .form-wrapper
+  form
+  .item
+  p {
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0%;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+footer
+  section
+  .section-enter-description
+  .section-enter-right
+  .form-wrapper
+  form
+  .item
+  .footer-send-btn {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--black-color);
+  letter-spacing: 0.52px;
+  text-transform: uppercase;
+  padding: clamp(8px, 1vw, 16px) clamp(16px, 1.5vw, 23px);
+  border-radius: 100px;
+  border: 1px solid var(--green-color);
+  background-color: var(--green-color);
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+footer
+  section
+  .section-enter-description
+  .section-enter-right
+  .form-wrapper
+  form
+  .item
+  .footer-send-btn:hover {
+  background-color: var(--white-color);
+  border-color: var(--white-color);
+}
+/* FOOTER SECTION END */
