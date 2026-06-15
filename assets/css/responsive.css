@@ -41,7 +41,7 @@
   .catalog-wrapper {
     padding: clamp(20px, 2vw, 32px) 0;
   }
-  footer section .catalog-wrapper {
+  .request-wrapper .catalog-wrapper {
     padding: clamp(60px, 8vw, 120px) 0;
   }
   .copyright-container .copyright-wrapper {
@@ -80,7 +80,7 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
   }
-  footer section .layout-section .section-enter-description {
+  .request-wrapper .layout-section .section-enter-description {
     grid-template-columns: repeat(1, 1fr);
   }
 }
@@ -336,7 +336,12 @@
     flex-direction: column;
     text-align: center;
   }
-  footer section .section-enter-description .section-enter-right .form-wrapper form .item:last-child {
+  .request-wrapper
+    .section-enter-description
+    .section-enter-right
+    .form-wrapper
+    form
+    .item:last-child {
     flex-direction: column;
   }
 }
@@ -352,8 +357,7 @@
   .cell__title {
     font-size: 20px;
   }
-  footer
-    section
+  .request-wrapper
     .section-enter-description
     .section-enter-right
     .form-wrapper
@@ -362,8 +366,7 @@
     flex-direction: column;
     gap: 5px;
   }
-  footer
-    section
+  .request-wrapper
     .section-enter-description
     .section-enter-right
     .form-wrapper
@@ -372,8 +375,7 @@
     label {
     width: 100%;
   }
-  footer
-    section
+  .request-wrapper
     .section-enter-description
     .section-enter-right
     .form-wrapper

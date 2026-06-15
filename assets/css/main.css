@@ -1395,22 +1395,21 @@ header {
 /* Reason section end */
 
 /* FOOTER SECTION START */
-footer section {
+.request-wrapper {
   background-color: var(--blue-color);
 }
-footer section .catalog-wrapper {
+.request-wrapper .catalog-wrapper {
   padding: clamp(60px, 8vw, 120px) 88px;
 }
-footer section .layout-section .section-enter-header {
+.request-wrapper .layout-section .section-enter-header {
   color: rgba(255, 255, 255, 0.5);
 }
 
-footer section .layout-section .section-enter-description {
+.request-wrapper .layout-section .section-enter-description {
   gap: clamp(60px, 8vw, 120px);
 }
 
-footer
-  section
+.request-wrapper
   .layout-section
   .section-enter-description
   .section-enter-left
@@ -1418,8 +1417,7 @@ footer
   line-height: 1;
   color: var(--white-color);
 }
-footer
-  section
+.request-wrapper
   .layout-section
   .section-enter-description
   .section-enter-left
@@ -1429,8 +1427,7 @@ footer
   color: rgba(255, 255, 255, 0.35);
 }
 
-footer
-  section
+.request-wrapper
   .section-enter-description
   .section-enter-right
   .form-wrapper
@@ -1444,8 +1441,7 @@ footer
   padding: clamp(10px, 1.5vw, 20px) 0;
 }
 
-footer
-  section
+.request-wrapper
   .section-enter-description
   .section-enter-right
   .form-wrapper
@@ -1454,8 +1450,7 @@ footer
   justify-content: space-between;
 }
 
-footer
-  section
+.request-wrapper
   .section-enter-description
   .section-enter-right
   .form-wrapper
@@ -1470,8 +1465,7 @@ footer
   width: 25%;
 }
 
-footer
-  section
+.request-wrapper
   .section-enter-description
   .section-enter-right
   .form-wrapper
@@ -1486,8 +1480,7 @@ footer
   color: rgba(255, 255, 255, 0.5);
   padding: 5px;
 }
-footer
-  section
+.request-wrapper
   .section-enter-description
   .section-enter-right
   .form-wrapper
@@ -1498,8 +1491,7 @@ footer
   outline: none;
 }
 
-footer
-  section
+.request-wrapper
   .section-enter-description
   .section-enter-right
   .form-wrapper
@@ -1512,8 +1504,7 @@ footer
   color: rgba(255, 255, 255, 0.5);
 }
 
-footer
-  section
+.request-wrapper
   .section-enter-description
   .section-enter-right
   .form-wrapper
@@ -1534,8 +1525,7 @@ footer
     color 0.2s ease;
 }
 
-footer
-  section
+.request-wrapper
   .section-enter-description
   .section-enter-right
   .form-wrapper
