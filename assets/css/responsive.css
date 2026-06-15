@@ -44,6 +44,9 @@
   footer section .catalog-wrapper {
     padding: clamp(60px, 8vw, 120px) 0;
   }
+  .copyright-container .copyright-wrapper {
+    padding: 0;
+  }
 }
 
 @media (max-width: 1200px) {
@@ -332,6 +335,9 @@
   .copyright-container .copyright-wrapper {
     flex-direction: column;
     text-align: center;
+  }
+  footer section .section-enter-description .section-enter-right .form-wrapper form .item:last-child {
+    flex-direction: column;
   }
 }
 
