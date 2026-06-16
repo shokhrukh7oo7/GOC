@@ -70,7 +70,7 @@ html {
 
 body {
   font-family: "Inter", sans-serif;
-  background-color: var(--body-color);
+  /* background-color: var(--body-color); */
 }
 
 .container {
@@ -1537,9 +1537,88 @@ header {
 
 /* ======================================================================== */
 /* SOLUTION PAGE START */
+/* keys */
+.keys-wrapper .keys-section {
+  padding: 32px 88px;
+}
+/* .keys-wrapper .layout-section .section-enter-description {
+  grid-template-columns: repeat(3, 1fr);
+  gap: 27px;
+  align-items: end;
+} */
+
+.keys-wrapper .layout-section .section-enter-description .section-enter-right {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  width: 100%;
+}
+.keys-wrapper
+  .layout-section
+  .section-enter-description
+  .section-enter-right
+  p {
+  max-width: 378px;
+}
+.keys-wrapper
+  .layout-section
+  .section-enter-description
+  .section-enter-right
+  .layout-extra-section-wrapper {
+  width: 100%;
+}
+
+.keys-wrapper
+  .layout-section
+  .section-enter-description
+  .section-enter-right
+  .layout-extra-section-wrapper
+  a {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--black-color);
+  border-radius: 100px;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.52px;
+  color: var(--black-color);
+  justify-content: center;
+  padding: 10px 0;
+  gap: 10px;
+  transition: all 0.3s ease-in-out;
+}
+.keys-wrapper
+  .layout-section
+  .section-enter-description
+  .section-enter-right
+  .layout-extra-section-wrapper
+  a:hover {
+  background-color: var(--black-color);
+  color: var(--white-color);
+}
+.keys-wrapper
+  .layout-section
+  .section-enter-description
+  .section-enter-right
+  .layout-extra-section-wrapper
+  a:hover
+  img {
+  filter: brightness(0) invert(1);
+}
+.keys-wrapper
+  .layout-section
+  .section-enter-description
+  .section-enter-right
+  .layout-extra-section-wrapper
+  a
+  img {
+  width: 10px;
+  filter: brightness(0) invert(0);
+  transition: all 0.3s ease-in-out;
+}
 /* table */
 .extra-section {
-  padding: 0 88px;
+  padding: 32px 88px;
 }
 .table-container .container {
   background-color: var(--white-color);
@@ -1547,7 +1626,7 @@ header {
 .table_component {
   overflow: auto;
   width: 100%;
-  padding: clamp(25px, 4vw, 50px) 0 clamp(60px, 8vw, 120px);
+  padding: clamp(25px, 4vw, 50px) 0 clamp(60px, 7vw, 98px);
 }
 
 .table_component table {

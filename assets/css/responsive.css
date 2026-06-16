@@ -50,6 +50,9 @@
   .extra-section {
     padding: clamp(20px, 2vw, 32px) 0;
   }
+  .keys-wrapper .keys-section {
+    padding: clamp(20px, 2vw, 32px) 0;
+  }
   .copyright-container .copyright-wrapper {
     padding: 0;
   }
@@ -88,6 +91,13 @@
   }
   .footer-request-wrapper .layout-section .section-enter-description {
     grid-template-columns: repeat(1, 1fr);
+  }
+  .keys-wrapper
+    .layout-section
+    .section-enter-description
+    .section-enter-right {
+    flex-direction: column;
+    gap: 10px;
   }
 }
 
@@ -416,6 +426,14 @@
     form
     .item:last-child {
     flex-direction: column;
+  }
+
+  .keys-wrapper
+    .layout-section
+    .section-enter-description
+    .section-enter-right
+    p {
+    max-width: 100%;
   }
 }
 
