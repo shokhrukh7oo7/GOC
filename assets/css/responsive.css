@@ -44,6 +44,9 @@
   .footer-request-wrapper .catalog-wrapper {
     padding: clamp(60px, 8vw, 120px) 0;
   }
+  .top-footer-container .top-footer-wrapper {
+    padding: clamp(35px, 5vw, 76px) 0;
+  }
   .copyright-container .copyright-wrapper {
     padding: 0;
   }
@@ -171,6 +174,10 @@
   }
   .catalog-wrapper {
     padding: clamp(10px, 2vw, 36px) clamp(10px, 2vw, 36px);
+  }
+  .top-footer-container .top-footer-wrapper {
+    flex-direction: column;
+    text-align: center;
   }
 }
 
