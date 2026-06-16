@@ -1538,6 +1538,9 @@ header {
 /* ======================================================================== */
 /* SOLUTION PAGE START */
 /* table */
+.extra-section {
+  padding: 0 88px;
+}
 .table-container .container {
   background-color: var(--white-color);
 }
