@@ -1541,11 +1541,6 @@ header {
 .keys-wrapper .keys-section {
   padding: 32px 88px;
 }
-/* .keys-wrapper .layout-section .section-enter-description {
-  grid-template-columns: repeat(3, 1fr);
-  gap: 27px;
-  align-items: end;
-} */
 
 .keys-wrapper .layout-section .section-enter-description .section-enter-right {
   display: flex;
@@ -1616,6 +1611,93 @@ header {
   filter: brightness(0) invert(0);
   transition: all 0.3s ease-in-out;
 }
+.keys-wrapper .keys-item-wrapper {
+  padding: clamp(25px, 4vw, 50px) 0;
+}
+.keys-wrapper .keys-item-wrapper .keys-item {
+  display: grid;
+  grid-template-columns: 0.8fr 3.5fr 1.5fr 1fr 1fr;
+  align-items: center;
+  gap: 20px;
+  border-top: 1px solid var(--milk-color);
+  padding: clamp(15px, 1.5vw, 20px) 0;
+}
+.keys-wrapper .keys-item-wrapper .keys-item:last-child {
+  border-bottom: 1px solid var(--milk-color);
+}
+
+.keys-wrapper .keys-item-wrapper .keys-item .keys-date {
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 1.1px;
+  color: var(--aqua-color);
+  white-space: nowrap;
+}
+.keys-wrapper .keys-item-wrapper .keys-item .keys-row {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex-grow: 1;
+  /* max-width: 40%; */
+}
+.keys-wrapper .keys-item-wrapper .keys-item .keys-row h6 {
+  font-size: clamp(18px, 2vw, 28px);
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  margin: 0;
+  color: var(--black-color);
+}
+.keys-wrapper .keys-item-wrapper .keys-item .keys-row span {
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  color: var(--grey-color);
+}
+.keys-wrapper .keys-item-wrapper .keys-item .keys-client {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.keys-wrapper .keys-item-wrapper .keys-item .keys-client span {
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.8px;
+  color: var(--grey-color);
+}
+.keys-wrapper .keys-item-wrapper .keys-item .keys-client p {
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0%;
+  color: var(--black-color);
+}
+.keys-wrapper .keys-item-wrapper .keys-item .keys-row-length {
+  display: flex;
+  justify-content: flex-start;
+  align-items: baseline;
+  gap: 4px;
+  font-size: clamp(18px, 2vw, 28px);
+  font-weight: 400;
+  letter-spacing: -0.4px;
+  color: var(--black-color);
+}
+.keys-wrapper .keys-item-wrapper .keys-item .keys-row-length sub {
+  font-size: 11px;
+  color: var(--grey-color);
+}
+.keys-wrapper .keys-item-wrapper .keys-item a {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.88px;
+  color: var(--aqua-color);
+}
+.keys-wrapper .keys-item-wrapper .keys-item a img {
+  width: 10px;
+}
+
 /* table */
 .extra-section {
   padding: 32px 88px;
