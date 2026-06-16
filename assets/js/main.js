@@ -27,8 +27,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // ===================================== SLIDER ==================================================
 (() => {
+  // Находим слайдер. Если его нет — сразу выходим из функции и не ломаем скрипт!
+  const slider = document.getElementById("slider");
+  if (!slider) return; 
+
   const slides = Array.from(document.querySelectorAll(".slide"));
   const total = slides.length;
+  if (total === 0) return; // На всякий случай, если слайдер есть, а слайдов внутри нет
+
   let current = 0;
   let timer = null;
 
@@ -59,20 +65,18 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  document
-    .getElementById("prev")
-    .addEventListener("click", () => goTo(current - 1));
-  document
-    .getElementById("next")
-    .addEventListener("click", () => goTo(current + 1));
-  document
-    .getElementById("dots")
-    .querySelectorAll(".nav-dot")
-    .forEach((dot) => {
+  // Безопасно вешаем клики (проверяем существование кнопок через «?» или if)
+  document.getElementById("prev")?.addEventListener("click", () => goTo(current - 1));
+  document.getElementById("next")?.addEventListener("click", () => goTo(current + 1));
+  
+  const dotsContainer = document.getElementById("dots");
+  if (dotsContainer) {
+    dotsContainer.querySelectorAll(".nav-dot").forEach((dot) => {
       dot.addEventListener("click", () =>
         goTo(parseInt(dot.dataset.index, 10)),
       );
     });
+  }
 
   document.addEventListener("keydown", (e) => {
     if (e.key === "ArrowLeft") goTo(current - 1);
@@ -80,7 +84,6 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   let touchX = null;
-  const slider = document.getElementById("slider");
   slider.addEventListener(
     "touchstart",
     (e) => {

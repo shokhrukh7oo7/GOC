@@ -1537,7 +1537,62 @@ header {
 
 /* ======================================================================== */
 /* SOLUTION PAGE START */
+/* table */
+.table-container .container {
+  background-color: var(--white-color);
+}
+.table_component {
+  overflow: auto;
+  width: 100%;
+  padding: clamp(25px, 4vw, 50px) 0 clamp(60px, 8vw, 120px);
+}
 
+.table_component table {
+  height: 100%;
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+  border: 1px solid var(--milk-color);
+  border-spacing: 1px;
+  text-align: left;
+}
+.table-container .table_component table thead tr th {
+  font-size: clamp(15px, 1.5vw, 18px);
+  font-weight: 700;
+  line-height: 100%;
+  letter-spacing: -0.3px;
+  color: var(--white-color);
+  padding: clamp(10px, 1.5vw, 20px) clamp(14px, 1.5vw, 24px);
+}
+.table-container .table_component table thead tr th span {
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.8px;
+  color: var(--green-color);
+}
+
+.table-container .table_component table thead tr th:first-child {
+  background-color: var(--white-color);
+}
+.table-container .table_component table thead tr th:nth-child(2),
+.table-container .table_component table thead tr th:nth-child(3),
+.table-container .table_component table thead tr th:nth-child(5) {
+  background-color: var(--black-color);
+}
+.table-container .table_component table thead tr th:nth-child(4) {
+  background-color: var(--blue-color);
+}
+
+.table-container .table_component table tbody tr td {
+  font-size: 11px;
+  font-weight: 400;
+  color: var(--grey-color);
+  padding: clamp(10px, 1.5vw, 20px) clamp(14px, 1.5vw, 24px);
+}
+.extra-section table img {
+  width: 15px;
+}
+/* top footer */
 .top-footer-container {
   background-color: var(--blue-color);
 }
