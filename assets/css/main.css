@@ -1538,13 +1538,63 @@ header {
 /* ======================================================================== */
 /* SOLUTION PAGE START */
 /* ready-made-solutions-section */
-.ready-made-solutions-section .layout-section .section-enter-description .section-enter-right p {
+.ready-made-solutions-section
+  .layout-section
+  .section-enter-description
+  .section-enter-right
+  p {
   max-width: 600px;
 }
 .ready-made-solutions-section .layout-section .section-enter-description {
   align-items: end;
 }
-
+.rms-item-wrapper {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  border-top: 1px solid var(--milk-color);
+  border-bottom: 1px solid var(--milk-color);
+  padding: clamp(15px, 2vw, 25px) 0;
+  margin: clamp(30px, 6vw, 120px) 0 clamp(10px, 5vw, 100px);
+}
+.rms-item-wrapper .item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border-left: 1px solid var(--milk-color);
+  padding: 0 clamp(15px, 2vw, 25px);
+}
+.rms-item-wrapper .item:first-child {
+  border: none;
+  padding: 0;
+}
+.rms-item-wrapper .item h6 {
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 1.1px;
+  margin: 0;
+  color: var(--grey-color);
+}
+.rms-item-wrapper .item .content {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.rms-item-wrapper .item .content p {
+  font-size: clamp(20px, 2vw, 32px);
+  font-weight: 400;
+  color: var(--black-color);
+  letter-spacing: -0.6px;
+  border-left: 1px solid var(--milk-color);
+  padding: 0 clamp(15px, 2vw, 25px);
+}
+.rms-item-wrapper .item .content span {
+  font-size: 11px;
+  font-weight: 400;
+  color: var(--grey-color);
+  letter-spacing: 0%;
+  border-left: 1px solid var(--milk-color);
+  padding: 0 clamp(15px, 2vw, 25px);
+}
 /* direction */
 .direction-section {
   padding: 32px 88px;
