@@ -56,6 +56,9 @@
   .process-wrapper {
     padding: clamp(20px, 2vw, 32px) 0;
   }
+  .direction-section {
+    padding: clamp(20px, 2vw, 32px) 0;
+  }
   .copyright-container .copyright-wrapper {
     padding: 0;
   }
@@ -96,6 +99,13 @@
     grid-template-columns: repeat(1, 1fr);
   }
   .keys-wrapper
+    .layout-section
+    .section-enter-description
+    .section-enter-right {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .direction-section
     .layout-section
     .section-enter-description
     .section-enter-right {
