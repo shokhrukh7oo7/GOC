@@ -631,7 +631,7 @@ header {
   font-size: clamp(14px, 1vw, 16px);
   font-weight: 400;
   letter-spacing: 0%;
-  color: var(--grey-color);
+  color: var(--black-color);
   width: 100%;
   max-width: 320px;
 }
@@ -1537,6 +1537,14 @@ header {
 
 /* ======================================================================== */
 /* SOLUTION PAGE START */
+/* ready-made-solutions-section */
+.ready-made-solutions-section .layout-section .section-enter-description .section-enter-right p {
+  max-width: 600px;
+}
+.ready-made-solutions-section .layout-section .section-enter-description {
+  align-items: end;
+}
+
 /* direction */
 .direction-section {
   padding: 32px 88px;
@@ -2128,3 +2136,4 @@ header {
   color: var(--white-color);
 }
 /* FOOTER SECTION END */
+/* ==================================================== */
