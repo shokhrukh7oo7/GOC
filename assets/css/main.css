@@ -1537,6 +1537,89 @@ header {
 
 /* ======================================================================== */
 /* SOLUTION PAGE START */
+/* process */
+.process-container {
+  background-color: var(--black-color);
+}
+.process-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(20px, 3vw, 45px);
+  padding: 32px 88px;
+}
+.process-wrapper .layout-section .section-enter-description {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.process-wrapper
+  .layout-section
+  .section-enter-description
+  .section-enter-left
+  h1 {
+  font-size: clamp(25px, 4vw, 55px);
+  font-weight: 700;
+  letter-spacing: -1.1px;
+  color: var(--white-color);
+  margin-bottom: 0;
+  width: 100%;
+  max-width: 100%;
+}
+.process-wrapper
+  .layout-section
+  .section-enter-description
+  .section-enter-right
+  p {
+  max-width: 500px;
+}
+.process-wrapper .section-enter-description .layout-extra-section-wrapper p {
+  font-size: 11px;
+  font-weight: 400;
+  color: var(--grey-color);
+}
+.process-wrapper .section-enter-description .layout-extra-section-wrapper span {
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--aqua-color);
+}
+.process-wrapper .process-item-wrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  border: 1px solid var(--grey-color);
+  padding: clamp(20px, 2vw, 32px);
+}
+.process-wrapper .process-item-wrapper .item {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.process-wrapper .process-item-wrapper .item h1 {
+  font-size: clamp(40px, 6vw, 80px);
+  font-weight: 400;
+  letter-spacing: -3px;
+  color: var(--aqua-color);
+  margin: 0;
+}
+.process-wrapper .process-item-wrapper .item span {
+  font-size: clamp(18px, 1.5vw, 24px);
+  font-weight: 700;
+  letter-spacing: -0.4px;
+  color: var(--white-color);
+}
+.process-wrapper .process-item-wrapper .item p {
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0%;
+  color: var(--grey-color);
+}
+.process-wrapper .process-item-wrapper .item span:last-child {
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.88px;
+  color: var(--aqua-color);
+}
 /* keys */
 .keys-wrapper .keys-section {
   padding: 32px 88px;
