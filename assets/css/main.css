@@ -1612,6 +1612,103 @@ header {
   img {
   filter: brightness(0) invert(1);
 }
+
+.direction-section .direction-item-wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  border: 1px solid var(--aqua-color);
+  margin: clamp(20px, 3vw, 40px) 0;
+}
+.direction-section .direction-item-wrapper .item .item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding: clamp(16px, 3vw, 40px);
+}
+.direction-section .direction-item-wrapper .item .item-header span {
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 1.1px;
+  color: var(--aqua-color);
+}
+.direction-section .direction-item-wrapper .item .item-header p {
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.8px;
+  border: 1px solid var(--grey-color);
+  border-radius: 100px;
+  color: var(--grey-color);
+  padding: 5px 10px;
+}
+.direction-section .direction-item-wrapper .item .item-image img {
+  max-height: 476px;
+  object-fit: cover;
+}
+.direction-section .direction-item-wrapper .item .item-content {
+  padding: clamp(16px, 2vw, 32px) clamp(16px, 3vw, 40px);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(10px, 1.3vw, 20px);
+}
+.direction-section .direction-item-wrapper .item .item-content h3 {
+  font-size: clamp(20px, 3vw, 38px);
+  font-weight: 700;
+  color: var(--black-color);
+  letter-spacing: -0.8px;
+  margin: 0;
+}
+.direction-section .direction-item-wrapper .item .item-content p {
+  font-size: clamp(13px, 1vw, 15px);
+  font-weight: 400;
+  letter-spacing: 0%;
+  border-bottom: 1px solid var(--milk-color);
+  color: var(--grey-color);
+}
+.direction-section .direction-item-wrapper .item .item-content .extra-content {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.direction-section
+  .direction-item-wrapper
+  .item
+  .item-content
+  .extra-content
+  p {
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.88px;
+  color: var(--grey-color);
+}
+.direction-section
+  .direction-item-wrapper
+  .item
+  .item-content
+  .extra-content
+  span {
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.88px;
+  color: var(--black-color);
+}
+.direction-section .direction-item-wrapper .item .item-content a {
+  border: 1px solid var(--aqua-color);
+  padding: clamp(8px, 1vw, 16px) clamp(10px, 1vw, 17px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--aqua-color);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.88px;
+  transition: all 0.3s ease-in-out;
+}
+.direction-section .direction-item-wrapper .item .item-content a:hover {
+  background-color: var(--black-color);
+  color: var(--white-color);
+  border-color: var(--white-color);
+}
 /* process */
 .process-container {
   background-color: var(--black-color);
