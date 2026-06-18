@@ -271,3 +271,54 @@ function showSolution() {
     });
   });
 })();
+// ==================== GALLERY TABS ===============================
+document.addEventListener('DOMContentLoaded', () => {
+  const tabs = document.querySelectorAll('.tab-btn');
+  const items = document.querySelectorAll('.gallery-item');
+  const grid = document.querySelector('.gallery-grid');
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      // 1. Меняем активный класс у табов
+      tabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+
+      const filterValue = tab.getAttribute('data-filter');
+
+      // 2. Фильтруем элементы
+      items.forEach(item => {
+        const itemCategory = item.getAttribute('data-category');
+
+        if (filterValue === 'all' || itemCategory === filterValue) {
+          item.classList.remove('is-hidden');
+          // Возвращаем в обычный поток для сетки
+          item.style.position = 'relative'; 
+        } else {
+          item.classList.add('is-hidden');
+          // Чтобы скрытые элементы не занимали место в Grid:
+          setTimeout(() => {
+            if(item.classList.contains('is-hidden')) {
+              item.style.position = 'absolute';
+            }
+          }, 400); // Время совпадает с transition в CSS
+        }
+      });
+    });
+  });
+});
+
+function playInlineVideo(element) {
+  const video = element.querySelector('.inline-player');
+  
+  if (!video) return;
+
+  if (element.classList.contains('is-playing')) {
+    // Если уже играет — ставим на паузу и возвращаем постер
+    video.pause();
+    element.classList.remove('is-playing');
+  } else {
+    // Запускаем видео и скрываем постер
+    video.play();
+    element.classList.add('is-playing');
+  }
+}
