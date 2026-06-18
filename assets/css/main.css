@@ -2309,7 +2309,6 @@ header {
   letter-spacing: 0.5px;
 }
 
-/* Круглая точка для видео/3d */
 .gallery-container .gallery-grid .gallery-item .video-indicator {
   position: absolute;
   top: 15px;
@@ -2321,17 +2320,10 @@ header {
   z-index: 2;
 }
 
-/* Адаптивность */
-@media (max-width: 768px) {
-  .gallery-grid {
-    grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
-  }
-}
-/* Общие стили для видео в галерее */
-.gallery-video {
+.gallery-container .gallery-grid .gallery-video {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Заполняет всю карточку без искажений */
+  object-fit: cover;
   display: block;
   position: absolute;
   top: 0;
@@ -2339,22 +2331,153 @@ header {
   z-index: 1;
 }
 
-/* Настройки для карточки, где видео запускается по клику */
-.item-inner.has-video {
+.gallery-container .gallery-grid .item-inner.has-video {
   cursor: pointer;
 }
 
-.inline-player {
+.gallery-container .gallery-grid .inline-player {
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.3s ease;
 }
 
-/* Класс, который мы будем добавлять через JS при клике */
-.item-inner.is-playing .inline-player {
+.gallery-container .gallery-grid .item-inner.is-playing .inline-player {
   opacity: 1;
   visibility: visible;
-  z-index: 2; /* Становится выше картинки-постера */
+  z-index: 2;
+}
+
+.download-container .download-wrapper .download-item-wrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border: 1px solid var(--black-color);
+  padding: clamp(14px, 2vw, 28px);
+  margin-top: clamp(20px, 3vw, 45px);
+  gap: clamp(20px, 3vw, 56px);
+}
+
+.download-container
+  .download-wrapper
+  .download-item-wrapper
+  .item
+  .download-icon-wrapper {
+  width: 48px;
+  height: 48px;
+}
+
+.download-container
+  .download-wrapper
+  .download-item-wrapper
+  .item
+  .download-content-wrapper {
+  padding: clamp(14px, 2vw, 24px) 0;
+  border-bottom: 1px solid var(--black-color);
+}
+
+.download-container
+  .download-wrapper
+  .download-item-wrapper
+  .item
+  .download-content-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.download-container
+  .download-wrapper
+  .download-item-wrapper
+  .item
+  .download-content-wrapper
+  h6 {
+  font-size: clamp(16px, 1.5vw, 20px);
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  margin: 0;
+  color: var(--black-color);
+}
+.download-container
+  .download-wrapper
+  .download-item-wrapper
+  .item
+  .download-content-wrapper
+  p {
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--black-color);
+}
+
+.download-container
+  .download-wrapper
+  .download-item-wrapper
+  .item
+  .download-btn-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  position: relative;
+  padding: 0 5px;
+  transition: all 0.3s ease-in-out;
+}
+.download-container
+  .download-wrapper
+  .download-item-wrapper
+  .item
+  .download-btn-wrapper:hover {
+  background-color: var(--white-color) !important;
+  border-radius: 4px;
+}
+.download-container
+  .download-wrapper
+  .download-item-wrapper
+  .item
+  .download-btn-wrapper
+  a::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
+.download-container
+  .download-wrapper
+  .download-item-wrapper
+  .item
+  .download-btn-wrapper
+  p {
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.88px;
+  color: var(--black-color);
+}
+
+.download-container
+  .download-wrapper
+  .download-item-wrapper
+  .item
+  .download-btn-wrapper
+  img {
+  width: 10px;
+  height: 10px;
+}
+
+.download-container {
+  background-color: var(--green-color);
+}
+.download-container .download-wrapper {
+  padding: clamp(40px, 6vw, 120px) 0;
+}
+.download-container .download-wrapper .layout-section .section-enter-header {
+  color: var(--black-color);
+}
+.download-container
+  .download-wrapper
+  .ready-made-solutions-section
+  .layout-section
+  .section-enter-description
+  .section-enter-right
+  p {
+  max-width: 477px;
 }
 /* GALLERY PAGE END */
 /* ======================================================================== */
