@@ -62,6 +62,9 @@
   .gallery-container {
     padding: clamp(20px, 2vw, 32px) 0;
   }
+  .video-section {
+    padding: clamp(40px, 6vw, 120px) 0;
+  }
   .copyright-container .copyright-wrapper {
     padding: 0;
   }
@@ -136,6 +139,13 @@
   }
   .download-container .download-wrapper .download-item-wrapper {
     grid-template-columns: repeat(3, 1fr);
+  }
+  .video-container .video-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  .video-container .video-grid .video-card.is-active {
+    grid-column: span 2;
   }
 }
 
@@ -498,6 +508,18 @@
   }
   .catalog-wrapper .card {
     min-height: 420px;
+  }
+  .video-container .video-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .video-container .video-grid .video-card,
+  .video-container .video-grid .video-card.is-active {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+  .video-container .video-grid .video-card.is-active .video-header {
+    font-size: unset;
   }
 }
 

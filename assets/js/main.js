@@ -322,3 +322,57 @@ function playInlineVideo(element) {
     element.classList.add('is-playing');
   }
 }
+// ================= VIDEO =======================
+document.addEventListener('DOMContentLoaded', () => {
+  const cards = document.querySelectorAll('.video-card');
+
+  // Функция для остановки всех видео плееров
+  const stopAllVideos = () => {
+    cards.forEach(card => {
+      card.classList.remove('is-playing');
+      const video = card.querySelector('.main-video-player');
+      if (video) {
+        video.pause();
+        video.src = ''; // Сбрасываем источник для оптимизации памяти
+      }
+    });
+  };
+
+  // Функция для запуска видео в активной карточке
+  const playVideo = (card) => {
+    const videoSrc = card.getAttribute('data-video-src');
+    const video = card.querySelector('.main-video-player');
+    
+    if (video && videoSrc) {
+      video.src = videoSrc;
+      card.classList.add('is-playing');
+      video.play().catch(error => {
+        console.log("Автовоспроизведение заблокировано браузером, нужен клик:", error);
+      });
+    }
+  };
+
+  // Запускаем видео в карточке, которая активна изначально
+  const initialActive = document.querySelector('.video-card.is-active');
+  if (initialActive) {
+    playVideo(initialActive);
+  }
+
+  // Обработчик кликов по карточкам
+  cards.forEach(card => {
+    card.addEventListener('click', () => {
+      // Если карточка уже активна, ничего не делаем
+      if (card.classList.contains('is-active')) return;
+
+      // 1. Сбрасываем старое видео и активность
+      stopAllVideos();
+      cards.forEach(c => c.classList.remove('is-active'));
+
+      // 2. Активируем текущую карточку (она становится большой)
+      card.classList.add('is-active');
+
+      // 3. Запускаем на ней воспроизведение
+      playVideo(card);
+    });
+  });
+});
