@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
 (() => {
   // Находим слайдер. Если его нет — сразу выходим из функции и не ломаем скрипт!
   const slider = document.getElementById("slider");
-  if (!slider) return; 
+  if (!slider) return;
 
   const slides = Array.from(document.querySelectorAll(".slide"));
   const total = slides.length;
@@ -66,9 +66,13 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Безопасно вешаем клики (проверяем существование кнопок через «?» или if)
-  document.getElementById("prev")?.addEventListener("click", () => goTo(current - 1));
-  document.getElementById("next")?.addEventListener("click", () => goTo(current + 1));
-  
+  document
+    .getElementById("prev")
+    ?.addEventListener("click", () => goTo(current - 1));
+  document
+    .getElementById("next")
+    ?.addEventListener("click", () => goTo(current + 1));
+
   const dotsContainer = document.getElementById("dots");
   if (dotsContainer) {
     dotsContainer.querySelectorAll(".nav-dot").forEach((dot) => {
@@ -272,107 +276,87 @@ function showSolution() {
   });
 })();
 // ==================== GALLERY TABS ===============================
-document.addEventListener('DOMContentLoaded', () => {
-  const tabs = document.querySelectorAll('.tab-btn');
-  const items = document.querySelectorAll('.gallery-item');
-  const grid = document.querySelector('.gallery-grid');
+document.addEventListener("DOMContentLoaded", () => {
+  const cards = document.querySelectorAll(".video-card");
 
-  tabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-      // 1. Меняем активный класс у табов
-      tabs.forEach(t => t.classList.remove('active'));
-      tab.classList.add('active');
+  const PLAY_ICON = "/assets/images/home/play.svg";
+  const PAUSE_ICON = "/assets/images/home/pause.svg"; 
 
-      const filterValue = tab.getAttribute('data-filter');
-
-      // 2. Фильтруем элементы
-      items.forEach(item => {
-        const itemCategory = item.getAttribute('data-category');
-
-        if (filterValue === 'all' || itemCategory === filterValue) {
-          item.classList.remove('is-hidden');
-          // Возвращаем в обычный поток для сетки
-          item.style.position = 'relative'; 
-        } else {
-          item.classList.add('is-hidden');
-          // Чтобы скрытые элементы не занимали место в Grid:
-          setTimeout(() => {
-            if(item.classList.contains('is-hidden')) {
-              item.style.position = 'absolute';
-            }
-          }, 400); // Время совпадает с transition в CSS
-        }
-      });
-    });
-  });
-});
-
-function playInlineVideo(element) {
-  const video = element.querySelector('.inline-player');
-  
-  if (!video) return;
-
-  if (element.classList.contains('is-playing')) {
-    // Если уже играет — ставим на паузу и возвращаем постер
-    video.pause();
-    element.classList.remove('is-playing');
-  } else {
-    // Запускаем видео и скрываем постер
-    video.play();
-    element.classList.add('is-playing');
-  }
-}
-// ================= VIDEO =======================
-document.addEventListener('DOMContentLoaded', () => {
-  const cards = document.querySelectorAll('.video-card');
-
-  // Функция для остановки всех видео плееров
-  const stopAllVideos = () => {
-    cards.forEach(card => {
-      card.classList.remove('is-playing');
-      const video = card.querySelector('.main-video-player');
-      if (video) {
-        video.pause();
-        video.src = ''; // Сбрасываем источник для оптимизации памяти
-      }
-    });
+  const pauseVideo = (card) => {
+    const video = card.querySelector(".main-video-player");
+    const icon = card.querySelector(".btn-icon");
+    
+    if (video) {
+      video.pause();
+      card.classList.remove("is-playing");
+      if (icon) icon.src = PLAY_ICON;
+    }
   };
 
-  // Функция для запуска видео в активной карточке
   const playVideo = (card) => {
-    const videoSrc = card.getAttribute('data-video-src');
-    const video = card.querySelector('.main-video-player');
+    const video = card.querySelector(".main-video-player");
+    const icon = card.querySelector(".btn-icon");
     
-    if (video && videoSrc) {
-      video.src = videoSrc;
-      card.classList.add('is-playing');
-      video.play().catch(error => {
-        console.log("Автовоспроизведение заблокировано браузером, нужен клик:", error);
+    if (video) {
+      card.classList.add("is-playing");
+      if (icon) icon.src = PAUSE_ICON;
+
+      video.play().catch((err) => {
+        console.log("Автозапуск заблокирован политикой браузера:", err);
       });
     }
   };
 
-  // Запускаем видео в карточке, которая активна изначально
-  const initialActive = document.querySelector('.video-card.is-active');
+  // Стартовый запуск
+  const initialActive = document.querySelector(".video-card.is-active");
   if (initialActive) {
     playVideo(initialActive);
   }
 
-  // Обработчик кликов по карточкам
-  cards.forEach(card => {
-    card.addEventListener('click', () => {
-      // Если карточка уже активна, ничего не делаем
-      if (card.classList.contains('is-active')) return;
+  cards.forEach((card) => {
+    const overlay = card.querySelector(".video-overlay");
+    const video = card.querySelector(".main-video-player");
 
-      // 1. Сбрасываем старое видео и активность
-      stopAllVideos();
-      cards.forEach(c => c.classList.remove('is-active'));
+    // Переключение активности карточек
+    card.addEventListener("click", (e) => {
+      if (
+        card.classList.contains("is-active") &&
+        (e.target.closest(".play-btn") || e.target.closest(".video-overlay"))
+      ) {
+        return;
+      }
 
-      // 2. Активируем текущую карточку (она становится большой)
-      card.classList.add('is-active');
+      if (!card.classList.contains("is-active")) {
+        cards.forEach((c) => {
+          c.classList.remove("is-active");
+          pauseVideo(c);
+          
+          // Безопасный сброс видео вместо удаления src
+          const v = c.querySelector(".main-video-player");
+          if (v) {
+            v.currentTime = 0;
+            v.load(); 
+          }
+        });
 
-      // 3. Запускаем на ней воспроизведение
-      playVideo(card);
+        card.classList.add("is-active");
+        playVideo(card);
+      }
     });
+
+    // Клик по кнопке внутри активного окна
+    if (overlay) {
+      overlay.addEventListener("click", (e) => {
+        if (!card.classList.contains("is-active")) return;
+
+        e.stopPropagation(); 
+
+        if (video.paused) {
+          playVideo(card);
+        } else {
+          pauseVideo(card);
+        }
+      });
+    }
   });
 });
