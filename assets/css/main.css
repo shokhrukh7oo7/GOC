@@ -2687,7 +2687,7 @@ header {
   grid-template-columns: repeat(4, 1fr);
   border: 1px solid var(--aqua-color);
   padding: clamp(16px, 2vw, 32px);
-  margin: clamp(30px, 6vw, 120px) 0 clamp(10px, 5vw, 100px);
+  margin: clamp(30px, 6vw, 120px) 0 clamp(10px, 3vw, 60px);
   gap: clamp(20px, 3vw, 56px);
 }
 .contact-wrapper .contact-item-wrapper .item .contact-icon-wrapper {
@@ -2886,14 +2886,6 @@ header {
   border-bottom: 1px solid var(--milk-color);
 }
 
-/* .form-section .form-grid .field-row .field:first-child {
-  border-right: 1px solid var(--border);
-} */
-
-/* .form-section .form-grid .field-row .field:last-child {
-  padding-left: 24px;
-} */
-
 .form-section .form-grid .field-row .field label {
   display: block;
   font-size: 11px;
@@ -2925,7 +2917,6 @@ header {
   color: var(--white-color);
 }
 
-/* Submit row */
 .form-section .form-grid .submit-row {
   display: flex;
   align-items: center;
@@ -2973,7 +2964,6 @@ header {
   text-decoration: underline;
 }
 
-/* Footer note */
 .form-section .form-footer {
   display: flex;
   align-items: center;
@@ -3100,6 +3090,59 @@ header {
   font-weight: 400;
   letter-spacing: 0.3px;
   color: var(--grey-color);
+}
+
+.contact-user-info-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: #fafaf7;
+  padding: clamp(14px, 1.5vw, 24px);
+  margin: clamp(20px, 3vw, 48px) 0;
+}
+.contact-user-info-wrapper .contact-user-info {
+  display: flex;
+  align-items: start;
+  gap: clamp(10px, 1vw, 16px);
+}
+.contact-user-info-wrapper .contact-user-info .user-cicle {
+  background-color: var(--aqua-color);
+  border-radius: 50%;
+  width: 56px;
+  height: 56px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.contact-user-info-wrapper .contact-user-info .user-cicle span {
+  font-size: clamp(13px, 1vw, 16px);
+  font-weight: 700;
+  letter-spacing: 0%;
+  color: var(--black-color);
+}
+.contact-user-info-wrapper .contact-user-info .user-info {
+  display: flex;
+  flex-direction: column;
+}
+.contact-user-info-wrapper .contact-user-info .user-info h6 {
+  font-size: clamp(13px, 1vw, 16px);
+  font-weight: 700;
+  letter-spacing: 0%;
+  margin-bottom: 5px;
+  color: var(--black-color);
+}
+.contact-user-info-wrapper .contact-user-info .user-info span {
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.8px;
+  margin-bottom: 5px;
+  color: var(--aqua-color);
+}
+.contact-user-info-wrapper .contact-user-info .user-info p {
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.3px;
+  color: var(--black-color);
 }
 /* CONTACT PAGE END */
 /* ======================================================================== */

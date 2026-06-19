@@ -654,6 +654,18 @@
   .form-section .form-grid .btn-submit {
     padding: 10px 25px;
   }
+  .contact-user-info-wrapper {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .contact-user-info-wrapper .contact-user-info {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .contact-user-info-wrapper .contact-user-info .user-info {
+    text-align: center;
+  }
 }
 
 @media (max-width: 480px) {
