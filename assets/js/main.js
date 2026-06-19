@@ -243,28 +243,32 @@ function showSolution() {
    JS only switches the active tab and shows/hides cards
    based on each card's data-cats attribute. */
 (function () {
-  var tabs = document.querySelectorAll(".tab");
-  var cards = document.querySelectorAll(".card");
+  // Находим реальные кнопки и карточки из HTML
+  var tabs = document.querySelectorAll(".tab-btn");
+  var cards = document.querySelectorAll(".gallery-item");
 
   tabs.forEach(function (tab) {
     tab.addEventListener("click", function () {
-      var cat = tab.dataset.cat;
+      // Переносим data-filter в переменную
+      var cat = tab.dataset.filter;
 
-      // active tab state
+      // Переключаем активный класс у табов
       tabs.forEach(function (t) {
         var active = t === tab;
-        t.classList.toggle("is-active", active);
+        t.classList.toggle("active", active); // Класс 'active' вместо 'is-active'
         t.setAttribute("aria-selected", active);
       });
 
-      // show / hide cards
+      // Фильтруем карточки
       var visibleIndex = 0;
       cards.forEach(function (card) {
-        var show =
-          cat === "all" || card.dataset.cats.split(" ").indexOf(cat) !== -1;
+        // Проверяем соответствие категории
+        var show = cat === "all" || card.dataset.category === cat;
+
         card.classList.toggle("is-hidden", !show);
+
         if (show) {
-          // restart the small fade-in, staggered
+          // Сброс и запуск анимации (если необходима)
           card.style.animation = "none";
           void card.offsetWidth; // force reflow
           card.style.animation = "";
@@ -275,17 +279,28 @@ function showSolution() {
     });
   });
 })();
+function playInlineVideo(container) {
+  var video = container.querySelector(".gallery-video");
+
+  if (!container.classList.contains("is-playing")) {
+    container.classList.add("is-playing");
+    video.play();
+  } else {
+    container.classList.remove("is-playing");
+    video.pause();
+  }
+}
 // ==================== GALLERY TABS ===============================
 document.addEventListener("DOMContentLoaded", () => {
   const cards = document.querySelectorAll(".video-card");
 
   const PLAY_ICON = "/assets/images/home/play.svg";
-  const PAUSE_ICON = "/assets/images/home/pause.svg"; 
+  const PAUSE_ICON = "/assets/images/home/pause.svg";
 
   const pauseVideo = (card) => {
     const video = card.querySelector(".main-video-player");
     const icon = card.querySelector(".btn-icon");
-    
+
     if (video) {
       video.pause();
       card.classList.remove("is-playing");
@@ -296,7 +311,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const playVideo = (card) => {
     const video = card.querySelector(".main-video-player");
     const icon = card.querySelector(".btn-icon");
-    
+
     if (video) {
       card.classList.add("is-playing");
       if (icon) icon.src = PAUSE_ICON;
@@ -330,12 +345,12 @@ document.addEventListener("DOMContentLoaded", () => {
         cards.forEach((c) => {
           c.classList.remove("is-active");
           pauseVideo(c);
-          
+
           // Безопасный сброс видео вместо удаления src
           const v = c.querySelector(".main-video-player");
           if (v) {
             v.currentTime = 0;
-            v.load(); 
+            v.load();
           }
         });
 
@@ -349,7 +364,7 @@ document.addEventListener("DOMContentLoaded", () => {
       overlay.addEventListener("click", (e) => {
         if (!card.classList.contains("is-active")) return;
 
-        e.stopPropagation(); 
+        e.stopPropagation();
 
         if (video.paused) {
           playVideo(card);

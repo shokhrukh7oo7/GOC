@@ -2334,7 +2334,25 @@ header {
   visibility: hidden;
   transition: opacity 0.3s ease;
 }
+/* Позиционируем превью абсолютно, чтобы оно перекрывало видео до старта */
+.gallery-container .gallery-grid .gallery-item .video-poster {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 2;
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease;
+}
 
+/* Когда видео начинает играть, скрываем картинку-превью */
+.gallery-container .gallery-grid .item-inner.is-playing .video-poster {
+  opacity: 0;
+  visibility: hidden;
+}
 .gallery-container .gallery-grid .item-inner.is-playing .inline-player {
   opacity: 1;
   visibility: visible;
