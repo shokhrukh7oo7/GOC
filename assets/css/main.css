@@ -2674,6 +2674,91 @@ header {
 }
 /* GALLERY PAGE END */
 /* ======================================================================== */
+/* CONTACT PAGE START */
+.contact-wrapper
+  .layout-section
+  .section-enter-description
+  .section-enter-left
+  h1 {
+  max-width: 430px;
+}
+.contact-wrapper .contact-item-wrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border: 1px solid var(--aqua-color);
+  padding: clamp(16px, 2vw, 32px);
+  margin: clamp(30px, 6vw, 120px) 0 clamp(10px, 5vw, 100px);
+  gap: clamp(20px, 3vw, 56px);
+}
+.contact-wrapper .contact-item-wrapper .item .contact-icon-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.contact-wrapper .contact-item-wrapper .item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.contact-wrapper .contact-item-wrapper .item .contact-icon-wrapper img {
+  width: 20px;
+}
+.contact-wrapper .contact-item-wrapper .item .contact-icon-wrapper p {
+  font-size: 12px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 1.1px;
+  color: var(--aqua-color);
+}
+.contact-wrapper .contact-item-wrapper .item .contact-content-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.contact-wrapper .contact-item-wrapper .item .contact-content-wrapper h6 {
+  font-size: clamp(18px, 1.5vw, 24px);
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  margin: 0;
+  color: var(--black-color);
+}
+.contact-wrapper .contact-item-wrapper .item .contact-content-wrapper p {
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0%;
+  color: var(--grey-color);
+}
+.contact-wrapper .contact-item-wrapper .item .contact-btn-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  position: relative;
+  padding: 0 5px;
+  transition: all 0.3s ease-in-out;
+}
+.contact-wrapper .contact-item-wrapper .item .contact-btn-wrapper:hover {
+  background-color: var(--milk-color) !important;
+  border-radius: 4px;
+}
+.contact-wrapper .contact-item-wrapper .item .contact-btn-wrapper p {
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.88px;
+  color: var(--grey-color);
+}
+.contact-wrapper .contact-item-wrapper .item .contact-btn-wrapper a::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+.contact-wrapper .contact-item-wrapper .item .contact-btn-wrapper img {
+  width: 10px;
+  height: 10px;
+  filter: brightness(0) invert(0);
+}
+/* CONTACT PAGE END */
+/* ======================================================================== */
 /* FOOTER SECTION START */
 
 .copyright-container {

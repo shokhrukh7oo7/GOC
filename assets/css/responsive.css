@@ -140,6 +140,9 @@
   .download-container .download-wrapper .download-item-wrapper {
     grid-template-columns: repeat(3, 1fr);
   }
+  .contact-wrapper .contact-item-wrapper {
+    grid-template-columns: repeat(3, 1fr);
+  }
   .video-container .video-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
@@ -249,6 +252,9 @@
     padding: 10px 0;
   }
   .download-container .download-wrapper .download-item-wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .contact-wrapper .contact-item-wrapper {
     grid-template-columns: repeat(2, 1fr);
   }
 }
@@ -593,6 +599,18 @@
     .item
     .download-btn-wrapper {
     width: 100%;
+  }
+  .contact-wrapper .contact-item-wrapper {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .contact-wrapper .contact-item-wrapper .item {
+    border: 1px solid var(--aqua-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
   }
 }
 
