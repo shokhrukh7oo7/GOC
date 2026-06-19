@@ -2348,7 +2348,29 @@ header {
   background-color: #111111;
   padding: clamp(40px, 6vw, 120px) 88px;
 }
-
+.video-section .extra-section {
+  padding: 0 0 clamp(20px, 3vw, 45px);
+}
+.video-section .extra-section .layout-section .section-enter-header {
+  color: rgba(255, 255, 255, 0.6);
+}
+.video-section
+  .extra-section
+  .layout-section
+  .section-enter-description
+  .section-enter-left
+  h1 {
+  color: var(--white-color);
+}
+.video-section
+  .extra-section
+  .layout-section
+  .section-enter-description
+  .section-enter-right
+  p {
+  color: rgba(255, 255, 255, 0.65);
+  max-width: 500px;
+}
 .video-container .video-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -2432,11 +2454,11 @@ header {
     background-color 0.3s ease;
 }
 
-.video-container .video-grid .video-card.is-active .play-btn {
+/* .video-container .video-grid .video-card.is-active .play-btn {
   width: 70px;
   height: 70px;
   padding: 27px;
-}
+} */
 
 .video-container .video-grid .video-card:hover .play-btn {
   transform: scale(1.05);
