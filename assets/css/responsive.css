@@ -257,6 +257,9 @@
   .contact-wrapper .contact-item-wrapper {
     grid-template-columns: repeat(2, 1fr);
   }
+  .contact-form-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
 
 @media (max-width: 900px) {
@@ -611,6 +614,45 @@
     align-items: center;
     text-align: center;
     padding: 10px;
+  }
+  .contact-form-container .contact-form-wrapper-left .form-section .tabs {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .form-section .form-grid .field-row {
+    grid-template-columns: 1fr;
+  }
+  .form-section .form-grid .submit-row {
+    flex-direction: column;
+  }
+  .contact-form-container .contact-form-wrapper-left .form-section .tabs .tab {
+    text-align: center;
+  }
+  .contact-form-container .contact-form-wrapper-left .form-section .eyebrow {
+    text-align: center;
+  }
+  .contact-form-container .contact-form-wrapper-left .form-section .heading {
+    text-align: center;
+  }
+  .contact-form-container .contact-form-wrapper-left .form-section .subheading {
+    text-align: center;
+  }
+  .form-section .form-grid .consent-text {
+    text-align: center;
+  }
+  .form-section .form-footer {
+    text-align: center;
+    justify-content: center;
+  }
+  .contact-form-container .contact-form-wrapper-right h3 {
+    text-align: center;
+  }
+  .contact-form-container .contact-form-wrapper-right .item-wrapper .item {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+  .form-section .form-grid .btn-submit {
+    padding: 10px 25px;
   }
 }
 

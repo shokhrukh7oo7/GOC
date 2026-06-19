@@ -239,9 +239,6 @@ function showSolution() {
 }
 
 // ===================================== tabs (cotalog) ==================================================
-/* Static version: cards live in the HTML above.
-   JS only switches the active tab and shows/hides cards
-   based on each card's data-cats attribute. */
 (function () {
   // Находим реальные кнопки и карточки из HTML
   var tabs = document.querySelectorAll(".tab-btn");
@@ -375,3 +372,12 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+// ================== contact (form tabs) =======================
+function selectTab(el) {
+  document.querySelectorAll(".tab").forEach((t) => {
+    t.classList.remove("active");
+    t.setAttribute("aria-selected", "false");
+  });
+  el.classList.add("active");
+  el.setAttribute("aria-selected", "true");
+}

@@ -58,7 +58,7 @@
     </header>
 
     <main>
-      <!-- ready-made solutions -->
+      <!-- contact -->
       <section class="contact-wrapper">
         <div class="container">
           <div class="extra-section ready-made-solutions-section">
@@ -101,10 +101,7 @@
                 <div class="contact-btn-wrapper">
                   <p>Пн – Пт · 09:00 – 19:00</p>
                   <a href="tel:+998781400000">
-                    <img
-                      src="/assets/images/home/arrow-top.svg"
-                      alt="icon"
-                    />
+                    <img src="/assets/images/home/arrow-top.svg" alt="icon" />
                   </a>
                 </div>
               </div>
@@ -123,10 +120,7 @@
                 <div class="contact-btn-wrapper">
                   <p>Ответ в течение 2 ч</p>
                   <a href="mailto:info@goc-uz.com">
-                    <img
-                      src="/assets/images/home/arrow-top.svg"
-                      alt="icon"
-                    />
+                    <img src="/assets/images/home/arrow-top.svg" alt="icon" />
                   </a>
                 </div>
               </div>
@@ -145,10 +139,7 @@
                 <div class="contact-btn-wrapper">
                   <p>09:00 - 21:00 UZT</p>
                   <a href="#">
-                    <img
-                      src="/assets/images/home/arrow-top.svg"
-                      alt="icon"
-                    />
+                    <img src="/assets/images/home/arrow-top.svg" alt="icon" />
                   </a>
                 </div>
               </div>
@@ -167,11 +158,244 @@
                 <div class="contact-btn-wrapper">
                   <p>24/7 • бот + менеджер</p>
                   <a href="#">
-                    <img
-                      src="/assets/images/home/arrow-top.svg"
-                      alt="icon"
-                    />
+                    <img src="/assets/images/home/arrow-top.svg" alt="icon" />
                   </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- contact form -->
+      <section>
+        <div class="container">
+          <div class="extra-section">
+            <div class="contact-form-container">
+              <div class="contact-form-wrapper-left">
+                <div class="form-section">
+                  <p class="eyebrow">№ 08.01 — Форма заявки</p>
+                  <h1 class="heading">Опишите задачу.</h1>
+                  <p class="subheading">
+                    Подготовим КП за 1 час · согласуем сроки за 1 день ·
+                    доставим документы в любое удобное время
+                  </p>
+
+                  <!-- Tabs -->
+                  <div class="tabs" role="tablist">
+                    <button
+                      class="tab active"
+                      role="tab"
+                      aria-selected="true"
+                      onclick="selectTab(this)"
+                    >
+                      <span class="tab-title">КП на кабель</span>
+                      <span class="tab-sub">подбор SKU + цена</span>
+                    </button>
+                    <button
+                      class="tab"
+                      role="tab"
+                      aria-selected="false"
+                      onclick="selectTab(this)"
+                    >
+                      <span class="tab-title">Решение под ключ</span>
+                      <span class="tab-sub">проект + монтаж</span>
+                    </button>
+                    <button
+                      class="tab"
+                      role="tab"
+                      aria-selected="false"
+                      onclick="selectTab(this)"
+                    >
+                      <span class="tab-title">Стать партнёром</span>
+                      <span class="tab-sub">дилерство · OEM</span>
+                    </button>
+                  </div>
+
+                  <!-- Form -->
+                  <form class="form-grid" onsubmit="return false;">
+                    <div class="field-row single">
+                      <div class="field">
+                        <label>Имя</label>
+                        <input
+                          type="text"
+                          placeholder="Бахром Кадыров"
+                          autocomplete="name"
+                        />
+                      </div>
+                    </div>
+
+                    <div class="field-row">
+                      <div class="field">
+                        <label>Компания <span class="req">*</span></label>
+                        <input
+                          type="text"
+                          placeholder="ООО «Связь-проект»"
+                          autocomplete="organization"
+                        />
+                      </div>
+                      <div class="field">
+                        <label>Должность</label>
+                        <input
+                          type="text"
+                          placeholder="Главный инженер"
+                          autocomplete="organization-title"
+                        />
+                      </div>
+                    </div>
+
+                    <div class="field-row">
+                      <div class="field">
+                        <label>Email <span class="req">*</span></label>
+                        <input
+                          type="email"
+                          placeholder="b.kadyrov@company.uz"
+                          autocomplete="email"
+                        />
+                      </div>
+                      <div class="field">
+                        <label>Телефон</label>
+                        <input
+                          type="tel"
+                          placeholder="+998 90 000 00 00"
+                          autocomplete="tel"
+                        />
+                      </div>
+                    </div>
+
+                    <div class="field-row">
+                      <div class="field">
+                        <label>Направление</label>
+                        <input type="text" placeholder="Магистральные ВОЛС" />
+                      </div>
+                      <div class="field">
+                        <label>Объём, км</label>
+                        <input type="text" placeholder="≈ 80" />
+                      </div>
+                    </div>
+
+                    <div class="field-row single">
+                      <div class="field message-field">
+                        <label>Сообщение</label>
+                        <textarea
+                          placeholder="Кратко о проекте: длины, среда прокладки, сроки, спецтребования…"
+                        ></textarea>
+                      </div>
+                    </div>
+
+                    <div class="submit-row">
+                      <button class="btn-submit" type="submit">
+                        Отправить заявку ›
+                      </button>
+                      <p class="consent-text">
+                        Отправляя форму, вы соглашаетесь<br />
+                        с <a href="#">политикой обработки данных</a>
+                      </p>
+                    </div>
+                  </form>
+
+                  <div class="form-footer">
+                    <span class="pulse-dot"></span>
+                    <span class="footer-note"
+                      >Среднее время ответа на форму — 47 минут в рабочее
+                      время</span
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <div class="contact-form-wrapper-right">
+                <h3>Менеджеры по направлениям</h3>
+                <div class="item-wrapper">
+                  <div class="item">
+                    <div class="item-left">
+                      <p>Операторы · FTTx · backbone</p>
+                      <span>Магистральные сети, last mile, агрегация</span>
+                    </div>
+
+                    <div class="item-center">
+                      <p>operators@goc-uz.com</p>
+                    </div>
+
+                    <div class="item-right">
+                      <p>вн. 201</p>
+                    </div>
+                  </div>
+
+                  <div class="item">
+                    <div class="item-left">
+                      <p>Энергетика · OPGW · ADSS</p>
+                      <span>Грозозащитные тросы, подстанции, ЛЭП</span>
+                    </div>
+
+                    <div class="item-center">
+                      <p>energy@goc-uz.com</p>
+                    </div>
+
+                    <div class="item-right">
+                      <p>вн. 204</p>
+                    </div>
+                  </div>
+
+                  <div class="item">
+                    <div class="item-left">
+                      <p>Дата-центры и кампусы</p>
+                      <span>MTP/MPO, OM3/4/5, корпоративная разводка</span>
+                    </div>
+
+                    <div class="item-center">
+                      <p>dc@goc-uz.com</p>
+                    </div>
+
+                    <div class="item-right">
+                      <p>вн. 207</p>
+                    </div>
+                  </div>
+
+                  <div class="item">
+                    <div class="item-left">
+                      <p>Промышленность · нефтегаз</p>
+                      <span>FIRE-R, ARMOR, спец. исполнения</span>
+                    </div>
+
+                    <div class="item-center">
+                      <p>industrial@goc-uz.com</p>
+                    </div>
+
+                    <div class="item-right">
+                      <p>вн. 211</p>
+                    </div>
+                  </div>
+
+                  <div class="item">
+                    <div class="item-left">
+                      <p>Партнёрство · дилерство</p>
+                      <span>OEM, реселлеры, СНГ и ЦА</span>
+                    </div>
+
+                    <div class="item-center">
+                      <p>partners@goc-uz.com</p>
+                    </div>
+
+                    <div class="item-right">
+                      <p>вн. 240</p>
+                    </div>
+                  </div>
+
+                  <div class="item">
+                    <div class="item-left">
+                      <p>Пресс-служба</p>
+                      <span>Интервью, комментарии, пресс-кит</span>
+                    </div>
+
+                    <div class="item-center">
+                      <p>press@goc-uz.com</p>
+                    </div>
+
+                    <div class="item-right">
+                      <p>вн. 110</p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
