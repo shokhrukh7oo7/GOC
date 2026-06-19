@@ -2675,6 +2675,9 @@ header {
 /* GALLERY PAGE END */
 /* ======================================================================== */
 /* CONTACT PAGE START */
+.contact-wrapper {
+  background-color: #fafaf7;
+}
 .contact-wrapper
   .layout-section
   .section-enter-description
@@ -3095,7 +3098,7 @@ header {
 .contact-user-info-wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  background-color: #fafaf7;
+  background-color: var(--white-color);
   padding: clamp(14px, 1.5vw, 24px);
   margin: clamp(20px, 3vw, 48px) 0;
 }
