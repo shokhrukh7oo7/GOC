@@ -3147,6 +3147,451 @@ header {
   letter-spacing: 0.3px;
   color: var(--black-color);
 }
+/* ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
+:root {
+  --black: #111111;
+  --white: #ffffff;
+  --accent: #00e5c8;
+  --gray-bg: #f0f0ee;
+  --gray-light: #e2e2e0;
+  --gray-mid: #999999;
+  --gray-dark: #555555;
+  --card-active-bg: #1a1a1a;
+  --font: "Arial", sans-serif;
+}
+
+body {
+  background: var(--gray-bg);
+  font-family: var(--font);
+  color: var(--black);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── SECTION 1: Cards ── */
+.section-offices {
+  padding: 48px 0 0;
+}
+
+.section-label {
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gray-mid);
+  margin-bottom: 8px;
+  padding: 0 40px;
+}
+
+.section-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+  padding: 0 40px 32px;
+}
+
+.section-title {
+  font-size: clamp(32px, 5vw, 52px);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  flex: 0 0 auto;
+}
+
+.section-desc {
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--gray-dark);
+  max-width: 340px;
+  padding-top: 6px;
+}
+
+.offices-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin: 0 40px;
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid var(--gray-light);
+}
+
+.office-card {
+  padding: 20px 20px 24px;
+  background: var(--white);
+  border-right: 1px solid var(--gray-light);
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.office-card:last-child {
+  border-right: none;
+}
+
+.office-card.active {
+  background: var(--card-active-bg);
+  color: var(--white);
+}
+
+.card-badge {
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.card-badge::before {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  flex-shrink: 0;
+}
+
+.card-city {
+  font-size: clamp(18px, 2.2vw, 26px);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: 14px;
+}
+
+.card-city.multi {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-details {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 11px;
+  line-height: 1.5;
+  flex: 1;
+}
+
+.detail-label {
+  font-size: 8.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--gray-mid);
+  display: block;
+  margin-bottom: 1px;
+}
+
+.office-card.active .detail-label {
+  color: var(--accent);
+}
+
+.detail-value {
+  opacity: 0.75;
+}
+.office-card:not(.active) .detail-value {
+  color: #444;
+}
+
+.card-divider {
+  height: 1px;
+  background: var(--gray-light);
+  margin: 2px 0;
+}
+.office-card.active .card-divider {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px solid var(--gray-light);
+}
+.office-card.active .card-footer {
+  border-top-color: rgba(255, 255, 255, 0.1);
+}
+
+.card-coords {
+  font-size: 10px;
+  color: var(--gray-mid);
+  font-variant-numeric: tabular-nums;
+}
+
+.card-link {
+  font-size: 10px;
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  transition: opacity 0.15s;
+}
+.card-link:hover {
+  opacity: 0.65;
+}
+.office-card.active .card-link {
+  color: var(--accent);
+}
+.office-card:not(.active) .card-link {
+  color: var(--black);
+}
+.card-link::after {
+  content: " →";
+}
+
+/* ── SECTION 2: Map ── */
+.section-map {
+  padding: 56px 0 56px;
+}
+
+.map-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+  padding: 0 40px 32px;
+}
+
+.map-title {
+  font-size: clamp(32px, 5vw, 52px);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  flex: 0 0 auto;
+}
+
+.map-desc {
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--gray-dark);
+  max-width: 360px;
+  padding-top: 6px;
+}
+
+.map-wrap {
+  margin: 0 40px;
+  background: #d8e0dc;
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+  height: 420px;
+  border: 1px solid var(--gray-light);
+}
+
+#map-svg {
+  width: 100%;
+  height: 100%;
+}
+
+.uz-border {
+  fill: #cdd8d3;
+  stroke: #a8b8b2;
+  stroke-width: 1.5;
+}
+.neighbor-fill {
+  fill: #c0ccc7;
+  stroke: #a0afaa;
+  stroke-width: 0.8;
+}
+
+.map-pin {
+  cursor: pointer;
+}
+.map-pin .pin-bg {
+  transition: opacity 0.2s;
+  opacity: 0;
+}
+.map-pin:hover .pin-bg {
+  opacity: 1;
+}
+
+.pin-label {
+  font-size: 10px;
+  font-family: Arial, sans-serif;
+  font-weight: 700;
+  fill: #111;
+  pointer-events: none;
+}
+.pin-sublabel {
+  font-size: 8px;
+  font-family: Arial, sans-serif;
+  fill: #555;
+  pointer-events: none;
+}
+
+.map-legend {
+  position: absolute;
+  bottom: 16px;
+  left: 20px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 3px;
+  padding: 10px 14px;
+  font-size: 10px;
+  border: 1px solid var(--gray-light);
+}
+
+.legend-title {
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--gray-mid);
+  margin-bottom: 6px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-bottom: 4px;
+  color: #333;
+}
+.legend-item:last-child {
+  margin-bottom: 0;
+}
+
+.legend-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.map-controls {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.map-btn {
+  width: 28px;
+  height: 28px;
+  background: var(--white);
+  border: 1px solid var(--gray-light);
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  cursor: default;
+  color: #444;
+  line-height: 1;
+  user-select: none;
+}
+
+.map-popup {
+  position: absolute;
+  background: var(--white);
+  border-radius: 4px;
+  padding: 12px 14px;
+  font-size: 11px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  border: 1px solid var(--gray-light);
+  min-width: 150px;
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+  pointer-events: none;
+}
+.map-popup.hidden {
+  opacity: 0;
+  transform: translateY(4px);
+}
+
+.popup-name {
+  font-weight: 800;
+  font-size: 14px;
+  margin-bottom: 3px;
+}
+.popup-type {
+  color: var(--accent);
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 6px;
+}
+.popup-addr {
+  color: #666;
+  line-height: 1.5;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  .section-header,
+  .map-header {
+    flex-direction: column;
+    gap: 12px;
+    padding: 0 24px 24px;
+  }
+  .section-label {
+    padding: 0 24px;
+  }
+  .offices-grid {
+    grid-template-columns: repeat(2, 1fr);
+    margin: 0 24px;
+  }
+  .office-card:nth-child(2) {
+    border-right: none;
+  }
+  .office-card:nth-child(3) {
+    border-top: 1px solid var(--gray-light);
+  }
+  .office-card:nth-child(4) {
+    border-top: 1px solid var(--gray-light);
+    border-right: none;
+  }
+  .map-wrap {
+    margin: 0 24px;
+    height: 340px;
+  }
+}
+
+@media (max-width: 580px) {
+  .section-header,
+  .map-header {
+    padding: 0 16px 20px;
+  }
+  .section-label {
+    padding: 0 16px;
+  }
+  .offices-grid {
+    grid-template-columns: 1fr;
+    margin: 0 16px;
+  }
+  .office-card {
+    border-right: none !important;
+    border-top: none !important;
+    border-bottom: 1px solid var(--gray-light);
+  }
+  .office-card:last-child {
+    border-bottom: none;
+  }
+  .map-wrap {
+    margin: 0 16px;
+    height: 260px;
+  }
+  .map-legend {
+    font-size: 9px;
+    padding: 7px 10px;
+  }
+  .section-map {
+    padding: 36px 0 36px;
+  }
+  .section-offices {
+    padding: 32px 0 0;
+  }
+}
+/* ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
+
+/* ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
 /* CONTACT PAGE END */
 /* ======================================================================== */
 /* FOOTER SECTION START */

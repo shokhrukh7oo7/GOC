@@ -381,3 +381,113 @@ function selectTab(el) {
   el.classList.add("active");
   el.setAttribute("aria-selected", "true");
 }
+// ================== map (tabs) =======================
+const offices = [
+  {
+    pinIds: ["pin-0"],
+    accentColor: true,
+    popup: {
+      name: "Ташкент",
+      type: "Головной офис",
+      addr: "ул. Шахрисабзская, 10<br>Alibaba Tower, 12 этаж",
+    },
+    svgX: 392,
+    svgY: 100,
+  },
+  {
+    pinIds: ["pin-1"],
+    accentColor: false,
+    popup: {
+      name: "Чирчик",
+      type: "Завод № 1",
+      addr: "СЭЗ «Ангрен», корпус 8–2",
+    },
+    svgX: 426,
+    svgY: 78,
+  },
+  {
+    pinIds: ["pin-2"],
+    accentColor: false,
+    popup: { name: "Янгиюль", type: "Завод № 2", addr: "ул. Промышленная, 4" },
+    svgX: 316,
+    svgY: 152,
+  },
+  {
+    pinIds: ["pin-3a", "pin-3b", "pin-3c"],
+    accentColor: false,
+    popup: {
+      name: "Представительства",
+      type: "Алматы · Сеул · Бишкек",
+      addr: "Региональные офисы продаж<br>и сервисной поддержки",
+    },
+    svgX: 510,
+    svgY: 38,
+  },
+];
+
+let current = 0;
+
+function setActive(index) {
+  // Cards
+  document
+    .querySelectorAll(".office-card")
+    .forEach((c, i) => c.classList.toggle("active", i === index));
+
+  // All pins back to default
+  offices.forEach((o) => {
+    o.pinIds.forEach((pid) => {
+      const el = document.getElementById(pid);
+      if (!el) return;
+      const outer = el.querySelector(".pin-outer");
+      const dot = el.querySelector("circle:not(.pin-outer):not(.pin-bg)");
+      if (outer) {
+        outer.setAttribute("fill", "var(--white)");
+        outer.setAttribute("stroke", "#888");
+        outer.setAttribute("stroke-width", "1.2");
+        outer.setAttribute(
+          "r",
+          pid === "pin-0" ? "10" : pid.includes("3") ? "6.5" : "8",
+        );
+      }
+      if (dot) {
+        dot.setAttribute("fill", "#555");
+      }
+    });
+  });
+
+  // Active pins
+  offices[index].pinIds.forEach((pid) => {
+    const el = document.getElementById(pid);
+    if (!el) return;
+    const outer = el.querySelector(".pin-outer");
+    const dot = el.querySelector("circle:not(.pin-outer):not(.pin-bg)");
+    if (outer) {
+      outer.setAttribute("fill", "var(--accent)");
+      outer.setAttribute("stroke", "none");
+    }
+    if (dot) {
+      dot.setAttribute("fill", "#111");
+    }
+  });
+
+  // Popup
+  const o = offices[index];
+  document.getElementById("popupName").textContent = o.popup.name;
+  document.getElementById("popupType").textContent = o.popup.type;
+  document.getElementById("popupAddr").innerHTML = o.popup.addr;
+
+  const wrap = document.getElementById("mapWrap");
+  const ww = wrap.offsetWidth,
+    wh = wrap.offsetHeight;
+  const px = (o.svgX / 700) * ww;
+  const py = (o.svgY / 400) * wh;
+  const popup = document.getElementById("mapPopup");
+  popup.style.left = Math.min(px, ww - 175) + "px";
+  popup.style.top = Math.max(py, 8) + "px";
+  popup.classList.remove("hidden");
+
+  current = index;
+}
+
+window.addEventListener("resize", () => setActive(current));
+setTimeout(() => setActive(0), 80);
