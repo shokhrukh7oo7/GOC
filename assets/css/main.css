@@ -2198,17 +2198,32 @@ header {
   color: var(--black-color);
 }
 .news-tabs-btn-wrapper {
-  display: flex;
+  /* display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: center; */
+  width: 100%;
+  padding: 16px 88px;
+
 }
 .news-tabs-wrapper .tabs {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--milk-color);
+  padding-bottom: 16px;
+  /* flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  padding: 16px 88px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; */
+}
+.news-tabs-wrapper .tabs .tabs-btn-box {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
   align-items: center;
-  padding: 16px 88px;
-  border-bottom: 1px solid var(--milk-color);
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;

@@ -68,7 +68,7 @@
   .copyright-container .copyright-wrapper {
     padding: 0;
   }
-  .news-tabs-wrapper .tabs {
+  .news-tabs-btn-wrapper {
     padding: 16px 0;
   }
   .news-wrapper .news-header {
@@ -168,8 +168,12 @@
   .video-container .video-grid .video-card.is-active {
     grid-column: span 2;
   }
-  .news-tabs-btn-wrapper {
+  .news-tabs-wrapper .tabs {
     flex-direction: column-reverse;
+    gap: 15px;
+  }
+  .news-tabs-wrapper .tabs .tabs-btn-box {
+    justify-content: center;
   }
   .search-container {
     width: 100%;
