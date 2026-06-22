@@ -305,10 +305,48 @@ function showSolution() {
     });
   });
 })();
+// ==================== GALLERY TABS ===============================
+(function () {
+  // Находим реальные кнопки и карточки из HTML
+  var tabs = document.querySelectorAll(".tab-btn");
+  var cards = document.querySelectorAll(".gallery-item");
+
+  tabs.forEach(function (tab) {
+    tab.addEventListener("click", function () {
+      // Переносим data-filter в переменную
+      var cat = tab.dataset.filter;
+
+      // Переключаем активный класс у табов
+      tabs.forEach(function (t) {
+        var active = t === tab;
+        t.classList.toggle("active", active); // Класс 'active' вместо 'is-active'
+        t.setAttribute("aria-selected", active);
+      });
+
+      // Фильтруем карточки
+      var visibleIndex = 0;
+      cards.forEach(function (card) {
+        // Проверяем соответствие категории
+        var show = cat === "all" || card.dataset.category === cat;
+
+        card.classList.toggle("is-hidden", !show);
+
+        if (show) {
+          // Сброс и запуск анимации (если необходима)
+          card.style.animation = "none";
+          void card.offsetWidth; // force reflow
+          card.style.animation = "";
+          card.style.animationDelay = visibleIndex * 45 + "ms";
+          visibleIndex++;
+        }
+      });
+    });
+  });
+})();
 // =======================================================================================
 function playInlineVideo(container) {
   var video = container.querySelector(".gallery-video");
-
+  
   if (!container.classList.contains("is-playing")) {
     container.classList.add("is-playing");
     video.play();
@@ -317,7 +355,6 @@ function playInlineVideo(container) {
     video.pause();
   }
 }
-// ==================== GALLERY TABS ===============================
 document.addEventListener("DOMContentLoaded", () => {
   const cards = document.querySelectorAll(".video-card");
 
