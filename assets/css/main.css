@@ -2411,6 +2411,81 @@ header {
     transform-origin: right;
   }
 }
+
+.subscribe-container {
+  padding: clamp(30px, 6vw, 120px) 0;
+  background-color: var(--aqua-color);
+}
+.subscribe-container .subscribe-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 10px;
+}
+.subscribe-container .subscribe-wrapper .subscribe-left {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(10px, 1vw, 16px);
+}
+.subscribe-container .subscribe-wrapper .subscribe-left h2 {
+  font-size: clamp(24px, 3vw, 48px);
+  font-weight: 700;
+  letter-spacing: -0.96px;
+  margin: 0;
+  color: var(--black-color);
+}
+.subscribe-container .subscribe-wrapper .subscribe-left p {
+  font-size: clamp(13px, 1vw, 16px);
+  font-weight: 400;
+  letter-spacing: 0%;
+  margin: 0;
+  color: var(--black-color);
+}
+.subscribe-container .subscribe-wrapper .subscribe-right {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(10px, 1vw, 16px);
+  width: 30%;
+}
+.subscribe-container .subscribe-wrapper .subscribe-right form {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  width: 100%;
+}
+.subscribe-container .subscribe-wrapper .subscribe-right form input {
+  padding: clamp(13px, 1vw, 16px);
+  color: var(--black-color);
+  font-size: clamp(13px, 1vw, 16px);
+  font-weight: 400;
+  border: 1px solid var(--grey-color);
+  width: 100%;
+  max-width: 350px;
+}
+.subscribe-container
+  .subscribe-wrapper
+  .subscribe-right
+  form
+  input::placeholder {
+  color: var(--grey-color);
+}
+.subscribe-container .subscribe-wrapper .subscribe-right form button {
+  font-size: 12px;
+  font-weight: 700;
+  text-align: center;
+  color: var(--white-color);
+  background-color: var(--black-color);
+  padding: clamp(10px, 1vw, 16px);
+  width: 100%;
+  max-width: 200px;
+}
+.subscribe-container .subscribe-wrapper .subscribe-right span {
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0%;
+  margin: 0;
+  color: var(--black-color);
+}
 /* ======================================================================== */
 /* GALLERY PAGE START */
 .gallery-container {

@@ -273,6 +273,18 @@
   .timeline-item {
     border: 1px solid var(--milk-color);
   }
+  .subscribe-container .subscribe-wrapper {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .subscribe-container .subscribe-wrapper .subscribe-right {
+    width: 100%;
+  }
+  .subscribe-container .subscribe-wrapper .subscribe-right form {
+    justify-content: center;
+  }
 }
 
 @media (max-width: 900px) {
@@ -698,6 +710,9 @@
   .timeline-item::before {
     left: 8px;
     top: 0;
+  }
+  .subscribe-container .subscribe-wrapper .subscribe-right form {
+    flex-direction: column;
   }
 }
 
