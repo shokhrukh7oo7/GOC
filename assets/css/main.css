@@ -2197,13 +2197,75 @@ header {
   letter-spacing: -0.5px;
   color: var(--black-color);
 }
+.news-tabs-btn-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.news-tabs-wrapper .tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  padding: 16px 88px;
+  border-bottom: 1px solid var(--milk-color);
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.news-tabs-wrapper .tabs span {
+  font-size: 12px;
+  font-weight: 400;
+  margin-right: clamp(10px, 1.5vw, 25px);
+  color: var(--grey-color);
+}
+.news-tabs-wrapper .tabs button.is-active {
+  background-color: var(--black-color);
+  color: var(--white-color);
+}
+.news-tabs-wrapper .tabs button.is-active span {
+  color: var(--aqua-color);
+}
+.news-tabs-wrapper .tabs button {
+  display: flex;
+  gap: 5px;
+  background-color: var(--white-color);
+  border-radius: 100px;
+  padding: 10px 16px;
+  border: none;
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--black-color);
+}
+
+.search-container .search-box {
+  position: relative;
+}
+.search-container .search-icon img {
+  width: 15px;
+  position: absolute;
+  top: 10px;
+  left: 13px;
+}
+.search-container .search-box input {
+  padding: 8px 35px 8px 35px;
+  outline: none;
+  border: none;
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--grey-color);
+  width: 100%;
+}
+.search-container .search-box input::placeholder {
+  color: var(--grey-color);
+}
 
 .news-wrapper .news-header {
   display: flex;
   flex-direction: column;
   gap: clamp(5px, 1vw, 10px);
   border-bottom: 1px solid var(--milk-color);
-  padding: clamp(15px, 1.5vw, 25px) 0;
+  padding: clamp(15px, 1.5vw, 25px) 88px;
 }
 
 .news-wrapper .news-header span {
@@ -2235,7 +2297,7 @@ header {
 .news-wrapper .news-item-wrapper {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  margin: clamp(15px, 2vw, 32px) 0;
+  margin: clamp(15px, 2vw, 32px) 88px;
   border: 1px solid var(--aqua-color);
 }
 .news-wrapper .news-item-wrapper .item .item-image {
@@ -2301,7 +2363,7 @@ header {
 /* Сетка для десктопа */
 .timeline-box {
   background-color: var(--black-color);
-  padding: clamp(30px, 6vw, 120px) 0;
+  padding: clamp(30px, 6vw, 120px) 88px;
 }
 .timeline-box
   .layout-section
@@ -2413,7 +2475,7 @@ header {
 }
 
 .subscribe-container {
-  padding: clamp(30px, 6vw, 120px) 0;
+  padding: clamp(30px, 6vw, 120px) 88px;
   background-color: var(--aqua-color);
 }
 .subscribe-container .subscribe-wrapper {

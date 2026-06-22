@@ -68,6 +68,21 @@
   .copyright-container .copyright-wrapper {
     padding: 0;
   }
+  .news-tabs-wrapper .tabs {
+    padding: 16px 0;
+  }
+  .news-wrapper .news-header {
+    padding: clamp(15px, 1.5vw, 25px) 0;
+  }
+  .news-wrapper .news-item-wrapper {
+    margin: clamp(15px, 2vw, 32px) 0;
+  }
+  .timeline-box {
+    padding: clamp(30px, 6vw, 120px) 0;
+  }
+  .subscribe-container {
+    padding: clamp(30px, 6vw, 120px) 0;
+  }
 }
 
 @media (max-width: 1200px) {
@@ -149,6 +164,12 @@
   }
   .video-container .video-grid .video-card.is-active {
     grid-column: span 2;
+  }
+  .news-tabs-btn-wrapper {
+    flex-direction: column-reverse;
+  }
+  .search-container {
+    width: 100%;
   }
 }
 

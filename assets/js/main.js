@@ -241,8 +241,8 @@ function showSolution() {
 // ===================================== tabs (cotalog) ==================================================
 (function () {
   // Находим реальные кнопки и карточки из HTML
-  var tabs = document.querySelectorAll(".tab-btn");
-  var cards = document.querySelectorAll(".gallery-item");
+  var tabs = document.querySelectorAll(".tab");
+  var cards = document.querySelectorAll(".card");
 
   tabs.forEach(function (tab) {
     tab.addEventListener("click", function () {
@@ -276,6 +276,36 @@ function showSolution() {
     });
   });
 })();
+// ===================================== tabs (news) ==================================================
+(function () {
+  const tabs = document.querySelectorAll(".tab");
+  const cards = document.querySelectorAll(".item");
+
+  tabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+      const cat = tab.dataset.cat;
+
+      tabs.forEach((t) => {
+        t.classList.remove("is-active");
+        t.setAttribute("aria-selected", "false");
+      });
+
+      tab.classList.add("is-active");
+      tab.setAttribute("aria-selected", "true");
+
+      cards.forEach((card) => {
+        const cardCat = card.dataset.cats;
+
+        if (cat === "all" || cardCat === cat) {
+          card.style.display = "";
+        } else {
+          card.style.display = "none";
+        }
+      });
+    });
+  });
+})();
+// =======================================================================================
 function playInlineVideo(container) {
   var video = container.querySelector(".gallery-video");
 
@@ -428,6 +458,15 @@ const offices = [
 let current = 0;
 
 function setActive(index) {
+  const popupName = document.getElementById("popupName");
+  const popupType = document.getElementById("popupType");
+  const popupAddr = document.getElementById("popupAddr");
+  const wrap = document.getElementById("mapWrap");
+  const popup = document.getElementById("mapPopup");
+
+  if (!popupName || !popupType || !popupAddr || !wrap || !popup) {
+    return;
+  }
   // Cards
   document
     .querySelectorAll(".office-card")
@@ -476,12 +515,11 @@ function setActive(index) {
   document.getElementById("popupType").textContent = o.popup.type;
   document.getElementById("popupAddr").innerHTML = o.popup.addr;
 
-  const wrap = document.getElementById("mapWrap");
+
   const ww = wrap.offsetWidth,
     wh = wrap.offsetHeight;
   const px = (o.svgX / 700) * ww;
   const py = (o.svgY / 400) * wh;
-  const popup = document.getElementById("mapPopup");
   popup.style.left = Math.min(px, ww - 175) + "px";
   popup.style.top = Math.max(py, 8) + "px";
   popup.classList.remove("hidden");
