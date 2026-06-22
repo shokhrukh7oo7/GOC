@@ -4385,6 +4385,30 @@ body {
   font-weight: 400;
   color: var(--black-color);
 }
+.detail-banner-wrapper {
+  border-top: 1px solid var(--milk-color);
+  padding: clamp(20px, 3vw, 50px) 0;
+}
+.detail-banner {
+  margin: 0 88px;
+  position: relative;
+  border: 1px solid var(--aqua-color);
+}
+.detail-banner img {
+  max-height: 636px;
+  object-fit: cover;
+}
+.detail-banner p {
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  background-color: var(--white-color);
+  padding: 10px 16px;
+  color: var(--black-color);
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+}
 /* NEWS DETAIL END */
 /* ======================================================================== */
 /* FOOTER SECTION START */
