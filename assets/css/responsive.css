@@ -260,6 +260,9 @@
   .contact-form-container {
     grid-template-columns: repeat(1, 1fr);
   }
+  .news-wrapper .news-item-wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 900px) {
@@ -666,8 +669,15 @@
   .contact-user-info-wrapper .contact-user-info .user-info {
     text-align: center;
   }
+  .news-wrapper .news-item-wrapper {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 5px;
+    padding: 5px;
+  }
+  .news-wrapper .news-item-wrapper .item {
+    border: 1px solid var(--aqua-color);
+  }
 }
-
 
 @media (max-width: 480px) {
   .cell__text {
