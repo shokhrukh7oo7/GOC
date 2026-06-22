@@ -2275,6 +2275,7 @@ header {
   letter-spacing: -0.3px;
   margin-bottom: 0;
   color: var(--black-color);
+  height: 55px;
 }
 .news-wrapper .news-item-wrapper .item .item-content p {
   font-size: clamp(12px, 1vw, 14px);
