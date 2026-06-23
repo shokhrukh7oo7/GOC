@@ -346,7 +346,7 @@ function showSolution() {
 // =======================================================================================
 function playInlineVideo(container) {
   var video = container.querySelector(".gallery-video");
-  
+
   if (!container.classList.contains("is-playing")) {
     container.classList.add("is-playing");
     video.play();
@@ -552,7 +552,6 @@ function setActive(index) {
   document.getElementById("popupType").textContent = o.popup.type;
   document.getElementById("popupAddr").innerHTML = o.popup.addr;
 
-
   const ww = wrap.offsetWidth,
     wh = wrap.offsetHeight;
   const px = (o.svgX / 700) * ww;
@@ -566,3 +565,25 @@ function setActive(index) {
 
 window.addEventListener("resize", () => setActive(current));
 setTimeout(() => setActive(0), 80);
+// ====== detail catalog not finished
+// Gallery thumbs
+function setThumb(el, src) {
+  document
+    .querySelectorAll(".thumb")
+    .forEach((t) => t.classList.remove("active"));
+  el.classList.add("active");
+  document.getElementById("mainImg").src = src;
+}
+
+// Variant price selector
+document.querySelectorAll(".variant-btn").forEach((btn) => {
+  btn.addEventListener("click", function () {
+    document
+      .querySelectorAll(".variant-btn")
+      .forEach((b) => b.classList.remove("active"));
+    this.classList.add("active");
+    const price = parseInt(this.dataset.price);
+    document.getElementById("priceDisplay").textContent =
+      price.toLocaleString("ru-RU");
+  });
+});
