@@ -92,6 +92,12 @@
   .news-detail-container .news-detail-content {
     margin: 0;
   }
+  .sources-wrapper {
+    padding: clamp(30px, 4vw, 50px) 0;
+  }
+  .sources-wrapper .sources-tag-wrapper ul {
+    flex-wrap: wrap;
+  }
 }
 
 @media (max-width: 1200px) {
@@ -554,6 +560,16 @@
     .section-enter-description
     .section-enter-right {
     justify-content: center;
+  }
+  .sources-wrapper .sources-tag-wrapper {
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+  .sources-wrapper .sources-tag-wrapper ul {
+    justify-content: center;
+    align-items: center !important;
   }
 }
 
