@@ -7,687 +7,6 @@
     <link rel="stylesheet" href="/assets/css/bootstrap.css" />
     <link rel="stylesheet" href="/assets/css/main.css" />
     <link rel="stylesheet" href="/assets/css/responsive.css" />
-    <style>
-      :root {
-        --ink-900: #0f1b1e;
-        --ink-700: #33424a;
-        --ink-500: #6b7b82;
-        --ink-300: #a6b3b8;
-        --line: #e3e9ea;
-        --surface: #ffffff;
-        --canvas: #f6f8f8;
-        --teal: #19c3b4;
-        --teal-dark: #0fa89b;
-        --teal-tint: #e7f9f6;
-        --amber: #e8b84b;
-        --radius-lg: 14px;
-        --radius-md: 10px;
-        --radius-sm: 7px;
-        --shadow-card:
-          0 1px 2px rgba(15, 27, 30, 0.04),
-          0 8px 24px -16px rgba(15, 27, 30, 0.12);
-        font-size: 16px;
-      }
-
-      * {
-        box-sizing: border-box;
-      }
-      html,
-      body {
-        margin: 0;
-        padding: 0;
-      }
-      body {
-        font-family:
-          "Inter",
-          system-ui,
-          -apple-system,
-          "Segoe UI",
-          sans-serif;
-        background: var(--canvas);
-        color: var(--ink-900);
-        -webkit-font-smoothing: antialiased;
-      }
-      button {
-        font-family: inherit;
-        cursor: pointer;
-      }
-      input {
-        font-family: inherit;
-      }
-
-      .page {
-        max-width: 1280px;
-        margin: 0 auto;
-        padding: 20px 24px 56px;
-      }
-
-      /* ============ Search bar ============ */
-      .searchbar {
-        display: flex;
-        gap: 12px;
-        margin-bottom: 18px;
-      }
-      .searchbar__field {
-        flex: 1;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        background: var(--surface);
-        border: 1px solid var(--line);
-        border-radius: var(--radius-md);
-        padding: 0 16px;
-        height: 48px;
-      }
-      .searchbar__field .icon {
-        color: var(--ink-300);
-        flex-shrink: 0;
-      }
-      .searchbar__field input {
-        border: none;
-        outline: none;
-        width: 100%;
-        font-size: 14.5px;
-        color: var(--ink-900);
-        background: transparent;
-      }
-      .searchbar__field input::placeholder {
-        color: var(--ink-300);
-      }
-
-      .btn-search {
-        background: var(--teal);
-        color: #fff;
-        border: none;
-        border-radius: var(--radius-md);
-        padding: 0 28px;
-        font-weight: 600;
-        font-size: 14.5px;
-        height: 48px;
-        transition: background 0.15s ease;
-        white-space: nowrap;
-      }
-      .btn-search:hover {
-        background: var(--teal-dark);
-      }
-
-      /* ============ Tabs ============ */
-      .tabs {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 8px;
-        margin-bottom: 20px;
-      }
-      .tab {
-        background: var(--surface);
-        border: 1px solid var(--line);
-        color: var(--ink-700);
-        border-radius: 999px;
-        padding: 9px 18px;
-        font-size: 13.5px;
-        font-weight: 500;
-        transition: all 0.15s ease;
-      }
-      .tab:hover {
-        border-color: var(--teal);
-        color: var(--teal-dark);
-      }
-      .tab--active {
-        background: var(--ink-900);
-        border-color: var(--ink-900);
-        color: #fff;
-      }
-      .tab--active:hover {
-        color: #fff;
-      }
-
-      /* ============ Layout ============ */
-      .layout {
-        display: grid;
-        grid-template-columns: 240px 1fr;
-        gap: 24px;
-        align-items: start;
-      }
-
-      /* ============ Sidebar ============ */
-      .sidebar {
-        background: var(--surface);
-        border: 1px solid var(--line);
-        border-radius: var(--radius-lg);
-        padding: 20px;
-        position: sticky;
-        top: 20px;
-      }
-      .filter-group {
-        padding-bottom: 16px;
-        margin-bottom: 16px;
-        border-bottom: 1px solid var(--line);
-      }
-      .filter-group:last-of-type {
-        border-bottom: none;
-        margin-bottom: 8px;
-      }
-      .filter-group h3 {
-        font-size: 12.5px;
-        font-weight: 600;
-        text-transform: uppercase;
-        letter-spacing: 0.03em;
-        color: var(--ink-500);
-        margin: 0 0 12px;
-      }
-      .checkbox {
-        display: flex;
-        align-items: center;
-        gap: 9px;
-        font-size: 13.5px;
-        color: var(--ink-700);
-        padding: 5px 0;
-        cursor: pointer;
-      }
-      .checkbox input {
-        width: 16px;
-        height: 16px;
-        accent-color: var(--teal);
-        cursor: pointer;
-        flex-shrink: 0;
-      }
-      .range-inputs {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-      }
-      .range-inputs input {
-        width: 100%;
-        border: 1px solid var(--line);
-        border-radius: var(--radius-sm);
-        padding: 8px 10px;
-        font-size: 13px;
-        outline: none;
-        color: var(--ink-900);
-      }
-      .range-inputs input:focus {
-        border-color: var(--teal);
-      }
-      .range-inputs span {
-        color: var(--ink-300);
-      }
-
-      .sidebar__actions {
-        display: flex;
-        gap: 8px;
-        margin-top: 6px;
-      }
-      .btn-primary {
-        flex: 1;
-        background: var(--teal);
-        color: #fff;
-        border: none;
-        border-radius: var(--radius-sm);
-        padding: 11px 0;
-        font-weight: 600;
-        font-size: 13.5px;
-        transition: background 0.15s ease;
-      }
-      .btn-primary:hover {
-        background: var(--teal-dark);
-      }
-      .btn-ghost {
-        flex: 1;
-        background: transparent;
-        color: var(--ink-700);
-        border: 1px solid var(--line);
-        border-radius: var(--radius-sm);
-        padding: 11px 0;
-        font-weight: 600;
-        font-size: 13.5px;
-        transition: all 0.15s ease;
-      }
-      .btn-ghost:hover {
-        border-color: var(--ink-300);
-      }
-
-      /* ============ Catalog toolbar ============ */
-      .catalog__toolbar {
-        display: flex;
-        align-items: center;
-        gap: 14px;
-        flex-wrap: wrap;
-        margin-bottom: 16px;
-      }
-      .result-count {
-        font-size: 13.5px;
-        color: var(--ink-500);
-      }
-      .result-count strong {
-        color: var(--ink-900);
-      }
-
-      .toolbar__chips {
-        display: flex;
-        gap: 8px;
-        flex-wrap: wrap;
-        margin-left: auto;
-      }
-      .chip {
-        background: var(--surface);
-        border: 1px solid var(--line);
-        color: var(--ink-500);
-        border-radius: 999px;
-        padding: 7px 14px;
-        font-size: 12.5px;
-        font-weight: 500;
-        transition: all 0.15s ease;
-      }
-      .chip--active {
-        background: var(--teal-tint);
-        border-color: var(--teal);
-        color: var(--teal-dark);
-      }
-
-      .view-toggle {
-        display: flex;
-        gap: 4px;
-        background: var(--surface);
-        border: 1px solid var(--line);
-        border-radius: var(--radius-sm);
-        padding: 3px;
-      }
-      .view-btn {
-        width: 30px;
-        height: 30px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border: none;
-        background: transparent;
-        color: var(--ink-300);
-        border-radius: 6px;
-      }
-      .view-btn--active {
-        background: var(--teal-tint);
-        color: var(--teal-dark);
-      }
-
-      /* ============ Grid & cards ============ */
-      .grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 16px;
-      }
-
-      .card {
-        background: var(--surface);
-        border: 1px solid var(--line);
-        border-radius: var(--radius-lg);
-        padding: 14px;
-        display: flex;
-        flex-direction: column;
-        box-shadow: var(--shadow-card);
-        transition:
-          transform 0.18s ease,
-          box-shadow 0.18s ease;
-      }
-      .card:hover {
-        transform: translateY(-3px);
-        box-shadow:
-          0 4px 8px rgba(15, 27, 30, 0.06),
-          0 16px 32px -16px rgba(15, 27, 30, 0.18);
-      }
-
-      .card__media {
-        position: relative;
-        height: 150px;
-        background: linear-gradient(180deg, #fafcfc, #f1f5f5);
-        border-radius: var(--radius-md);
-        margin-bottom: 14px;
-        overflow: hidden;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-      .card__sku {
-        position: absolute;
-        top: 10px;
-        left: 10px;
-        font-size: 10.5px;
-        font-weight: 600;
-        color: var(--ink-300);
-        letter-spacing: 0.02em;
-        z-index: 2;
-      }
-      .card__badge {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        font-size: 10px;
-        font-weight: 700;
-        letter-spacing: 0.04em;
-        padding: 4px 9px;
-        border-radius: 999px;
-        z-index: 2;
-      }
-      .card__badge--new {
-        background: var(--amber);
-        color: #3a2c05;
-      }
-      .card__badge--stock {
-        background: var(--teal-tint);
-        color: var(--teal-dark);
-      }
-
-      .card__title {
-        font-size: 15px;
-        font-weight: 600;
-        margin: 0 0 4px;
-        color: var(--ink-900);
-      }
-      .card__desc {
-        font-size: 12.5px;
-        color: var(--ink-500);
-        margin: 0 0 10px;
-        line-height: 1.4;
-        min-height: 2.6em;
-      }
-      .card__specs {
-        display: flex;
-        gap: 14px;
-        font-size: 12px;
-        color: var(--ink-700);
-        font-weight: 500;
-        margin-bottom: 14px;
-      }
-      .card__specs span {
-        background: var(--canvas);
-        padding: 4px 9px;
-        border-radius: 6px;
-      }
-
-      .card__footer {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        margin-top: auto;
-        gap: 8px;
-      }
-      .btn-outline {
-        background: transparent;
-        border: 1px solid var(--line);
-        color: var(--ink-700);
-        border-radius: var(--radius-sm);
-        padding: 8px 13px;
-        font-size: 12.5px;
-        font-weight: 600;
-        white-space: nowrap;
-        transition: all 0.15s ease;
-      }
-      .btn-outline:hover {
-        border-color: var(--teal);
-        color: var(--teal-dark);
-        background: var(--teal-tint);
-      }
-      .card__price {
-        font-size: 13px;
-        font-weight: 700;
-        color: var(--ink-900);
-        white-space: nowrap;
-      }
-
-      /* ---- Illustrated spool / cable graphics (placeholder product art) ---- */
-      .spool {
-        position: relative;
-        width: 104px;
-        height: 104px;
-        border-radius: 50%;
-        background: radial-gradient(
-          circle at 35% 30%,
-          #e6c896,
-          #c79a5e 70%,
-          #a87a40
-        );
-        box-shadow:
-          inset 0 0 0 7px rgba(0, 0, 0, 0.12),
-          inset 0 -6px 14px rgba(0, 0, 0, 0.18);
-      }
-      .spool::before {
-        content: "";
-        position: absolute;
-        inset: 14px;
-        border-radius: 50%;
-        background: repeating-radial-gradient(
-          circle,
-          #14181a 0 3px,
-          #1f2426 3px 6px
-        );
-      }
-      .spool__hub {
-        position: absolute;
-        inset: 42px;
-        border-radius: 50%;
-        background: #3a3f42;
-        box-shadow: inset 0 0 0 3px #20242600;
-      }
-      .spool--armored::before {
-        background: repeating-radial-gradient(
-          circle,
-          #2c2f31 0 4px,
-          #1a1d1e 4px 7px
-        );
-      }
-      .cable-line {
-        position: absolute;
-        width: 230px;
-        height: 14px;
-        background: linear-gradient(180deg, #3a3f42, #15181a);
-        border-radius: 7px;
-        transform: rotate(-3deg);
-      }
-      .cable-line--green::after {
-        content: "";
-        position: absolute;
-        right: -4px;
-        top: 50%;
-        width: 18px;
-        height: 18px;
-        background: #2bbf6f;
-        border-radius: 4px;
-        transform: translateY(-50%);
-      }
-
-      .spool--bundle {
-        background: none;
-        box-shadow: none;
-      }
-      .spool--bundle::before {
-        display: none;
-      }
-      .bundle {
-        position: relative;
-        width: 90px;
-        height: 64px;
-      }
-      .bundle::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        border-radius: 14px;
-        background: linear-gradient(135deg, #1c2022, #0c0e0f);
-      }
-      .bundle::after {
-        content: "";
-        position: absolute;
-        left: 8px;
-        top: 10px;
-        width: 18px;
-        height: 18px;
-        border-radius: 50%;
-        background: conic-gradient(
-          from 0deg,
-          #e0444d 0 14%,
-          #3aa6e0 14% 28%,
-          #f2c14e 28% 42%,
-          #3ec77f 42% 56%,
-          #9b5de5 56% 70%,
-          #e0444d 70% 84%,
-          #3aa6e0 84% 100%
-        );
-        box-shadow: 0 0 0 4px #0c0e0f;
-      }
-      .bundle--connector::after {
-        background: conic-gradient(
-          from 0deg,
-          #3ec77f 0 16%,
-          #e0444d 16% 32%,
-          #3aa6e0 32% 48%,
-          #f2c14e 48% 64%,
-          #9b5de5 64% 80%,
-          #3ec77f 80% 100%
-        );
-      }
-      .bundle--green::after {
-        box-shadow:
-          0 0 0 4px #0c0e0f,
-          0 0 0 6px transparent;
-      }
-
-      /* ============ Pagination ============ */
-      .pagination {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 6px;
-        margin-top: 28px;
-      }
-      .page-btn {
-        min-width: 34px;
-        height: 34px;
-        padding: 0 6px;
-        border: 1px solid var(--line);
-        background: var(--surface);
-        color: var(--ink-700);
-        border-radius: var(--radius-sm);
-        font-size: 13px;
-        font-weight: 500;
-        transition: all 0.15s ease;
-      }
-      .page-btn:hover {
-        border-color: var(--teal);
-        color: var(--teal-dark);
-      }
-      .page-btn--active {
-        background: var(--ink-900);
-        border-color: var(--ink-900);
-        color: #fff;
-      }
-      .page-btn--active:hover {
-        color: #fff;
-      }
-      .page-btn--nav {
-        font-size: 16px;
-        color: var(--ink-500);
-      }
-      .page-dots {
-        color: var(--ink-300);
-        padding: 0 4px;
-        font-size: 13px;
-      }
-
-      /* ============ Responsive ============ */
-
-      /* Tablet: sidebar collapses above content, 2-col grid */
-      @media (max-width: 980px) {
-        .layout {
-          display: block;
-          grid-template-columns: 1fr;
-        }
-        .sidebar {
-          position: static;
-          display: grid;
-          grid-template-columns: repeat(2, 1fr);
-          gap: 0 24px;
-        }
-        .sidebar__actions {
-          grid-column: 1 / -1;
-        }
-        .grid {
-          grid-template-columns: repeat(2, 1fr);
-        }
-      }
-
-      /* Small tablet / large phone */
-      @media (max-width: 680px) {
-        .page {
-          padding: 16px 16px 40px;
-        }
-        .searchbar {
-          flex-direction: column;
-        }
-        .btn-search {
-          height: 46px;
-        }
-        .tabs {
-          flex-wrap: nowrap;
-          overflow-x: auto;
-          -ms-overflow-style: none;
-          scrollbar-width: none;
-          padding-bottom: 2px;
-        }
-        .tabs::-webkit-scrollbar {
-          display: none;
-        }
-        .tab {
-          flex-shrink: 0;
-        }
-
-        .sidebar {
-          grid-template-columns: 1fr;
-        }
-        .grid {
-          grid-template-columns: 1fr;
-        }
-        .catalog__toolbar {
-          flex-direction: column;
-          align-items: flex-start;
-        }
-        .toolbar__chips {
-          margin-left: 0;
-          overflow-x: auto;
-          flex-wrap: nowrap;
-          width: 100%;
-          padding-bottom: 2px;
-        }
-        .view-toggle {
-          align-self: flex-end;
-        }
-      }
-
-      @media (max-width: 380px) {
-        .card__footer {
-          flex-direction: column;
-          align-items: stretch;
-        }
-        .btn-outline {
-          text-align: center;
-        }
-        .card__price {
-          text-align: center;
-        }
-      }
-
-      /* Reduced motion */
-      @media (prefers-reduced-motion: reduce) {
-        * {
-          transition: none !important;
-        }
-      }
-
-      /* Focus visibility */
-      a:focus-visible,
-      button:focus-visible,
-      input:focus-visible {
-        outline: 2px solid var(--teal);
-        outline-offset: 2px;
-      }
-    </style>
   </head>
   <body>
     <!-- HEADER -->
@@ -739,24 +58,77 @@
     </header>
 
     <main>
-      <section>
+      <section class="catalog-container">
+        <div class="container">
+          <div class="extra-section ready-made-solutions-section">
+            <div class="layout-section">
+              <div class="breadcrubs-wrapper">
+                <a href="/index.html">Главная</a>
+                <span>/ Каталог продукции</span>
+              </div>
+              <p class="section-enter-header">№ 06 - Каталог</p>
+              <div class="section-enter-description">
+                <div class="section-enter-left">
+                  <h1>
+                    Каталог <br />
+                    продукции.
+                  </h1>
+                </div>
+
+                <div class="section-enter-right">
+                  <p>
+                    128 SKU оптического кабель для телекома, энергетики,
+                    дата-центров и промышленности. Артикулы под заказ -
+                    производство за 10-14 дней.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="rms-item-wrapper">
+              <div class="item">
+                <h6>Total SKU</h6>
+                <div class="content">
+                  <p>120</p>
+                  <span>артикулов в наличии</span>
+                </div>
+              </div>
+
+              <div class="item">
+                <h6>Categories</h6>
+                <div class="content">
+                  <p>12</p>
+                  <span>категорий продукции</span>
+                </div>
+              </div>
+
+              <div class="item">
+                <h6>Lead time</h6>
+                <div class="content">
+                  <p>10-14</p>
+                  <span>дней под заказ</span>
+                </div>
+              </div>
+
+              <div class="item">
+                <h6>In stock</h6>
+                <div class="content">
+                  <p>87</p>
+                  <span>артикулов на складе</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="catalog-filter-wrapper">
         <div class="container">
           <div class="page">
             <!-- Search bar -->
             <header class="searchbar">
               <div class="searchbar__field">
-                <svg
-                  class="icon"
-                  width="18"
-                  height="18"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                >
-                  <circle cx="11" cy="11" r="7" />
-                  <line x1="21" y1="21" x2="16.65" y2="16.65" />
-                </svg>
+                <img src="/assets/images/home/search.svg" alt="img" />
                 <input
                   type="text"
                   placeholder="Найти кабель — SKU, модель, область применения, стандарт..."
@@ -876,243 +248,301 @@
               </aside>
 
               <!-- Product grid -->
-              <main class="catalog">
+              <div class="catalog">
                 <div class="catalog__toolbar">
                   <div class="result-count">
-                    Найдено <strong>1247</strong> товаров
-                  </div>
-                  <div class="toolbar__chips">
-                    <button class="chip chip--active">По релевантности</button>
-                    <button class="chip">Цена</button>
-                    <button class="chip">— от дешевых</button>
-                    <button class="chip">от Стандарт</button>
+                    Найдено <span>1247</span> товаров
                   </div>
                   <div class="view-toggle">
                     <button
                       class="view-btn view-btn--active"
                       aria-label="Сетка"
                     >
-                      <svg
-                        width="16"
-                        height="16"
-                        viewBox="0 0 24 24"
-                        fill="currentColor"
-                      >
-                        <rect x="3" y="3" width="7" height="7" />
-                        <rect x="14" y="3" width="7" height="7" />
-                        <rect x="3" y="14" width="7" height="7" />
-                        <rect x="14" y="14" width="7" height="7" />
-                      </svg>
+                      <img src="/assets/images/home/chip-btn.svg" alt="image" />
                     </button>
                     <button class="view-btn" aria-label="Список">
-                      <svg
-                        width="16"
-                        height="16"
-                        viewBox="0 0 24 24"
-                        fill="currentColor"
-                      >
-                        <rect x="3" y="4" width="18" height="3" />
-                        <rect x="3" y="11" width="18" height="3" />
-                        <rect x="3" y="18" width="18" height="3" />
-                      </svg>
+                      <img
+                        src="/assets/images/home/chip-btn-2.svg"
+                        alt="image"
+                      />
                     </button>
                   </div>
                 </div>
 
                 <div class="grid">
                   <!-- Card 1 -->
-                  <article class="card">
+                  <div class="card">
                     <div class="card__media">
                       <span class="card__sku">SKU-3X.301</span>
                       <span class="card__badge card__badge--new">NEW</span>
-                      <div class="spool spool--bundle">
-                        <div class="bundle"></div>
+                      <div class="card__image">
+                        <img
+                          src="/assets/images/home/catalog/cat-1.png"
+                          alt="image"
+                        />
                       </div>
                     </div>
-                    <h3 class="card__title">Aerial Cable ADSS</h3>
-                    <p class="card__desc">
-                      Самонесущий, без металла, пролёт до 100 м
-                    </p>
-                    <div class="card__specs">
-                      <span>от 24 вол.</span><span>11,4 мм</span>
+                    <div class="card-content">
+                      <h3 class="card__title">Aerial Cable ADSS</h3>
+                      <p class="card__desc">
+                        Самонесущий, без металла, пролёт до 100 м
+                      </p>
+                      <div class="card__specs">
+                        <p>
+                          <span>G.652.D</span> · волокно<span> 12.4 мм </span>·
+                          ⌀
+                        </p>
+                      </div>
+                      <div class="card__footer">
+                        <a href="#" class="btn-outline">
+                          Подробнее →
+                          <span class="card__price">от 1 980 ₸/км</span>
+                        </a>
+                      </div>
                     </div>
-                    <div class="card__footer">
-                      <button class="btn-outline">Подробнее →</button>
-                      <span class="card__price">от 1 980 ₸/км</span>
-                    </div>
-                  </article>
+                  </div>
 
                   <!-- Card 2 -->
-                  <article class="card">
+                  <div class="card">
                     <div class="card__media">
                       <span class="card__sku">SKU-3X.302</span>
                       <span class="card__badge card__badge--stock"
                         >В наличии</span
                       >
-                      <div class="spool"><div class="spool__hub"></div></div>
+                      <div class="card__image">
+                        <img
+                          src="/assets/images/home/catalog/cat-3.png"
+                          alt="image"
+                        />
+                      </div>
                     </div>
-                    <h3 class="card__title">ADSS Aramid</h3>
-                    <p class="card__desc">Усиленный арамид, FTTH / FTTx сети</p>
-                    <div class="card__specs">
-                      <span>4 — 48 вол.</span><span>10,7 мм</span>
+                    <div class="card-content">
+                      <h3 class="card__title">ADSS Aramid</h3>
+                      <p class="card__desc">
+                        Усиленный арамид, FTTH / FTTx сети
+                      </p>
+                      <div class="card__specs">
+                        <p>
+                          <span>G.652.D</span> · волокно<span> 12.4 мм </span>·
+                          ⌀
+                        </p>
+                      </div>
+                      <div class="card__footer">
+                        <a href="#" class="btn-outline">
+                          Подробнее →
+                          <span class="card__price">от 4 290 ₸/км</span>
+                        </a>
+                      </div>
                     </div>
-                    <div class="card__footer">
-                      <button class="btn-outline">Подробнее →</button>
-                      <span class="card__price">от 4 290 ₸/км</span>
-                    </div>
-                  </article>
+                  </div>
 
                   <!-- Card 3 -->
-                  <article class="card">
+                  <div class="card">
                     <div class="card__media">
                       <span class="card__sku">SKU-3X.303</span>
-                      <div class="spool spool--bundle">
-                        <div class="bundle bundle--connector"></div>
+                      <div class="card__image">
+                        <img
+                          src="/assets/images/home/catalog/cat-4.png"
+                          alt="image"
+                        />
                       </div>
                     </div>
-                    <h3 class="card__title">Drop cable Universal</h3>
-                    <p class="card__desc">Однородн. ОВ FTTH, без коннектора</p>
-                    <div class="card__specs">
-                      <span>1 — 4 вол.</span><span>3,0 мм</span>
+                    <div class="card-content">
+                      <h3 class="card__title">Drop cable Universal</h3>
+                      <p class="card__desc">
+                        Однородн. ОВ FTTH, без коннектора
+                      </p>
+                      <div class="card__specs">
+                        <p>
+                          <span>G.652.D</span> · волокно<span> 12.4 мм </span>·
+                          ⌀
+                        </p>
+                      </div>
+                      <div class="card__footer">
+                        <a href="#" class="btn-outline">
+                          Подробнее →
+                          <span class="card__price">от 1 290 ₸/км</span>
+                        </a>
+                      </div>
                     </div>
-                    <div class="card__footer">
-                      <button class="btn-outline">Подробнее →</button>
-                      <span class="card__price">от 1 290 ₸/км</span>
-                    </div>
-                  </article>
+                  </div>
 
                   <!-- Card 4 -->
-                  <article class="card">
+                  <div class="card">
                     <div class="card__media">
                       <span class="card__sku">SKU-3X.304</span>
-                      <div class="spool spool--armored">
-                        <div class="cable-line"></div>
+                      <div class="card__image">
+                        <img
+                          src="/assets/images/home/catalog/cat-2.png"
+                          alt="image"
+                        />
                       </div>
                     </div>
-                    <h3 class="card__title">Многомодульный грунтовый</h3>
-                    <p class="card__desc">Бронированный, прямая закладка</p>
-                    <div class="card__specs">
-                      <span>96 вол.</span><span>13,4 мм</span>
+                    <div class="card-content">
+                      <h3 class="card__title">Многомодульный грунтовый</h3>
+                      <p class="card__desc">Бронированный, прямая закладка</p>
+                      <div class="card__specs">
+                        <p>
+                          <span>G.652.D</span> · волокно<span> 12.4 мм </span>·
+                          ⌀
+                        </p>
+                      </div>
+                      <div class="card__footer">
+                        <a href="#" class="btn-outline">
+                          Подробнее →
+                          <span class="card__price">от 730 ₸/км</span>
+                        </a>
+                      </div>
                     </div>
-                    <div class="card__footer">
-                      <button class="btn-outline">Подробнее →</button>
-                      <span class="card__price">от 730 ₸/км</span>
-                    </div>
-                  </article>
+                  </div>
 
                   <!-- Card 5 -->
-                  <article class="card">
+                  <div class="card">
                     <div class="card__media">
                       <span class="card__sku">SKU-3X.305</span>
-                      <div class="spool"><div class="spool__hub"></div></div>
+                      <div class="card__image">
+                        <img
+                          src="/assets/images/home/catalog/cat-5.png"
+                          alt="image"
+                        />
+                      </div>
                     </div>
-                    <h3 class="card__title">ADSS Long-span</h3>
-                    <p class="card__desc">Дальний пролёт, повыш. прочность</p>
-                    <div class="card__specs">
-                      <span>12 — 96 вол.</span><span>13,2 мм</span>
+                    <div class="card-content">
+                      <h3 class="card__title">ADSS Long-span</h3>
+                      <p class="card__desc">Дальний пролёт, повыш. прочность</p>
+                      <div class="card__specs">
+                        <p>
+                          <span>G.652.D</span> · волокно<span> 12.4 мм </span>·
+                          ⌀
+                        </p>
+                      </div>
+                      <div class="card__footer">
+                        <a href="#" class="btn-outline">
+                          Подробнее →
+                          <span class="card__price">от 980 ₸/км</span>
+                        </a>
+                      </div>
                     </div>
-                    <div class="card__footer">
-                      <button class="btn-outline">Подробнее →</button>
-                      <span class="card__price">от 980 ₸/км</span>
-                    </div>
-                  </article>
+                  </div>
 
                   <!-- Card 6 -->
-                  <article class="card">
+                  <div class="card">
                     <div class="card__media">
                       <span class="card__sku">SKU-3X.306</span>
-                      <div class="spool spool--bundle">
-                        <div
-                          class="bundle bundle--connector bundle--green"
-                        ></div>
+                      <div class="card__image">
+                        <img
+                          src="/assets/images/home/catalog/cat-6.png"
+                          alt="image"
+                        />
                       </div>
                     </div>
-                    <h3 class="card__title">Indoor Riser</h3>
-                    <p class="card__desc">Внутр. прокладка, низкий дым</p>
-                    <div class="card__specs">
-                      <span>4 вол.</span><span>4,1 мм</span>
+                    <div class="card-content">
+                      <h3 class="card__title">Indoor Riser</h3>
+                      <p class="card__desc">Внутр. прокладка, низкий дым</p>
+                      <div class="card__specs">
+                        <p>
+                          <span>G.652.D</span> · волокно<span> 12.4 мм </span>·
+                          ⌀
+                        </p>
+                      </div>
+                      <div class="card__footer">
+                        <a href="#" class="btn-outline">
+                          Подробнее →
+                          <span class="card__price">от 1 580 ₸/км</span>
+                        </a>
+                      </div>
                     </div>
-                    <div class="card__footer">
-                      <button class="btn-outline">Подробнее →</button>
-                      <span class="card__price">от 1 580 ₸/км</span>
-                    </div>
-                  </article>
+                  </div>
 
                   <!-- Card 7 -->
-                  <article class="card">
+                  <div class="card">
                     <div class="card__media">
                       <span class="card__sku">SKU-3X.307</span>
-                      <div class="spool spool--bundle">
-                        <div class="bundle"></div>
+                      <div class="card__image">
+                        <img
+                          src="/assets/images/home/catalog/cat-7.png"
+                          alt="image"
+                        />
                       </div>
                     </div>
-                    <h3 class="card__title">Воздушный многомодульный OPGW</h3>
-                    <p class="card__desc">Грозотрос, оптика в линиях ЛЭП</p>
-                    <div class="card__specs">
-                      <span>24 вол.</span><span>11,5 мм</span>
+                    <div class="card-content">
+                      <h3 class="card__title">Воздушный многомодульный OPGW</h3>
+                      <p class="card__desc">Грозотрос, оптика в линиях ЛЭП</p>
+                      <div class="card__specs">
+                        <p>
+                          <span>G.652.D</span> · волокно<span> 12.4 мм </span>·
+                          ⌀
+                        </p>
+                      </div>
+                      <div class="card__footer">
+                        <a href="#" class="btn-outline">
+                          Подробнее →
+                          <span class="card__price">от 3 750 ₸/км</span>
+                        </a>
+                      </div>
                     </div>
-                    <div class="card__footer">
-                      <button class="btn-outline">Подробнее →</button>
-                      <span class="card__price">от 3 750 ₸/км</span>
-                    </div>
-                  </article>
+                  </div>
 
                   <!-- Card 8 -->
-                  <article class="card">
+                  <div class="card">
                     <div class="card__media">
                       <span class="card__sku">SKU-3X.308</span>
-                      <div class="spool">
-                        <div class="cable-line cable-line--green"></div>
+                      <div class="card__image">
+                        <img
+                          src="/assets/images/home/catalog/cat-11.png"
+                          alt="image"
+                        />
                       </div>
                     </div>
-                    <h3 class="card__title">Underground Armored</h3>
-                    <p class="card__desc">Бронь стальная гофроленты</p>
-                    <div class="card__specs">
-                      <span>48 вол.</span><span>12,4 мм</span>
+                    <div class="card-content">
+                      <h3 class="card__title">Underground Armored</h3>
+                      <p class="card__desc">Бронь стальная гофроленты</p>
+                      <div class="card__specs">
+                        <p>
+                          <span>G.652.D</span> · волокно<span> 12.4 мм </span>·
+                          ⌀
+                        </p>
+                      </div>
+                      <div class="card__footer">
+                        <a href="#" class="btn-outline">
+                          Подробнее →
+                          <span class="card__price">от 1 130 ₸/км</span>
+                        </a>
+                      </div>
                     </div>
-                    <div class="card__footer">
-                      <button class="btn-outline">Подробнее →</button>
-                      <span class="card__price">от 1 130 ₸/км</span>
-                    </div>
-                  </article>
+                  </div>
 
                   <!-- Card 9 -->
-                  <article class="card">
+                  <div class="card">
                     <div class="card__media">
                       <span class="card__sku">SKU-3X.309</span>
                       <span class="card__badge card__badge--new">NEW</span>
-                      <div class="spool spool--bundle">
-                        <div class="bundle"></div>
+                      <div class="card__image">
+                        <img
+                          src="/assets/images/home/catalog/cat-9.png"
+                          alt="image"
+                        />
                       </div>
                     </div>
-                    <h3 class="card__title">FTTH Drop</h3>
-                    <p class="card__desc">2 волокна, плоский профиль</p>
-                    <div class="card__specs">
-                      <span>5,07 мм</span><span>2 × 3,0 мм</span>
+                    <div class="card-content">
+                      <h3 class="card__title">FTTH Drop</h3>
+                      <p class="card__desc">2 волокна, плоский профиль</p>
+                      <div class="card__specs">
+                        <p>
+                          <span>G.652.D</span> · волокно<span> 12.4 мм </span>·
+                          ⌀
+                        </p>
+                      </div>
+                      <div class="card__footer">
+                        <a href="#" class="btn-outline">
+                          Подробнее →
+                          <span class="card__price">от 1 290 ₸/км</span>
+                        </a>
+                      </div>
                     </div>
-                    <div class="card__footer">
-                      <button class="btn-outline">Подробнее →</button>
-                      <span class="card__price">от 1 290 ₸/км</span>
-                    </div>
-                  </article>
+                  </div>
                 </div>
-
-                <!-- Pagination -->
-                <nav class="pagination">
-                  <button class="page-btn page-btn--nav" aria-label="Назад">
-                    ‹
-                  </button>
-                  <button class="page-btn page-btn--active">1</button>
-                  <button class="page-btn">2</button>
-                  <button class="page-btn">3</button>
-                  <button class="page-btn">4</button>
-                  <button class="page-btn">5</button>
-                  <span class="page-dots">…</span>
-                  <button class="page-btn page-btn--nav" aria-label="Вперёд">
-                    ›
-                  </button>
-                </nav>
-              </main>
+              </div>
             </div>
           </div>
         </div>
