@@ -9,254 +9,531 @@
     <link rel="stylesheet" href="/assets/css/responsive.css" />
 
     <style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
- 
-:root{
-  --black-color:#1e1e1e;
-  --white-color:#ffffff;
-  --grey-color:#6c6c6c;
-  --milk-color:#e6e5e0;
-  --aqua-color:#00d6d6;
-  --body-color:#fafaf7;
-  --blue-color:#0050f0;
-  --green-color:#00d6d6;
-  --font:'Inter',system-ui,sans-serif;
-}
- 
-body{font-family:var(--font);background:var(--body-color);color:var(--black-color);font-size:14px;line-height:1.5;}
-a{text-decoration:none;color:inherit;}
-ul{list-style:none;}
-button{cursor:pointer;font-family:inherit;}
- 
-/* ── NAV ── */
-.nav{
-  display:flex;align-items:center;justify-content:space-between;
-  padding:0 40px;height:56px;
-  background:var(--white-color);
-  border-bottom:1px solid var(--milk-color);
-  position:sticky;top:0;z-index:100;
-}
-.nav-logo{font-size:15px;font-weight:700;letter-spacing:-.02em;}
-.nav-logo span{color:var(--aqua-color);}
-.nav-links{display:flex;gap:28px;font-size:13px;color:var(--grey-color);}
-.nav-links a:hover{color:var(--black-color);}
-.nav-right{display:flex;align-items:center;gap:16px;}
-.nav-btn{background:var(--aqua-color);color:var(--black-color);font-size:12px;font-weight:700;padding:8px 18px;border:none;border-radius:100px;}
- 
-/* ── BREADCRUMB ── */
-.breadcrumb{padding:14px 40px;font-size:12px;color:var(--grey-color);display:flex;gap:6px;align-items:center;border-bottom:1px solid var(--milk-color);background:var(--white-color);}
-.breadcrumb a{color:var(--grey-color);}
-.breadcrumb a:hover{color:var(--black-color);}
-.breadcrumb span{color:var(--black-color);}
- 
-/* ── HERO / PRODUCT INTRO ── */
-.product-hero{
-  display:grid;grid-template-columns:1fr 1fr;
-  gap:0;
-  background:var(--white-color);
-  border-bottom:1px solid var(--milk-color);
-}
- 
-/* Left: gallery */
-.gallery-col{
-  padding:32px 40px 32px 40px;
-  border-right:1px solid var(--milk-color);
-}
-.gallery-main{
-  width:100%;aspect-ratio:4/3;background:var(--body-color);
-  display:flex;align-items:center;justify-content:center;overflow:hidden;
-  margin-bottom:12px;cursor:zoom-in;
-}
-.gallery-main img{width:100%;height:100%;object-fit:cover;transition:transform .3s;}
-.gallery-main:hover img{transform:scale(1.03);}
-.gallery-thumbs{display:flex;gap:8px;}
-.thumb{
-  width:68px;height:54px;background:var(--body-color);
-  border:2px solid transparent;cursor:pointer;overflow:hidden;flex-shrink:0;
-  display:flex;align-items:center;justify-content:center;
-}
-.thumb.active{border-color:var(--aqua-color);}
-.thumb img{width:100%;height:100%;object-fit:cover;}
- 
-/* Right: info */
-.info-col{
-  padding:32px 40px;
-  display:flex;flex-direction:column;
-  gap:0;
-}
-.info-badge{
-  display:inline-flex;align-items:center;gap:6px;
-  background:rgba(0,214,214,.12);color:var(--aqua-color);
-  font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
-  padding:4px 10px;margin-bottom:16px;width:fit-content;
-}
-.info-badge::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--aqua-color);}
-.info-cat{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--grey-color);margin-bottom:6px;}
-.info-title{font-size:clamp(22px,2.5vw,36px);font-weight:800;letter-spacing:-.03em;line-height:1.1;margin-bottom:12px;}
-.info-desc{font-size:13px;color:var(--grey-color);line-height:1.65;margin-bottom:20px;}
- 
-/* quick specs grid */
-.quick-specs{
-  display:grid;grid-template-columns:1fr 1fr;
-  gap:1px;background:var(--milk-color);border:1px solid var(--milk-color);
-  margin-bottom:20px;
-}
-.qs-item{background:var(--white-color);padding:12px 16px;}
-.qs-label{font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:var(--grey-color);margin-bottom:3px;}
-.qs-value{font-size:14px;font-weight:700;}
- 
-/* variant selector */
-.variant-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px;color:var(--grey-color);}
-.variant-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px;}
-.variant-btn{
-  padding:7px 14px;border:1px solid var(--milk-color);background:var(--white-color);
-  font-size:12px;font-weight:600;color:var(--black-color);
-  transition:.15s;
-}
-.variant-btn:hover{border-color:var(--black-color);}
-.variant-btn.active{border-color:var(--aqua-color);background:rgba(0,214,214,.08);color:var(--black-color);}
- 
-/* price */
-.price-row{display:flex;align-items:baseline;gap:10px;margin-bottom:20px;}
-.price-main{font-size:clamp(24px,3vw,40px);font-weight:900;letter-spacing:-.03em;}
-.price-unit{font-size:13px;color:var(--grey-color);}
-.price-old{font-size:16px;color:var(--grey-color);text-decoration:line-through;}
- 
-/* actions */
-.action-row{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:20px;}
-.btn-primary{
-  flex:1;min-width:140px;
-  background:var(--aqua-color);border:none;
-  padding:14px 20px;font-size:13px;font-weight:700;color:var(--black-color);
-  text-align:center;
-}
-.btn-primary:hover{background:#00b8b8;}
-.btn-secondary{
-  flex:1;min-width:140px;
-  background:transparent;border:1.5px solid var(--black-color);
-  padding:14px 20px;font-size:13px;font-weight:700;color:var(--black-color);
-  text-align:center;
-}
-.btn-secondary:hover{background:var(--black-color);color:var(--white-color);}
- 
-/* meta tags */
-.meta-tags{display:flex;gap:8px;flex-wrap:wrap;}
-.meta-tag{font-size:11px;color:var(--grey-color);border:1px solid var(--milk-color);padding:4px 10px;}
- 
-/* ── CONTENT BODY ── */
-.content-body{max-width:1280px;margin:0 auto;padding:0 40px 80px;}
- 
-/* section header */
-.sec-head{
-  padding:48px 0 24px;
-  border-bottom:1px solid var(--milk-color);
-  margin-bottom:32px;
-}
-.sec-label{font-size:10px;text-transform:uppercase;letter-spacing:.12em;color:var(--aqua-color);font-weight:700;margin-bottom:6px;}
-.sec-title{font-size:clamp(20px,2.5vw,30px);font-weight:800;letter-spacing:-.03em;}
- 
-/* about cable */
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;}
-.about-text p{font-size:14px;line-height:1.8;color:#333;margin-bottom:14px;}
-.about-links{display:flex;gap:16px;flex-wrap:wrap;margin-top:16px;}
-.about-link{
-  font-size:12px;font-weight:700;color:var(--black-color);
-  border-bottom:2px solid var(--aqua-color);padding-bottom:2px;
-}
-.about-link:hover{color:var(--aqua-color);}
- 
-/* specs table */
-.specs-table{width:100%;border-collapse:collapse;}
-.specs-table tr{border-bottom:1px solid var(--milk-color);}
-.specs-table td{padding:12px 16px;font-size:13px;}
-.specs-table td:first-child{color:var(--grey-color);width:45%;}
-.specs-table td:last-child{font-weight:600;}
-.specs-table tr:nth-child(even) td{background:#f5f5f2;}
- 
-/* cable cross-section */
-.cross-section-grid{display:grid;grid-template-columns:280px 1fr;gap:40px;align-items:center;}
-.cross-img{
-  width:100%;aspect-ratio:1;background:var(--black-color);
-  display:flex;align-items:center;justify-content:center;overflow:hidden;
-}
-.cross-img img{width:100%;height:100%;object-fit:contain;}
-.cross-legend{display:flex;flex-direction:column;gap:12px;}
-.legend-item{display:flex;align-items:center;gap:12px;font-size:13px;}
-.legend-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0;}
- 
-/* applications */
-.apps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--milk-color);}
-.app-item{
-  background:var(--white-color);padding:24px 20px;
-  display:flex;flex-direction:column;gap:10px;
-}
-.app-icon{font-size:24px;line-height:1;}
-.app-title{font-size:13px;font-weight:700;}
-.app-desc{font-size:12px;color:var(--grey-color);line-height:1.5;}
- 
-/* datasheet */
-.datasheet-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--milk-color);}
-.ds-item{
-  background:var(--white-color);padding:20px 24px;
-  display:flex;align-items:center;gap:16px;
-  cursor:pointer;
-}
-.ds-item:hover{background:#f0f0ed;}
-.ds-icon{
-  width:44px;height:44px;background:var(--body-color);
-  display:flex;align-items:center;justify-content:center;flex-shrink:0;
-  font-size:11px;font-weight:700;color:var(--grey-color);
-}
-.ds-info{flex:1;}
-.ds-name{font-size:13px;font-weight:700;margin-bottom:2px;}
-.ds-meta{font-size:11px;color:var(--grey-color);}
-.ds-arrow{font-size:18px;color:var(--grey-color);}
-.ds-item:hover .ds-arrow{color:var(--aqua-color);}
- 
-/* related */
-.related-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--milk-color);border:1px solid var(--milk-color);}
-.rel-card{
-  background:var(--white-color);padding:20px;
-  cursor:pointer;
-}
-.rel-card:hover{box-shadow:0 4px 24px rgba(0,0,0,.08);}
-.rel-img{width:100%;aspect-ratio:4/3;object-fit:cover;background:var(--body-color);margin-bottom:12px;overflow:hidden;}
-.rel-img img{width:100%;height:100%;object-fit:cover;}
-.rel-cat{font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:var(--aqua-color);font-weight:600;margin-bottom:4px;}
-.rel-name{font-size:13px;font-weight:700;margin-bottom:8px;}
-.rel-price{font-size:15px;font-weight:800;}
-.rel-price span{font-size:11px;font-weight:400;color:var(--grey-color);}
- 
-/* ── RESPONSIVE ── */
-@media(max-width:1024px){
-  .product-hero{grid-template-columns:1fr;}
-  .gallery-col{border-right:none;border-bottom:1px solid var(--milk-color);}
-  .about-grid{grid-template-columns:1fr;}
-  .cross-section-grid{grid-template-columns:1fr;grid-template-rows:auto auto;}
-  .cross-img{max-width:280px;margin:0 auto;}
-  .apps-grid{grid-template-columns:repeat(2,1fr);}
-  .datasheet-grid{grid-template-columns:1fr 1fr;}
-  .related-grid{grid-template-columns:repeat(2,1fr);}
-}
-@media(max-width:768px){
-  .nav{padding:0 16px;}
-  .nav-links{display:none;}
-  .breadcrumb{padding:10px 16px;}
-  .gallery-col,.info-col{padding:20px 16px;}
-  .content-body{padding:0 16px 60px;}
-  .quick-specs{grid-template-columns:1fr 1fr;}
-  .apps-grid{grid-template-columns:1fr 1fr;}
-  .datasheet-grid{grid-template-columns:1fr;}
-  .related-grid{grid-template-columns:1fr 1fr;}
-}
-@media(max-width:480px){
-  .quick-specs{grid-template-columns:1fr;}
-  .apps-grid{grid-template-columns:1fr;}
-  .related-grid{grid-template-columns:1fr;}
-  .info-title{font-size:24px;}
-  .price-main{font-size:28px;}
-}
-</style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      :root {
+        --black-color: #1e1e1e;
+        --white-color: #ffffff;
+        --grey-color: #6c6c6c;
+        --milk-color: #e6e5e0;
+        --aqua-color: #00d6d6;
+        --body-color: #fafaf7;
+        --blue-color: #0050f0;
+        --green-color: #00d6d6;
+        --font: "Inter", system-ui, sans-serif;
+      }
+
+      body {
+        font-family: var(--font);
+        background: var(--body-color);
+        color: var(--black-color);
+        font-size: 14px;
+        line-height: 1.5;
+      }
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+      ul {
+        list-style: none;
+      }
+      button {
+        cursor: pointer;
+        font-family: inherit;
+      }
+
+      /* ── HERO / PRODUCT INTRO ── */
+      /* .product-hero {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0;
+        background: var(--white-color);
+        border-bottom: 1px solid var(--milk-color);
+      } */
+
+      /* Left: gallery */
+      /* .gallery-col {
+        border-right: 1px solid var(--milk-color);
+      } */
+      /* .gallery-main {
+        width: 100%;
+        aspect-ratio: 4/3;
+        background: var(--body-color);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        margin-bottom: 12px;
+        cursor: zoom-in;
+      } */
+      /* .gallery-main img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s;
+      }
+      .gallery-main:hover img {
+        transform: scale(1.03);
+      } */
+      /* .gallery-thumbs {
+        display: flex;
+        gap: 8px;
+      } */
+      /* .thumb {
+        width: 68px;
+        height: 54px;
+        background: var(--body-color);
+        border: 2px solid transparent;
+        cursor: pointer;
+        overflow: hidden;
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      } */
+      /* .thumb.active {
+        border-color: var(--aqua-color);
+      } */
+      /* .thumb img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      } */
+
+      /* Right: info */
+      /* .info-col {
+        padding: 32px 40px;
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+      } */
+      /* .info-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        background: rgba(0, 214, 214, 0.12);
+        color: var(--aqua-color);
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        padding: 4px 10px;
+        margin-bottom: 16px;
+        width: fit-content;
+      } */
+      /* .info-badge::before {
+        content: "";
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--aqua-color);
+      } */
+      /* .info-cat {
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--grey-color);
+        margin-bottom: 6px;
+      } */
+      /* .info-title {
+        font-size: clamp(22px, 2.5vw, 36px);
+        font-weight: 800;
+        letter-spacing: -0.03em;
+        line-height: 1.1;
+        margin-bottom: 12px;
+      } */
+      /* .info-desc {
+        font-size: 13px;
+        color: var(--grey-color);
+        line-height: 1.65;
+        margin-bottom: 20px;
+      } */
+
+      /* quick specs grid */
+      /* .quick-specs {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1px;
+        background: var(--milk-color);
+        border: 1px solid var(--milk-color);
+        margin-bottom: 20px;
+      } */
+      /* .qs-item {
+        background: var(--white-color);
+        padding: 12px 16px;
+      } */
+      /* .qs-label {
+        font-size: 10px;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--grey-color);
+        margin-bottom: 3px;
+      } */
+      /* .qs-value {
+        font-size: 14px;
+        font-weight: 700;
+      } */
+
+      /* variant selector */
+      /* .variant-label {
+        font-size: 11px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        margin-bottom: 8px;
+        color: var(--grey-color);
+      }
+      .variant-row {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+        margin-bottom: 20px;
+      }
+      .variant-btn {
+        padding: 7px 14px;
+        border: 1px solid var(--milk-color);
+        background: var(--white-color);
+        font-size: 12px;
+        font-weight: 600;
+        color: var(--black-color);
+        transition: 0.15s;
+      }
+      .variant-btn:hover {
+        border-color: var(--black-color);
+      }
+      .variant-btn.active {
+        border-color: var(--aqua-color);
+        background: rgba(0, 214, 214, 0.08);
+        color: var(--black-color);
+      } */
+
+      /* price */
+      /* .price-row {
+        display: flex;
+        align-items: baseline;
+        gap: 10px;
+        margin-bottom: 20px;
+      }
+      .price-main {
+        font-size: clamp(24px, 3vw, 40px);
+        font-weight: 900;
+        letter-spacing: -0.03em;
+      }
+      .price-unit {
+        font-size: 13px;
+        color: var(--grey-color);
+      }
+      .price-old {
+        font-size: 16px;
+        color: var(--grey-color);
+        text-decoration: line-through;
+      } */
+
+      /* actions */
+      /* .action-row {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin-bottom: 20px;
+      }
+      .btn-primary {
+        flex: 1;
+        min-width: 140px;
+        background: var(--aqua-color);
+        border: none;
+        padding: 14px 20px;
+        font-size: 13px;
+        font-weight: 700;
+        color: var(--black-color);
+        text-align: center;
+      }
+      .btn-primary:hover {
+        background: #00b8b8;
+      }
+      .btn-secondary {
+        flex: 1;
+        min-width: 140px;
+        background: transparent;
+        border: 1.5px solid var(--black-color);
+        padding: 14px 20px;
+        font-size: 13px;
+        font-weight: 700;
+        color: var(--black-color);
+        text-align: center;
+      }
+      .btn-secondary:hover {
+        background: var(--black-color);
+        color: var(--white-color);
+      } */
+
+      /* meta tags */
+      .meta-tags {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+      .meta-tag {
+        font-size: 11px;
+        color: var(--grey-color);
+        border: 1px solid var(--milk-color);
+        padding: 4px 10px;
+      }
+
+      /* ── CONTENT BODY ── */
+      .content-body {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 0 40px 80px;
+      }
+
+      /* section header */
+      .sec-head {
+        padding: 48px 0 24px;
+        border-bottom: 1px solid var(--milk-color);
+        margin-bottom: 32px;
+      }
+      .sec-label {
+        font-size: 10px;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: var(--aqua-color);
+        font-weight: 700;
+        margin-bottom: 6px;
+      }
+      .sec-title {
+        font-size: clamp(20px, 2.5vw, 30px);
+        font-weight: 800;
+        letter-spacing: -0.03em;
+      }
+
+      /* about cable */
+      .about-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 48px;
+        align-items: start;
+      }
+      .about-text p {
+        font-size: 14px;
+        line-height: 1.8;
+        color: #333;
+        margin-bottom: 14px;
+      }
+      .about-links {
+        display: flex;
+        gap: 16px;
+        flex-wrap: wrap;
+        margin-top: 16px;
+      }
+      .about-link {
+        font-size: 12px;
+        font-weight: 700;
+        color: var(--black-color);
+        border-bottom: 2px solid var(--aqua-color);
+        padding-bottom: 2px;
+      }
+      .about-link:hover {
+        color: var(--aqua-color);
+      }
+
+      /* specs table */
+      .specs-table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      .specs-table tr {
+        border-bottom: 1px solid var(--milk-color);
+      }
+      .specs-table td {
+        padding: 12px 16px;
+        font-size: 13px;
+      }
+      .specs-table td:first-child {
+        color: var(--grey-color);
+        width: 45%;
+      }
+      .specs-table td:last-child {
+        font-weight: 600;
+      }
+      .specs-table tr:nth-child(even) td {
+        background: #f5f5f2;
+      }
+
+      /* cable cross-section */
+      .cross-section-grid {
+        display: grid;
+        grid-template-columns: 280px 1fr;
+        gap: 40px;
+        align-items: center;
+      }
+      .cross-img {
+        width: 100%;
+        aspect-ratio: 1;
+        background: var(--black-color);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+      }
+      .cross-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+      .cross-legend {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+      .legend-item {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-size: 13px;
+      }
+      .legend-dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        flex-shrink: 0;
+      }
+
+      /* applications */
+      .apps-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1px;
+        background: var(--milk-color);
+      }
+      .app-item {
+        background: var(--white-color);
+        padding: 24px 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .app-icon {
+        font-size: 24px;
+        line-height: 1;
+      }
+      .app-title {
+        font-size: 13px;
+        font-weight: 700;
+      }
+      .app-desc {
+        font-size: 12px;
+        color: var(--grey-color);
+        line-height: 1.5;
+      }
+
+      /* datasheet */
+      .datasheet-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1px;
+        background: var(--milk-color);
+      }
+      .ds-item {
+        background: var(--white-color);
+        padding: 20px 24px;
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        cursor: pointer;
+      }
+      .ds-item:hover {
+        background: #f0f0ed;
+      }
+      .ds-icon {
+        width: 44px;
+        height: 44px;
+        background: var(--body-color);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        font-size: 11px;
+        font-weight: 700;
+        color: var(--grey-color);
+      }
+      .ds-info {
+        flex: 1;
+      }
+      .ds-name {
+        font-size: 13px;
+        font-weight: 700;
+        margin-bottom: 2px;
+      }
+      .ds-meta {
+        font-size: 11px;
+        color: var(--grey-color);
+      }
+      .ds-arrow {
+        font-size: 18px;
+        color: var(--grey-color);
+      }
+      .ds-item:hover .ds-arrow {
+        color: var(--aqua-color);
+      }
+
+      /* related */
+      .related-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1px;
+        background: var(--milk-color);
+        border: 1px solid var(--milk-color);
+      }
+      .rel-card {
+        background: var(--white-color);
+        padding: 20px;
+        cursor: pointer;
+      }
+      .rel-card:hover {
+        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+      }
+      .rel-img {
+        width: 100%;
+        aspect-ratio: 4/3;
+        object-fit: cover;
+        background: var(--body-color);
+        margin-bottom: 12px;
+        overflow: hidden;
+      }
+      .rel-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .rel-cat {
+        font-size: 10px;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--aqua-color);
+        font-weight: 600;
+        margin-bottom: 4px;
+      }
+      .rel-name {
+        font-size: 13px;
+        font-weight: 700;
+        margin-bottom: 8px;
+      }
+      .rel-price {
+        font-size: 15px;
+        font-weight: 800;
+      }
+      .rel-price span {
+        font-size: 11px;
+        font-weight: 400;
+        color: var(--grey-color);
+      }
+    </style>
   </head>
   <body>
     <!-- HEADER -->
@@ -308,553 +585,540 @@ button{cursor:pointer;font-family:inherit;}
     </header>
 
     <main>
-      <section>
+      <section class="catalog-detail-wrapper">
         <div class="container">
-          <!-- BREADCRUMB -->
-          <div class="breadcrumb">
-            <a href="#">Главная</a>
-            <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-              <path
-                d="M4.5 3l3 3-3 3"
-                stroke="#6c6c6c"
-                stroke-width="1.2"
-                stroke-linecap="round"
-              />
-            </svg>
-            <a href="catalog.html">Каталог</a>
-            <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-              <path
-                d="M4.5 3l3 3-3 3"
-                stroke="#6c6c6c"
-                stroke-width="1.2"
-                stroke-linecap="round"
-              />
-            </svg>
-            <a href="#">Aerial Cable</a>
-            <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-              <path
-                d="M4.5 3l3 3-3 3"
-                stroke="#6c6c6c"
-                stroke-width="1.2"
-                stroke-linecap="round"
-              />
-            </svg>
-            <span>Aerial Cable ADSS</span>
-          </div>
-
-          <!-- HERO -->
-          <div class="product-hero">
-            <!-- Gallery -->
-            <div class="gallery-col">
-              <div class="gallery-main" id="galleryMain">
-                <img
-                  id="mainImg"
-                  src="/assets/images/home/catalog/cat-1.png"
-                  alt="Aerial Cable ADSS"
-                />
+          <div class="extra-section ready-made-solutions-section">
+            <div class="layout-section">
+              <div class="breadcrubs-wrapper">
+                <a href="/index.html">Главная</a>
+                <a href="/index.html">/ Каталог</a>
+                <span>/ Aerial Cable ADSS • OM-024</span>
               </div>
-              <div class="gallery-thumbs">
-                <div
-                  class="thumb active"
-                  onclick="
-                    setThumb(
-                      this,
-                      '/assets/images/home/catalog/cat-1.png',
-                    )
-                  "
-                >
+            </div>
+
+            <!-- HERO -->
+            <div class="product-hero">
+              <!-- Gallery -->
+              <div class="gallery-col">
+                <div class="gallery-main" id="galleryMain">
                   <img
+                    id="mainImg"
                     src="/assets/images/home/catalog/cat-1.png"
-                    alt=""
+                    alt="Aerial Cable ADSS"
                   />
                 </div>
-                <div
-                  class="thumb"
-                  onclick="
-                    setThumb(
-                      this,
-                      '/assets/images/home/catalog/cat-3.png',
-                    )
-                  "
-                >
-                  <img
-                    src="/assets/images/home/catalog/cat-3.png"
-                    alt=""
-                  />
-                </div>
-                <div
-                  class="thumb"
-                  onclick="
-                    setThumb(
-                      this,
-                      '/assets/images/home/catalog/cat-4.png',
-                    )
-                  "
-                >
-                  <img
-                    src="/assets/images/home/catalog/cat-4.png"
-                    alt=""
-                  />
-                </div>
-                <div
-                  class="thumb"
-                  onclick="
-                    setThumb(
-                      this,
-                      '/assets/images/home/catalog/cat-5.png',
-                    )
-                  "
-                >
-                  <img
-                    src="/assets/images/home/catalog/cat-5.png"
-                    alt=""
-                  />
-                </div>
-              </div>
-            </div>
-
-            <!-- Info -->
-            <div class="info-col">
-              <div class="info-badge">В наличии</div>
-              <div class="info-cat">Aerial Cable · ADSS</div>
-              <h1 class="info-title">Aerial Cable ADSS</h1>
-              <p class="info-desc">
-                Самонесущий диэлектрический оптический кабель для воздушной
-                подвески на опорах ЛЭП и телефонной связи. Не требует
-                заземления. Устойчив к гололёду и ветровым нагрузкам до 60 м/с.
-              </p>
-
-              <div class="quick-specs">
-                <div class="qs-item">
-                  <div class="qs-label">Волокна</div>
-                  <div class="qs-value">2 · 4 · 8 · 24 · 48</div>
-                </div>
-                <div class="qs-item">
-                  <div class="qs-label">Стандарт</div>
-                  <div class="qs-value">ГОСТ Р 52266</div>
-                </div>
-                <div class="qs-item">
-                  <div class="qs-label">Тип волокна</div>
-                  <div class="qs-value">G.652D</div>
-                </div>
-                <div class="qs-item">
-                  <div class="qs-label">Пролёт max</div>
-                  <div class="qs-value">200 м</div>
-                </div>
-                <div class="qs-item">
-                  <div class="qs-label">Диапазон t°</div>
-                  <div class="qs-value">-60 … +70°C</div>
-                </div>
-                <div class="qs-item">
-                  <div class="qs-label">Гарантия</div>
-                  <div class="qs-value">25 лет</div>
-                </div>
-              </div>
-
-              <div class="variant-label">Количество волокон</div>
-              <div class="variant-row" id="variantRow">
-                <button class="variant-btn active" data-price="2800">2</button>
-                <button class="variant-btn" data-price="3400">4</button>
-                <button class="variant-btn" data-price="3900">8</button>
-                <button class="variant-btn" data-price="4460">24</button>
-                <button class="variant-btn" data-price="6200">48</button>
-                <button class="variant-btn" data-price="8100">72</button>
-                <button class="variant-btn" data-price="11200">96</button>
-              </div>
-
-              <div class="price-row">
-                <span class="price-main" id="priceDisplay">2 800</span>
-                <span class="price-unit">руб/км</span>
-              </div>
-
-              <div class="action-row">
-                <button class="btn-primary">Запросить КП</button>
-                <button class="btn-secondary">Скачать datasheet</button>
-              </div>
-
-              <div class="meta-tags">
-                <span class="meta-tag">ADSS</span>
-                <span class="meta-tag">G.652D</span>
-                <span class="meta-tag">Воздушная прокладка</span>
-                <span class="meta-tag">ЛЭП</span>
-                <span class="meta-tag">Диэлектрик</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- CONTENT -->
-          <div class="content-body">
-            <!-- О кабеле -->
-            <div class="sec-head">
-              <div class="sec-label">Описание</div>
-              <h2 class="sec-title">О кабеле.</h2>
-            </div>
-            <div class="about-grid">
-              <div class="about-text">
-                <p>
-                  Кабель ADSS (All-Dielectric Self-Supporting) предназначен для
-                  подвески на опорах воздушных линий электропередачи напряжением
-                  до 500 кВ, а также на опорах городских телефонных сетей и
-                  мачтах освещения без сооружения дополнительной несущей
-                  проволоки.
-                </p>
-                <p>
-                  Конструкция кабеля включает центральный силовой элемент из
-                  стекловолокна (FRP), оптические модули в гелевом заполнении,
-                  внутреннюю оболочку из полиэтилена повышенной плотности и
-                  внешнюю оболочку из материала AT (Anti-Tracking), устойчивого
-                  к трекингу и дуге.
-                </p>
-                <p>
-                  Кабель соответствует требованиям ГОСТ Р 52266, IEC 60794-1,
-                  IEEE 1222 и может применяться на ЛЭП напряжением до 500 кВ без
-                  специальных мер защиты.
-                </p>
-                <div class="about-links">
-                  <a href="#" class="about-link">↗ Технические условия (PDF)</a>
-                  <a href="#" class="about-link">↗ Область применения</a>
-                  <a href="#" class="about-link">↗ Инструкция по монтажу</a>
-                </div>
-              </div>
-              <div>
-                <table class="specs-table">
-                  <tr>
-                    <td>Тип конструкции</td>
-                    <td>Stranded Loose Tube</td>
-                  </tr>
-                  <tr>
-                    <td>Центральный элемент</td>
-                    <td>FRP стекловолокно</td>
-                  </tr>
-                  <tr>
-                    <td>Защитные нити</td>
-                    <td>Aramid Yarn (кевлар)</td>
-                  </tr>
-                  <tr>
-                    <td>Внутренняя оболочка</td>
-                    <td>HDPE (полиэтилен)</td>
-                  </tr>
-                  <tr>
-                    <td>Внешняя оболочка</td>
-                    <td>AT-HDPE (трекингостойкая)</td>
-                  </tr>
-                  <tr>
-                    <td>Заполнение модулей</td>
-                    <td>Тиксотропный гель</td>
-                  </tr>
-                  <tr>
-                    <td>Диаметр (24F)</td>
-                    <td>13,2 мм</td>
-                  </tr>
-                  <tr>
-                    <td>Вес (24F)</td>
-                    <td>145 кг/км</td>
-                  </tr>
-                  <tr>
-                    <td>Строительная длина</td>
-                    <td>2 000 / 4 000 м</td>
-                  </tr>
-                  <tr>
-                    <td>Радиус изгиба (min)</td>
-                    <td>20 × D (монтаж)</td>
-                  </tr>
-                </table>
-              </div>
-            </div>
-
-            <!-- Технические параметры -->
-            <div class="sec-head">
-              <div class="sec-label">Характеристики</div>
-              <h2 class="sec-title">Технические параметры.</h2>
-            </div>
-            <table class="specs-table" style="margin-bottom: 0">
-              <tr>
-                <td>Разрывная нагрузка (RTS)</td>
-                <td>15–45 кН (зависит от исполнения)</td>
-              </tr>
-              <tr>
-                <td>Допустимое растягивающее усилие (EDS)</td>
-                <td>≤ 25% RTS</td>
-              </tr>
-              <tr>
-                <td>Ветровая нагрузка (max)</td>
-                <td>60 м/с</td>
-              </tr>
-              <tr>
-                <td>Гололёдная нагрузка</td>
-                <td>до 40 мм радиус</td>
-              </tr>
-              <tr>
-                <td>Затухание (1310 нм, G.652D)</td>
-                <td>≤ 0,36 дБ/км</td>
-              </tr>
-              <tr>
-                <td>Затухание (1550 нм, G.652D)</td>
-                <td>≤ 0,22 дБ/км</td>
-              </tr>
-              <tr>
-                <td>Затухание (1625 нм, G.652D)</td>
-                <td>≤ 0,24 дБ/км</td>
-              </tr>
-              <tr>
-                <td>Дисперсия хроматическая (1310 нм)</td>
-                <td>≤ 3,5 пс/(нм·км)</td>
-              </tr>
-              <tr>
-                <td>Дисперсия хроматическая (1550 нм)</td>
-                <td>≤ 18 пс/(нм·км)</td>
-              </tr>
-              <tr>
-                <td>Диаметр модового поля (1310 нм)</td>
-                <td>9,2 ± 0,4 мкм</td>
-              </tr>
-              <tr>
-                <td>Числовая апертура</td>
-                <td>0,13 ± 0,015</td>
-              </tr>
-              <tr>
-                <td>Рабочая температура</td>
-                <td>-60 … +70°C</td>
-              </tr>
-              <tr>
-                <td>Температура хранения</td>
-                <td>-40 … +70°C</td>
-              </tr>
-              <tr>
-                <td>Срок службы гарантийный</td>
-                <td>25 лет</td>
-              </tr>
-            </table>
-
-            <!-- Слои кабеля -->
-            <div class="sec-head">
-              <div class="sec-label">Конструкция</div>
-              <h2 class="sec-title">Слои кабеля.</h2>
-            </div>
-            <div class="cross-section-grid">
-              <div class="cross-img">
-                <!-- SVG schematic cross-section -->
-                <svg
-                  viewBox="0 0 280 280"
-                  width="280"
-                  height="280"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <!-- outer jacket -->
-                  <circle
-                    cx="140"
-                    cy="140"
-                    r="120"
-                    fill="#1a1a1a"
-                    stroke="#00d6d6"
-                    stroke-width="2"
-                  />
-                  <!-- AT jacket ring -->
-                  <circle cx="140" cy="140" r="110" fill="#111" />
-                  <!-- inner jacket -->
-                  <circle cx="140" cy="140" r="88" fill="#222" />
-                  <!-- aramid layer -->
-                  <circle cx="140" cy="140" r="72" fill="#333" />
-                  <!-- loose tubes (6 around center) -->
-                  <g fill="#00b4b4">
-                    <circle cx="140" cy="80" r="14" />
-                    <circle cx="191" cy="110" r="14" />
-                    <circle cx="191" cy="170" r="14" />
-                    <circle cx="140" cy="200" r="14" />
-                    <circle cx="89" cy="170" r="14" />
-                    <circle cx="89" cy="110" r="14" />
-                  </g>
-                  <!-- fibers in tubes -->
-                  <g fill="#ffffff" opacity=".7">
-                    <circle cx="140" cy="76" r="3" />
-                    <circle cx="144" cy="82" r="3" />
-                    <circle cx="136" cy="82" r="3" />
-                    <circle cx="191" cy="106" r="3" />
-                    <circle cx="195" cy="112" r="3" />
-                    <circle cx="187" cy="112" r="3" />
-                    <circle cx="191" cy="166" r="3" />
-                    <circle cx="195" cy="172" r="3" />
-                    <circle cx="187" cy="172" r="3" />
-                    <circle cx="140" cy="196" r="3" />
-                    <circle cx="144" cy="202" r="3" />
-                    <circle cx="136" cy="202" r="3" />
-                    <circle cx="89" cy="166" r="3" />
-                    <circle cx="93" cy="172" r="3" />
-                    <circle cx="85" cy="172" r="3" />
-                    <circle cx="89" cy="106" r="3" />
-                    <circle cx="93" cy="112" r="3" />
-                    <circle cx="85" cy="112" r="3" />
-                  </g>
-                  <!-- central FRP -->
-                  <circle
-                    cx="140"
-                    cy="140"
-                    r="18"
-                    fill="#00d6d6"
-                    opacity=".9"
-                  />
-                  <circle cx="140" cy="140" r="10" fill="#fafaf7" />
-                  <!-- label -->
-                  <text
-                    x="140"
-                    y="270"
-                    text-anchor="middle"
-                    fill="#6c6c6c"
-                    font-size="11"
-                    font-family="Inter,sans-serif"
-                  >
-                    Aerial Cable ADSS — 24F
-                  </text>
-                </svg>
-              </div>
-              <div class="cross-legend">
-                <div class="legend-item">
+                <div class="gallery-thumbs">
                   <div
-                    class="legend-dot"
-                    style="background: #fafaf7; border: 1px solid #e6e5e0"
-                  ></div>
-                  FRP — центральный силовой элемент из стеклопластика
-                </div>
-                <div class="legend-item">
-                  <div class="legend-dot" style="background: #00d6d6"></div>
-                  Центральная трубка / заполнение гелем
-                </div>
-                <div class="legend-item">
-                  <div class="legend-dot" style="background: #00b4b4"></div>
-                  Оптические модули (6 × 4 волокна G.652D)
-                </div>
-                <div class="legend-item">
-                  <div
-                    class="legend-dot"
-                    style="
-                      background: rgba(255, 255, 255, 0.7);
-                      border: 1px solid #aaa;
+                    class="thumb active"
+                    onclick="
+                      setThumb(this, '/assets/images/home/catalog/cat-1.png')
                     "
-                  ></div>
-                  Оптические волокна G.652D
-                </div>
-                <div class="legend-item">
-                  <div class="legend-dot" style="background: #333"></div>
-                  Нити арамидного волокна (кевлар)
-                </div>
-                <div class="legend-item">
-                  <div class="legend-dot" style="background: #222"></div>
-                  Внутренняя оболочка из HDPE
-                </div>
-                <div class="legend-item">
-                  <div class="legend-dot" style="background: #111"></div>
-                  Внешняя оболочка AT-HDPE (трекингостойкая)
-                </div>
-                <div class="legend-item">
+                  >
+                    <img src="/assets/images/home/catalog/cat-1.png" alt="" />
+                  </div>
                   <div
-                    class="legend-dot"
-                    style="background: #1a1a1a; border: 1px solid #00d6d6"
-                  ></div>
-                  Наружный диаметр — 13,2 мм
+                    class="thumb"
+                    onclick="
+                      setThumb(this, '/assets/images/home/catalog/cat-3.png')
+                    "
+                  >
+                    <img src="/assets/images/home/catalog/cat-3.png" alt="" />
+                  </div>
+                  <div
+                    class="thumb"
+                    onclick="
+                      setThumb(this, '/assets/images/home/catalog/cat-4.png')
+                    "
+                  >
+                    <img src="/assets/images/home/catalog/cat-4.png" alt="" />
+                  </div>
+                  <div
+                    class="thumb"
+                    onclick="
+                      setThumb(this, '/assets/images/home/catalog/cat-5.png')
+                    "
+                  >
+                    <img src="/assets/images/home/catalog/cat-5.png" alt="" />
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <!-- Где используется -->
-            <div class="sec-head">
-              <div class="sec-label">Применение</div>
-              <h2 class="sec-title">Где используется.</h2>
-            </div>
-            <div class="apps-grid">
-              <div class="app-item">
-                <div class="app-icon">⚡</div>
-                <div class="app-title">
-                  Линии электропередачи ВЛ-110/220/500 кВ
+              <!-- Info -->
+              <div class="info-col">
+                <div class="info-badge">
+                  N°024 · Самонесущие (ADSS) · Self-supporting
                 </div>
-                <div class="app-desc">
-                  Подвеска на опорах ЛЭП без дополнительного заземления.
-                  Диэлектрическая конструкция исключает влияние наведённых
-                  токов.
-                </div>
-              </div>
-              <div class="app-item">
-                <div class="app-icon">🏙️</div>
-                <div class="app-title">Городские воздушные сети ГТС</div>
-                <div class="app-desc">
-                  Подвеска между зданиями и на мачтах городского освещения для
-                  магистральных и распределительных сетей связи.
-                </div>
-              </div>
-              <div class="app-item">
-                <div class="app-icon">🌲</div>
-                <div class="app-desc">
-                  Прокладка в лесных и горных районах на анкерных пролётах до
-                  200 м при минимальных капитальных вложениях.
-                </div>
-                <div class="app-title">Труднодоступные районы</div>
-              </div>
-              <div class="app-item">
-                <div class="app-icon">🛤️</div>
-                <div class="app-title">Железнодорожная инфраструктура</div>
-                <div class="app-desc">
-                  Подвеска вдоль контактных сетей железных дорог. Устойчивость к
-                  вибрациям и динамическим нагрузкам.
-                </div>
-              </div>
-            </div>
+                <h1 class="info-title">Aerial Cable ADSS</h1>
+                <p class="info-desc">
+                  Самонесущий диэлектрический кабель для воздушной подвески.
+                  Конструкция с центральным силовым элементом из стеклопластика
+                  и арамидной обмоткой выдерживает пролёт до 200 m без
+                  подвесного троса.
+                </p>
 
-            <!-- Datasheet -->
-            <div class="sec-head">
-              <div class="sec-label">Документация</div>
-              <h2 class="sec-title">Datasheet, сертификаты. 3D.</h2>
-            </div>
-            <div class="datasheet-grid">
-              <div class="ds-item">
-                <div class="ds-icon">PDF</div>
-                <div class="ds-info">
-                  <div class="ds-name">Datasheet ADSS</div>
-                  <div class="ds-meta">Спецификация · PDF · 240 КБ</div>
+                <div class="quick-specs">
+                  <div class="qs-item">
+                    <div class="qs-label">Волокна</div>
+                    <div class="qs-value">2 – 144 <span>шт</span></div>
+                  </div>
+                  <div class="qs-item">
+                    <div class="qs-label">Стандарт</div>
+                    <div class="qs-value">G.652.D <span>sm</span></div>
+                  </div>
+                  <div class="qs-item">
+                    <div class="qs-label">Внешний диаметр</div>
+                    <div class="qs-value">12.4 <span>мм</span></div>
+                  </div>
+                  <div class="qs-item">
+                    <div class="qs-label">Масса</div>
+                    <div class="qs-value">142 <span>кг / км</span></div>
+                  </div>
+                  <div class="qs-item">
+                    <div class="qs-label">Пролёт</div>
+                    <div class="qs-value">до 200 <span>м</span></div>
+                  </div>
+                  <div class="qs-item">
+                    <div class="qs-label">Темп. эксплуатации</div>
+                    <div class="qs-value">−40 … +70 <span>°C</span></div>
+                  </div>
                 </div>
-                <span class="ds-arrow">↗</span>
-              </div>
-              <div class="ds-item">
-                <div class="ds-icon">PDF</div>
-                <div class="ds-info">
-                  <div class="ds-name">Сертификат соответствия</div>
-                  <div class="ds-meta">ГОСТ Р 52266 · PDF · 1,2 МБ</div>
+
+                <div class="price-info-wrapper">
+                  <div class="left-side">
+                    <p>от <span>$ 480</span> / км · без НДС</p>
+                  </div>
+                  <div class="right-side">
+                    <p>На складе · 18 200 m</p>
+                  </div>
                 </div>
-                <span class="ds-arrow">↗</span>
-              </div>
-              <div class="ds-item">
-                <div class="ds-icon">3D</div>
-                <div class="ds-info">
-                  <div class="ds-name">3D модель кабеля</div>
-                  <div class="ds-meta">STP / STEP · 8,4 МБ</div>
+
+                <div class="product-length-wrapper">
+                  <span>Длина</span>
+                  <div class="product-length">
+                    <button>-</button>
+                    <p>2 000</p>
+                    <button>+</button>
+                  </div>
+                  <span>метров</span>
                 </div>
-                <span class="ds-arrow">↗</span>
-              </div>
-              <div class="ds-item">
-                <div class="ds-icon">XLS</div>
-                <div class="ds-info">
-                  <div class="ds-name">Таблица исполнений</div>
-                  <div class="ds-meta">Все модификации · XLSX · 88 КБ</div>
+
+                <div class="price-row">
+                  <a href="#">Получить КП за 1 час</a>
+                  <a href="#">Скачать datasheet</a>
                 </div>
-                <span class="ds-arrow">↗</span>
-              </div>
-              <div class="ds-item">
-                <div class="ds-icon">ZIP</div>
-                <div class="ds-info">
-                  <div class="ds-name">Пакет сертификатов</div>
-                  <div class="ds-meta">ISO, CE, ГОСТ · ZIP · 4,8 МБ</div>
+
+                <div class="action-row">
+                  <div class="item">
+                    <span>Срок производства</span>
+                    <p>10-14 рабочих дней при отсутсвии на складе</p>
+                  </div>
+                  <div class="item">
+                    <span>Отгрузка</span>
+                    <p>Ташкент · Сеул · доставка по СНГ и ЦА</p>
+                  </div>
+                  <div class="item">
+                    <span>Гарантия</span>
+                    <p>24 месяца · OTDR-тест каждой катушки</p>
+                  </div>
                 </div>
-                <span class="ds-arrow">↗</span>
-              </div>
-              <div class="ds-item">
-                <div class="ds-icon">DOC</div>
-                <div class="ds-info">
-                  <div class="ds-name">Инструкция по монтажу</div>
-                  <div class="ds-meta">Шеф-монтаж · PDF · 3,1 МБ</div>
-                </div>
-                <span class="ds-arrow">↗</span>
               </div>
             </div>
           </div>
         </div>
+
+        <section class="cd-menu-wrapper">
+          <div class="container">
+            <div class="cd-section-menu">
+              <ul>
+                <li><a href="#description" class="active">Описание 01</a></li>
+                <li><a href="#character">Характеристика 02</a></li>
+                <li><a href="#construction">Конструкция 03</a></li>
+                <li><a href="#application">Применение 04</a></li>
+                <li><a href="#doc">Документы 05</a></li>
+                <li><a href="#similar">Похожие 06</a></li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <div class="container">
+            <!-- CONTENT -->
+            <div class="content-body">
+              <!-- О кабеле -->
+              <div class="sec-head">
+                <div class="sec-label">Описание</div>
+                <h2 class="sec-title">О кабеле.</h2>
+              </div>
+              <div class="about-grid">
+                <div class="about-text">
+                  <p>
+                    Кабель ADSS (All-Dielectric Self-Supporting) предназначен
+                    для подвески на опорах воздушных линий электропередачи
+                    напряжением до 500 кВ, а также на опорах городских
+                    телефонных сетей и мачтах освещения без сооружения
+                    дополнительной несущей проволоки.
+                  </p>
+                  <p>
+                    Конструкция кабеля включает центральный силовой элемент из
+                    стекловолокна (FRP), оптические модули в гелевом заполнении,
+                    внутреннюю оболочку из полиэтилена повышенной плотности и
+                    внешнюю оболочку из материала AT (Anti-Tracking),
+                    устойчивого к трекингу и дуге.
+                  </p>
+                  <p>
+                    Кабель соответствует требованиям ГОСТ Р 52266, IEC 60794-1,
+                    IEEE 1222 и может применяться на ЛЭП напряжением до 500 кВ
+                    без специальных мер защиты.
+                  </p>
+                  <div class="about-links">
+                    <a href="#" class="about-link"
+                      >↗ Технические условия (PDF)</a
+                    >
+                    <a href="#" class="about-link">↗ Область применения</a>
+                    <a href="#" class="about-link">↗ Инструкция по монтажу</a>
+                  </div>
+                </div>
+                <div>
+                  <table class="specs-table">
+                    <tr>
+                      <td>Тип конструкции</td>
+                      <td>Stranded Loose Tube</td>
+                    </tr>
+                    <tr>
+                      <td>Центральный элемент</td>
+                      <td>FRP стекловолокно</td>
+                    </tr>
+                    <tr>
+                      <td>Защитные нити</td>
+                      <td>Aramid Yarn (кевлар)</td>
+                    </tr>
+                    <tr>
+                      <td>Внутренняя оболочка</td>
+                      <td>HDPE (полиэтилен)</td>
+                    </tr>
+                    <tr>
+                      <td>Внешняя оболочка</td>
+                      <td>AT-HDPE (трекингостойкая)</td>
+                    </tr>
+                    <tr>
+                      <td>Заполнение модулей</td>
+                      <td>Тиксотропный гель</td>
+                    </tr>
+                    <tr>
+                      <td>Диаметр (24F)</td>
+                      <td>13,2 мм</td>
+                    </tr>
+                    <tr>
+                      <td>Вес (24F)</td>
+                      <td>145 кг/км</td>
+                    </tr>
+                    <tr>
+                      <td>Строительная длина</td>
+                      <td>2 000 / 4 000 м</td>
+                    </tr>
+                    <tr>
+                      <td>Радиус изгиба (min)</td>
+                      <td>20 × D (монтаж)</td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+
+              <!-- Технические параметры -->
+              <div class="sec-head">
+                <div class="sec-label">Характеристики</div>
+                <h2 class="sec-title">Технические параметры.</h2>
+              </div>
+              <table class="specs-table" style="margin-bottom: 0">
+                <tr>
+                  <td>Разрывная нагрузка (RTS)</td>
+                  <td>15–45 кН (зависит от исполнения)</td>
+                </tr>
+                <tr>
+                  <td>Допустимое растягивающее усилие (EDS)</td>
+                  <td>≤ 25% RTS</td>
+                </tr>
+                <tr>
+                  <td>Ветровая нагрузка (max)</td>
+                  <td>60 м/с</td>
+                </tr>
+                <tr>
+                  <td>Гололёдная нагрузка</td>
+                  <td>до 40 мм радиус</td>
+                </tr>
+                <tr>
+                  <td>Затухание (1310 нм, G.652D)</td>
+                  <td>≤ 0,36 дБ/км</td>
+                </tr>
+                <tr>
+                  <td>Затухание (1550 нм, G.652D)</td>
+                  <td>≤ 0,22 дБ/км</td>
+                </tr>
+                <tr>
+                  <td>Затухание (1625 нм, G.652D)</td>
+                  <td>≤ 0,24 дБ/км</td>
+                </tr>
+                <tr>
+                  <td>Дисперсия хроматическая (1310 нм)</td>
+                  <td>≤ 3,5 пс/(нм·км)</td>
+                </tr>
+                <tr>
+                  <td>Дисперсия хроматическая (1550 нм)</td>
+                  <td>≤ 18 пс/(нм·км)</td>
+                </tr>
+                <tr>
+                  <td>Диаметр модового поля (1310 нм)</td>
+                  <td>9,2 ± 0,4 мкм</td>
+                </tr>
+                <tr>
+                  <td>Числовая апертура</td>
+                  <td>0,13 ± 0,015</td>
+                </tr>
+                <tr>
+                  <td>Рабочая температура</td>
+                  <td>-60 … +70°C</td>
+                </tr>
+                <tr>
+                  <td>Температура хранения</td>
+                  <td>-40 … +70°C</td>
+                </tr>
+                <tr>
+                  <td>Срок службы гарантийный</td>
+                  <td>25 лет</td>
+                </tr>
+              </table>
+
+              <!-- Слои кабеля -->
+              <div class="sec-head">
+                <div class="sec-label">Конструкция</div>
+                <h2 class="sec-title">Слои кабеля.</h2>
+              </div>
+              <div class="cross-section-grid">
+                <div class="cross-img">
+                  <!-- SVG schematic cross-section -->
+                  <svg
+                    viewBox="0 0 280 280"
+                    width="280"
+                    height="280"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <!-- outer jacket -->
+                    <circle
+                      cx="140"
+                      cy="140"
+                      r="120"
+                      fill="#1a1a1a"
+                      stroke="#00d6d6"
+                      stroke-width="2"
+                    />
+                    <!-- AT jacket ring -->
+                    <circle cx="140" cy="140" r="110" fill="#111" />
+                    <!-- inner jacket -->
+                    <circle cx="140" cy="140" r="88" fill="#222" />
+                    <!-- aramid layer -->
+                    <circle cx="140" cy="140" r="72" fill="#333" />
+                    <!-- loose tubes (6 around center) -->
+                    <g fill="#00b4b4">
+                      <circle cx="140" cy="80" r="14" />
+                      <circle cx="191" cy="110" r="14" />
+                      <circle cx="191" cy="170" r="14" />
+                      <circle cx="140" cy="200" r="14" />
+                      <circle cx="89" cy="170" r="14" />
+                      <circle cx="89" cy="110" r="14" />
+                    </g>
+                    <!-- fibers in tubes -->
+                    <g fill="#ffffff" opacity=".7">
+                      <circle cx="140" cy="76" r="3" />
+                      <circle cx="144" cy="82" r="3" />
+                      <circle cx="136" cy="82" r="3" />
+                      <circle cx="191" cy="106" r="3" />
+                      <circle cx="195" cy="112" r="3" />
+                      <circle cx="187" cy="112" r="3" />
+                      <circle cx="191" cy="166" r="3" />
+                      <circle cx="195" cy="172" r="3" />
+                      <circle cx="187" cy="172" r="3" />
+                      <circle cx="140" cy="196" r="3" />
+                      <circle cx="144" cy="202" r="3" />
+                      <circle cx="136" cy="202" r="3" />
+                      <circle cx="89" cy="166" r="3" />
+                      <circle cx="93" cy="172" r="3" />
+                      <circle cx="85" cy="172" r="3" />
+                      <circle cx="89" cy="106" r="3" />
+                      <circle cx="93" cy="112" r="3" />
+                      <circle cx="85" cy="112" r="3" />
+                    </g>
+                    <!-- central FRP -->
+                    <circle
+                      cx="140"
+                      cy="140"
+                      r="18"
+                      fill="#00d6d6"
+                      opacity=".9"
+                    />
+                    <circle cx="140" cy="140" r="10" fill="#fafaf7" />
+                    <!-- label -->
+                    <text
+                      x="140"
+                      y="270"
+                      text-anchor="middle"
+                      fill="#6c6c6c"
+                      font-size="11"
+                      font-family="Inter,sans-serif"
+                    >
+                      Aerial Cable ADSS — 24F
+                    </text>
+                  </svg>
+                </div>
+                <div class="cross-legend">
+                  <div class="legend-item">
+                    <div
+                      class="legend-dot"
+                      style="background: #fafaf7; border: 1px solid #e6e5e0"
+                    ></div>
+                    FRP — центральный силовой элемент из стеклопластика
+                  </div>
+                  <div class="legend-item">
+                    <div class="legend-dot" style="background: #00d6d6"></div>
+                    Центральная трубка / заполнение гелем
+                  </div>
+                  <div class="legend-item">
+                    <div class="legend-dot" style="background: #00b4b4"></div>
+                    Оптические модули (6 × 4 волокна G.652D)
+                  </div>
+                  <div class="legend-item">
+                    <div
+                      class="legend-dot"
+                      style="
+                        background: rgba(255, 255, 255, 0.7);
+                        border: 1px solid #aaa;
+                      "
+                    ></div>
+                    Оптические волокна G.652D
+                  </div>
+                  <div class="legend-item">
+                    <div class="legend-dot" style="background: #333"></div>
+                    Нити арамидного волокна (кевлар)
+                  </div>
+                  <div class="legend-item">
+                    <div class="legend-dot" style="background: #222"></div>
+                    Внутренняя оболочка из HDPE
+                  </div>
+                  <div class="legend-item">
+                    <div class="legend-dot" style="background: #111"></div>
+                    Внешняя оболочка AT-HDPE (трекингостойкая)
+                  </div>
+                  <div class="legend-item">
+                    <div
+                      class="legend-dot"
+                      style="background: #1a1a1a; border: 1px solid #00d6d6"
+                    ></div>
+                    Наружный диаметр — 13,2 мм
+                  </div>
+                </div>
+              </div>
+
+              <!-- Где используется -->
+              <div class="sec-head">
+                <div class="sec-label">Применение</div>
+                <h2 class="sec-title">Где используется.</h2>
+              </div>
+              <div class="apps-grid">
+                <div class="app-item">
+                  <div class="app-icon">⚡</div>
+                  <div class="app-title">
+                    Линии электропередачи ВЛ-110/220/500 кВ
+                  </div>
+                  <div class="app-desc">
+                    Подвеска на опорах ЛЭП без дополнительного заземления.
+                    Диэлектрическая конструкция исключает влияние наведённых
+                    токов.
+                  </div>
+                </div>
+                <div class="app-item">
+                  <div class="app-icon">🏙️</div>
+                  <div class="app-title">Городские воздушные сети ГТС</div>
+                  <div class="app-desc">
+                    Подвеска между зданиями и на мачтах городского освещения для
+                    магистральных и распределительных сетей связи.
+                  </div>
+                </div>
+                <div class="app-item">
+                  <div class="app-icon">🌲</div>
+                  <div class="app-desc">
+                    Прокладка в лесных и горных районах на анкерных пролётах до
+                    200 м при минимальных капитальных вложениях.
+                  </div>
+                  <div class="app-title">Труднодоступные районы</div>
+                </div>
+                <div class="app-item">
+                  <div class="app-icon">🛤️</div>
+                  <div class="app-title">Железнодорожная инфраструктура</div>
+                  <div class="app-desc">
+                    Подвеска вдоль контактных сетей железных дорог. Устойчивость
+                    к вибрациям и динамическим нагрузкам.
+                  </div>
+                </div>
+              </div>
+
+              <!-- Datasheet -->
+              <div class="sec-head">
+                <div class="sec-label">Документация</div>
+                <h2 class="sec-title">Datasheet, сертификаты. 3D.</h2>
+              </div>
+              <div class="datasheet-grid">
+                <div class="ds-item">
+                  <div class="ds-icon">PDF</div>
+                  <div class="ds-info">
+                    <div class="ds-name">Datasheet ADSS</div>
+                    <div class="ds-meta">Спецификация · PDF · 240 КБ</div>
+                  </div>
+                  <span class="ds-arrow">↗</span>
+                </div>
+                <div class="ds-item">
+                  <div class="ds-icon">PDF</div>
+                  <div class="ds-info">
+                    <div class="ds-name">Сертификат соответствия</div>
+                    <div class="ds-meta">ГОСТ Р 52266 · PDF · 1,2 МБ</div>
+                  </div>
+                  <span class="ds-arrow">↗</span>
+                </div>
+                <div class="ds-item">
+                  <div class="ds-icon">3D</div>
+                  <div class="ds-info">
+                    <div class="ds-name">3D модель кабеля</div>
+                    <div class="ds-meta">STP / STEP · 8,4 МБ</div>
+                  </div>
+                  <span class="ds-arrow">↗</span>
+                </div>
+                <div class="ds-item">
+                  <div class="ds-icon">XLS</div>
+                  <div class="ds-info">
+                    <div class="ds-name">Таблица исполнений</div>
+                    <div class="ds-meta">Все модификации · XLSX · 88 КБ</div>
+                  </div>
+                  <span class="ds-arrow">↗</span>
+                </div>
+                <div class="ds-item">
+                  <div class="ds-icon">ZIP</div>
+                  <div class="ds-info">
+                    <div class="ds-name">Пакет сертификатов</div>
+                    <div class="ds-meta">ISO, CE, ГОСТ · ZIP · 4,8 МБ</div>
+                  </div>
+                  <span class="ds-arrow">↗</span>
+                </div>
+                <div class="ds-item">
+                  <div class="ds-icon">DOC</div>
+                  <div class="ds-info">
+                    <div class="ds-name">Инструкция по монтажу</div>
+                    <div class="ds-meta">Шеф-монтаж · PDF · 3,1 МБ</div>
+                  </div>
+                  <span class="ds-arrow">↗</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
       </section>
     </main>
 
