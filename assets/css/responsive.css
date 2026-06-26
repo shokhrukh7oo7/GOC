@@ -234,6 +234,9 @@
   .catalog-detail-wrapper .about-grid {
     grid-template-columns: 1fr;
   }
+  #similar .catalog-filter-wrapper .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 @media (max-width: 992px) {
@@ -425,6 +428,9 @@
     grid-template-columns: 1fr 1fr;
   }
   #doc .application-wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  #similar .catalog-filter-wrapper .grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
@@ -1115,6 +1121,9 @@
   }
   #doc .application-wrapper .item {
     border: 1px solid var(--grey-color);
+  }
+  #similar .catalog-filter-wrapper .grid {
+    grid-template-columns: repeat(1, 1fr);
   }
 }
 

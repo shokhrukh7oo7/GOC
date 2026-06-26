@@ -3176,6 +3176,7 @@ header {
 #doc .sec-head .sec-title {
   color: var(--white-color);
 }
+
 #doc .application-wrapper {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -3212,6 +3213,32 @@ header {
   font-weight: 400;
   letter-spacing: 0.5px;
   color: var(--grey-color);
+}
+/* similar */
+#similar {
+  background-color: var(--white-color);
+  padding: clamp(30px, 5vw, 80px) 0;
+}
+#similar .catalog-filter-wrapper {
+  margin-top: clamp(16px, 2vw, 32px);
+}
+#similar .catalog-filter-wrapper .grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+#similar .catalog-filter-wrapper .grid .card {
+  gap: 0;
+}
+#similar .catalog-filter-wrapper .grid .card .card-content {
+  padding: 14px;
+  gap: 4px;
+}
+#similar .catalog-filter-wrapper .grid .card .card-content .card__title {
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0;
+  color: var(--black-color);
+  height: 100%;
 }
 /* CATALOG DETAIL PAGE END */
 /* ======================================================================== */
