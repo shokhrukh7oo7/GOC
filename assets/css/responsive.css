@@ -662,6 +662,19 @@
   .catalog-detail-wrapper .about-grid .about-right-side .table-item span {
     text-align: center;
   }
+  #construction .about-grid .about-right-side .about-right-side-content {
+    grid-template-columns: 1fr;
+    padding: clamp(16px, 2vw, 32px);
+    width: 100%;
+  }
+  #construction
+    .about-grid
+    .about-right-side
+    .about-right-side-content
+    .image-info {
+    border: none;
+    text-align: start;
+  }
 }
 
 @media (max-width: 600px) {
