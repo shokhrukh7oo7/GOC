@@ -107,6 +107,9 @@
   .catalog-detail-wrapper .cd-section-menu {
     padding: 0;
   }
+  .catalog-detail-wrapper .content-body {
+    padding: 0;
+  }
 }
 
 @media (max-width: 1200px) {
@@ -227,6 +230,9 @@
   }
   .catalog-filter-wrapper .grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+  .catalog-detail-wrapper .about-grid {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -1035,6 +1041,18 @@
   }
   .catalog-detail-wrapper .price-info-wrapper .right-side {
     padding: 0;
+  }
+  .catalog-detail-wrapper .content-body .sec-head {
+    text-align: center;
+  }
+  .catalog-detail-wrapper .about-grid {
+    text-align: center;
+  }
+  .catalog-detail-wrapper .about-grid .about-right-side .about-right-side-info {
+    grid-template-columns: 1fr;
+  }
+  .cd-menu-wrapper .cd-section-menu ul {
+    justify-content: center;
   }
 }
 

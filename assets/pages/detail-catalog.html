@@ -9,309 +9,6 @@
     <link rel="stylesheet" href="/assets/css/responsive.css" />
 
     <style>
-      *,
-      *::before,
-      *::after {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-      }
-
-      :root {
-        --black-color: #1e1e1e;
-        --white-color: #ffffff;
-        --grey-color: #6c6c6c;
-        --milk-color: #e6e5e0;
-        --aqua-color: #00d6d6;
-        --body-color: #fafaf7;
-        --blue-color: #0050f0;
-        --green-color: #00d6d6;
-        --font: "Inter", system-ui, sans-serif;
-      }
-
-      body {
-        font-family: var(--font);
-        background: var(--body-color);
-        color: var(--black-color);
-        font-size: 14px;
-        line-height: 1.5;
-      }
-      a {
-        text-decoration: none;
-        color: inherit;
-      }
-      ul {
-        list-style: none;
-      }
-      button {
-        cursor: pointer;
-        font-family: inherit;
-      }
-
-      /* ── HERO / PRODUCT INTRO ── */
-      /* .product-hero {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 0;
-        background: var(--white-color);
-        border-bottom: 1px solid var(--milk-color);
-      } */
-
-      /* Left: gallery */
-      /* .gallery-col {
-        border-right: 1px solid var(--milk-color);
-      } */
-      /* .gallery-main {
-        width: 100%;
-        aspect-ratio: 4/3;
-        background: var(--body-color);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        overflow: hidden;
-        margin-bottom: 12px;
-        cursor: zoom-in;
-      } */
-      /* .gallery-main img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: transform 0.3s;
-      }
-      .gallery-main:hover img {
-        transform: scale(1.03);
-      } */
-      /* .gallery-thumbs {
-        display: flex;
-        gap: 8px;
-      } */
-      /* .thumb {
-        width: 68px;
-        height: 54px;
-        background: var(--body-color);
-        border: 2px solid transparent;
-        cursor: pointer;
-        overflow: hidden;
-        flex-shrink: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      } */
-      /* .thumb.active {
-        border-color: var(--aqua-color);
-      } */
-      /* .thumb img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      } */
-
-      /* Right: info */
-      /* .info-col {
-        padding: 32px 40px;
-        display: flex;
-        flex-direction: column;
-        gap: 0;
-      } */
-      /* .info-badge {
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
-        background: rgba(0, 214, 214, 0.12);
-        color: var(--aqua-color);
-        font-size: 10px;
-        font-weight: 700;
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
-        padding: 4px 10px;
-        margin-bottom: 16px;
-        width: fit-content;
-      } */
-      /* .info-badge::before {
-        content: "";
-        width: 6px;
-        height: 6px;
-        border-radius: 50%;
-        background: var(--aqua-color);
-      } */
-      /* .info-cat {
-        font-size: 11px;
-        text-transform: uppercase;
-        letter-spacing: 0.1em;
-        color: var(--grey-color);
-        margin-bottom: 6px;
-      } */
-      /* .info-title {
-        font-size: clamp(22px, 2.5vw, 36px);
-        font-weight: 800;
-        letter-spacing: -0.03em;
-        line-height: 1.1;
-        margin-bottom: 12px;
-      } */
-      /* .info-desc {
-        font-size: 13px;
-        color: var(--grey-color);
-        line-height: 1.65;
-        margin-bottom: 20px;
-      } */
-
-      /* quick specs grid */
-      /* .quick-specs {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 1px;
-        background: var(--milk-color);
-        border: 1px solid var(--milk-color);
-        margin-bottom: 20px;
-      } */
-      /* .qs-item {
-        background: var(--white-color);
-        padding: 12px 16px;
-      } */
-      /* .qs-label {
-        font-size: 10px;
-        text-transform: uppercase;
-        letter-spacing: 0.08em;
-        color: var(--grey-color);
-        margin-bottom: 3px;
-      } */
-      /* .qs-value {
-        font-size: 14px;
-        font-weight: 700;
-      } */
-
-      /* variant selector */
-      /* .variant-label {
-        font-size: 11px;
-        font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: 0.06em;
-        margin-bottom: 8px;
-        color: var(--grey-color);
-      }
-      .variant-row {
-        display: flex;
-        gap: 8px;
-        flex-wrap: wrap;
-        margin-bottom: 20px;
-      }
-      .variant-btn {
-        padding: 7px 14px;
-        border: 1px solid var(--milk-color);
-        background: var(--white-color);
-        font-size: 12px;
-        font-weight: 600;
-        color: var(--black-color);
-        transition: 0.15s;
-      }
-      .variant-btn:hover {
-        border-color: var(--black-color);
-      }
-      .variant-btn.active {
-        border-color: var(--aqua-color);
-        background: rgba(0, 214, 214, 0.08);
-        color: var(--black-color);
-      } */
-
-      /* price */
-      /* .price-row {
-        display: flex;
-        align-items: baseline;
-        gap: 10px;
-        margin-bottom: 20px;
-      }
-      .price-main {
-        font-size: clamp(24px, 3vw, 40px);
-        font-weight: 900;
-        letter-spacing: -0.03em;
-      }
-      .price-unit {
-        font-size: 13px;
-        color: var(--grey-color);
-      }
-      .price-old {
-        font-size: 16px;
-        color: var(--grey-color);
-        text-decoration: line-through;
-      } */
-
-      /* actions */
-      /* .action-row {
-        display: flex;
-        gap: 10px;
-        flex-wrap: wrap;
-        margin-bottom: 20px;
-      }
-      .btn-primary {
-        flex: 1;
-        min-width: 140px;
-        background: var(--aqua-color);
-        border: none;
-        padding: 14px 20px;
-        font-size: 13px;
-        font-weight: 700;
-        color: var(--black-color);
-        text-align: center;
-      }
-      .btn-primary:hover {
-        background: #00b8b8;
-      }
-      .btn-secondary {
-        flex: 1;
-        min-width: 140px;
-        background: transparent;
-        border: 1.5px solid var(--black-color);
-        padding: 14px 20px;
-        font-size: 13px;
-        font-weight: 700;
-        color: var(--black-color);
-        text-align: center;
-      }
-      .btn-secondary:hover {
-        background: var(--black-color);
-        color: var(--white-color);
-      } */
-
-      /* meta tags */
-      .meta-tags {
-        display: flex;
-        gap: 8px;
-        flex-wrap: wrap;
-      }
-      .meta-tag {
-        font-size: 11px;
-        color: var(--grey-color);
-        border: 1px solid var(--milk-color);
-        padding: 4px 10px;
-      }
-
-      /* ── CONTENT BODY ── */
-      .content-body {
-        max-width: 1280px;
-        margin: 0 auto;
-        padding: 0 40px 80px;
-      }
-
-      /* section header */
-      .sec-head {
-        padding: 48px 0 24px;
-        border-bottom: 1px solid var(--milk-color);
-        margin-bottom: 32px;
-      }
-      .sec-label {
-        font-size: 10px;
-        text-transform: uppercase;
-        letter-spacing: 0.12em;
-        color: var(--aqua-color);
-        font-weight: 700;
-        margin-bottom: 6px;
-      }
-      .sec-title {
-        font-size: clamp(20px, 2.5vw, 30px);
-        font-weight: 800;
-        letter-spacing: -0.03em;
-      }
-
       /* about cable */
       .about-grid {
         display: grid;
@@ -741,87 +438,77 @@
           </div>
         </section>
 
-        <section>
+        <section class="catalog-detail-wrapper" id="description">
           <div class="container">
-            <!-- CONTENT -->
             <div class="content-body">
-              <!-- О кабеле -->
               <div class="sec-head">
-                <div class="sec-label">Описание</div>
+                <div class="sec-label">N°01 — Описание</div>
                 <h2 class="sec-title">О кабеле.</h2>
               </div>
+
               <div class="about-grid">
-                <div class="about-text">
-                  <p>
-                    Кабель ADSS (All-Dielectric Self-Supporting) предназначен
-                    для подвески на опорах воздушных линий электропередачи
-                    напряжением до 500 кВ, а также на опорах городских
-                    телефонных сетей и мачтах освещения без сооружения
-                    дополнительной несущей проволоки.
-                  </p>
-                  <p>
-                    Конструкция кабеля включает центральный силовой элемент из
-                    стекловолокна (FRP), оптические модули в гелевом заполнении,
-                    внутреннюю оболочку из полиэтилена повышенной плотности и
-                    внешнюю оболочку из материала AT (Anti-Tracking),
-                    устойчивого к трекингу и дуге.
-                  </p>
-                  <p>
-                    Кабель соответствует требованиям ГОСТ Р 52266, IEC 60794-1,
-                    IEEE 1222 и может применяться на ЛЭП напряжением до 500 кВ
-                    без специальных мер защиты.
-                  </p>
-                  <div class="about-links">
-                    <a href="#" class="about-link"
-                      >↗ Технические условия (PDF)</a
-                    >
-                    <a href="#" class="about-link">↗ Область применения</a>
-                    <a href="#" class="about-link">↗ Инструкция по монтажу</a>
+                <div class="about-content">
+                  <div class="about-text">
+                    <span>Назначение</span>
+                    <p>
+                      Воздушная подвеска · линии связи общего пользования · ВОЛС
+                      операторов · корпоративные ВОЛС · сельские последняя миля
+                    </p>
+                  </div>
+                  <div class="about-text">
+                    <span>Условия эксплуатации</span>
+                    <p>
+                      Открытая атмосфера · УФ-стабилизированная оболочка PE ·
+                      работа при гололёде и ветровых нагрузках
+                    </p>
                   </div>
                 </div>
-                <div>
-                  <table class="specs-table">
-                    <tr>
-                      <td>Тип конструкции</td>
-                      <td>Stranded Loose Tube</td>
-                    </tr>
-                    <tr>
-                      <td>Центральный элемент</td>
-                      <td>FRP стекловолокно</td>
-                    </tr>
-                    <tr>
-                      <td>Защитные нити</td>
-                      <td>Aramid Yarn (кевлар)</td>
-                    </tr>
-                    <tr>
-                      <td>Внутренняя оболочка</td>
-                      <td>HDPE (полиэтилен)</td>
-                    </tr>
-                    <tr>
-                      <td>Внешняя оболочка</td>
-                      <td>AT-HDPE (трекингостойкая)</td>
-                    </tr>
-                    <tr>
-                      <td>Заполнение модулей</td>
-                      <td>Тиксотропный гель</td>
-                    </tr>
-                    <tr>
-                      <td>Диаметр (24F)</td>
-                      <td>13,2 мм</td>
-                    </tr>
-                    <tr>
-                      <td>Вес (24F)</td>
-                      <td>145 кг/км</td>
-                    </tr>
-                    <tr>
-                      <td>Строительная длина</td>
-                      <td>2 000 / 4 000 м</td>
-                    </tr>
-                    <tr>
-                      <td>Радиус изгиба (min)</td>
-                      <td>20 × D (монтаж)</td>
-                    </tr>
-                  </table>
+
+                <div class="about-right-side">
+                  <p>
+                    DSS (All-Dielectric Self-Supporting) — полностью
+                    диэлектрический самонесущий оптический кабель, рассчитанный
+                    на подвес между опорами ЛЭП и контактной сети. Конструкция
+                    исключает применение металлических элементов: и сердечник, и
+                    силовая броня выполнены из стеклопластика и арамидных нитей
+                    соответственно.
+                    <br /> <br>
+                    Кабель GOC-UZ OM-024 поставляется в исполнениях от 2 до 144
+                    волокон G.652.D / G.657.A2. Центральный диэлектрический
+                    силовой элемент, гелезаполненные модули с волокнами,
+                    водоблокирующая лента, арамидная обмотка и наружная
+                    UV-стойкая оболочка PE обеспечивают эксплуатацию в пролётах
+                    до 200 метров при максимальном растягивающем усилии 6 кН.
+                    <br /> <br>
+                    Производство OM-024 выполняется на Factory N°1 в Ташкенте по
+                    технологии вакуумной экструзии. Каждая барабанная катушка
+                    проходит OTDR-тестирование на длинах волн 1310 и 1550 нм с
+                    автоматическим формированием паспорта качества. Кабель
+                    сертифицирован по ISO 9001, IEC 60794-4, ГОСТ Р 52266.
+                  </p>
+                  
+                  <div class="about-right-side-info">
+                    <div class="item">
+                      <span>01 / 04</span>
+                      <h6>Полностью диэлектрик</h6>
+                      <p>Безопасно для линий 6–500 kV, не требует заземления и грозозащиты.</p>
+                    </div>
+                    <div class="item">
+                      <span>02 / 04</span>
+                      <h6>Пролёт до 200 m</h6>
+                      <p>Арамидная силовая обмотка выдерживает 6 kN при 1 % удлинения.</p>
+                    </div>
+                    <div class="item">
+                      <span>03 / 04</span>
+                      <h6>UV-стойкая оболочка</h6>
+                      <p>HDPE с углеродной сажей. Расчётный ресурс 30 лет на открытом солнце.</p>
+                    </div>
+                    <div class="item">
+                      <span>04 / 04</span>
+                      <h6>OTDR-паспорт</h6>
+                      <p>Тестирование на 1310 / 1550 nm каждой катушки. Затухание ≤ 0.20 dB/km.</p>
+                    </div>
+                  </div>
                 </div>
               </div>
 
