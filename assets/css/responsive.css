@@ -420,6 +420,10 @@
   .catalog-detail-wrapper .product-hero .info-col {
     padding: 20px 0;
   }
+  #application .application-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 @media (max-width: 900px) {
@@ -1088,6 +1092,21 @@
   }
   .cd-menu-wrapper .cd-section-menu ul {
     justify-content: center;
+  }
+  #application .application-wrapper {
+    grid-template-columns: 1fr;
+    gap: 5px;
+    padding: 5px;
+  }
+  #application .application-wrapper .item {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: 1px solid var(--aqua-color);
+    padding: clamp(14px, 1.5vw, 24px);
+  }
+  #application .application-wrapper .item span {
+    
   }
 }
 

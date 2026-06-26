@@ -3133,6 +3133,41 @@ header {
   letter-spacing: -0.2px;
   color: var(--black-color);
 }
+
+#application {
+  background-color: var(--white-color);
+  padding: clamp(30px, 5vw, 80px) 0;
+}
+
+#application .application-wrapper {
+  display: flex;
+  flex-direction: row;
+  margin-top: clamp(16px, 2vw, 32px);
+  border: 1px solid var(--aqua-color);
+  padding: clamp(14px, 1.5vw, 24px);
+}
+#application .application-wrapper .item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+#application .application-wrapper .item span {
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.88px;
+  margin-bottom: clamp(10px, 5vw, 80px);
+  color: var(--aqua-color);
+}
+#application .application-wrapper .item .item-head {
+  font-size: clamp(16px, 1.5vw, 24px);
+  font-weight: 700;
+  color: var(--black-color);
+}
+#application .application-wrapper .item .item-desc {
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--grey-color);
+}
 /* CATALOG DETAIL PAGE END */
 /* ======================================================================== */
 .layout-section
