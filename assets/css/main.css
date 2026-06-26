@@ -2936,6 +2936,74 @@ header {
   letter-spacing: 0%;
   color: var(--grey-color);
 }
+/* character */
+.catalog-detail-wrapper .about-grid .about-right-side .table-item {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  border-bottom: 1px solid var(--milk-color);
+}
+.catalog-detail-wrapper .about-grid .about-right-side .table-item:first-child {
+  border-top: 1px solid var(--black-color);
+  padding: clamp(15px, 1.5vw, 24px) 0;
+
+}
+.catalog-detail-wrapper .about-grid .about-right-side .table-item span {
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 1.32px;
+  color: var(--aqua-color);
+}
+.catalog-detail-wrapper
+  .about-grid
+  .about-right-side
+  .table-item
+  .table-content-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 0;
+  border-bottom: 1px solid var(--milk-color);
+}
+.catalog-detail-wrapper
+  .about-grid
+  .about-right-side
+  .table-item
+  .table-content-wrapper:last-child {
+  border-bottom: none;
+}
+.catalog-detail-wrapper
+  .about-grid
+  .about-right-side
+  .table-item
+  .table-content-wrapper
+  .table-content {
+  display: grid;
+  grid-template-columns: 400px 1fr;
+}
+.catalog-detail-wrapper
+  .about-grid
+  .about-right-side
+  .table-item
+  .table-content-wrapper
+  p {
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0%;
+  color: var(--grey-color);
+}
+.catalog-detail-wrapper
+  .about-grid
+  .about-right-side
+  .table-item
+  .table-content-wrapper
+  span {
+  font-size: clamp(13px, 1vw, 16px);
+  font-weight: 700;
+  letter-spacing: -0.2px;
+  color: var(--black-color);
+}
 /* CATALOG DETAIL PAGE END */
 /* ======================================================================== */
 .layout-section

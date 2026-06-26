@@ -640,6 +640,28 @@
   .catalog-filter-wrapper .tab {
     flex-shrink: 0;
   }
+  .catalog-detail-wrapper
+    .about-grid
+    .about-right-side
+    .table-item
+    .table-content-wrapper {
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+  }
+  .catalog-detail-wrapper
+    .about-grid
+    .about-right-side
+    .table-item
+    .table-content-wrapper
+    .table-content {
+    grid-template-columns: 1fr;
+    gap: 5px;
+  }
+  .catalog-detail-wrapper .about-grid .about-right-side .table-item span {
+    text-align: center;
+  }
 }
 
 @media (max-width: 600px) {
