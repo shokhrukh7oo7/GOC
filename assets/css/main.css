@@ -3168,6 +3168,51 @@ header {
   font-weight: 400;
   color: var(--grey-color);
 }
+/* doc */
+#doc {
+  background-color: var(--black-color);
+  padding: clamp(30px, 5vw, 80px) 0;
+}
+#doc .sec-head .sec-title {
+  color: var(--white-color);
+}
+#doc .application-wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border: 1px solid var(--grey-color);
+  margin-top: clamp(16px, 2vw, 32px);
+  padding: 0;
+  gap: 0;
+}
+#doc .application-wrapper .item {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(10px, 1.5vw, 20px);
+  padding: clamp(14px, 1.5vw, 24px);
+}
+#doc .application-wrapper .item a {
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.88px;
+  color: var(--aqua-color);
+}
+#doc .application-wrapper .item .item-head {
+  font-size: clamp(16px, 1.5vw, 24px);
+  font-weight: 700;
+  letter-spacing: -0.22px;
+  margin-bottom: clamp(14px, 2vw, 32px);
+  color: var(--white-color);
+}
+#doc .application-wrapper .item .item-desc {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  color: var(--grey-color);
+}
 /* CATALOG DETAIL PAGE END */
 /* ======================================================================== */
 .layout-section

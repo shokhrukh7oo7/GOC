@@ -424,6 +424,9 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
   }
+  #doc .application-wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 900px) {
@@ -1105,8 +1108,13 @@
     border: 1px solid var(--aqua-color);
     padding: clamp(14px, 1.5vw, 24px);
   }
-  #application .application-wrapper .item span {
-    
+  #doc .application-wrapper {
+    grid-template-columns: repeat(1, 1fr);
+    padding: 5px;
+    gap: 5px;
+  }
+  #doc .application-wrapper .item {
+    border: 1px solid var(--grey-color);
   }
 }
 
